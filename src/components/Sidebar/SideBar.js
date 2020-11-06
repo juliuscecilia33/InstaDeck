@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from './SideBar.module.scss';
 import DeckLogo from '../images/Decklol.png';
 import DownArrow from '../images/DownArrow.png';
@@ -7,7 +7,9 @@ import Fairlane from '../images/fairlane.jpg';
 import Dabin from '../images/dabin.jpg';
 
 export const SideBar = () => {
+
     return (
+
         <>
             <div className={Styles.SidebarBg}>
                 <div className={Styles.Logo}>
@@ -15,10 +17,10 @@ export const SideBar = () => {
                 </div>
 
                 <div className={Styles.Tabs}>
-                    <a href="/#"><h3>Home</h3></a>
-                    <a href="/#"><h3>Messages</h3></a>
-                    <a href="/#"><h3>Profile</h3></a>
-                    <a href="/#"><h3>Saved Posts</h3></a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Home</h3></a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Messages</h3></a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Profile</h3></a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Saved Posts</h3></a>
                 </div>
 
                 <div className={Styles.Account}>
@@ -36,7 +38,7 @@ export const SideBar = () => {
 
                     <div className={Styles.Profiles}>
 
-                        <div className={Styles.Profile}>
+                        <div className={`${Styles.Profile} ${Styles.Admin}`}>
                             <img src={Illenium} alt="illenium-profile"/>
                             <div className={Styles.Label}>
                                 <h3>Admin</h3>
@@ -64,7 +66,9 @@ export const SideBar = () => {
 
 
                     <div className={Styles.AccountBottom}>
-                        <h3>Log Out</h3>
+                        <a href="#/">
+                            <h3>Log Out</h3>
+                        </a>
                         <p>InstaDeck Business</p>
                     </div>
 

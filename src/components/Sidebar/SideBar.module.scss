@@ -30,11 +30,25 @@
         padding: 2rem 0;
 
         a {
+            width: 100%;
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
             color: black;
+            transition: ease 0.3s all;
 
             h3 {
                 font-weight: 500;
+            }
+
+            &:hover {
+                background-color: rgba(242, 241, 239, 1);
+            }
+
+            &:focus {
+                background-color: rgba(242, 241, 239, 1);
             }
 
         }
@@ -46,7 +60,7 @@
         height: 50%;
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
 
         .AccountTop {
             display: flex;
@@ -85,15 +99,16 @@
 
         .Profiles {
             width: 100%;
-            height: 80%;
+            height: 75%;
 
             .Profile {
-                height: 20%;
+                width: 100%;
+                height: 23%;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                margin: 0 .5rem;
-                margin-bottom: 1.5rem;
+                padding: 0 .5rem;
+                margin-bottom: 1rem;
     
                 img {
                     width: 54px;
@@ -122,23 +137,34 @@
     
             }
 
+            .Admin {
+                background-color: rgba(242, 241, 239, 1);
+            }
+
         }
 
         .AccountBottom {
             width: 100%;
-            height: 10%;
+            height: 15%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
 
-            h3 {
-                font-size: 18px;
-                font-weight: 400;
+            a {
+                color: black;
+                height: 50%;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
             }
 
+
             p {
-                font-size: 18px;
+                height: 50%;
+                font-size: 12px;
                 font-weight: 400;
                 color: #C2C2C2;
             }
