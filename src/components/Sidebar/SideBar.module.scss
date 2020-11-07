@@ -27,7 +27,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 0;
+        padding: 1rem 0;
 
         a {
             width: 100%;
@@ -36,19 +36,29 @@
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            color: black;
+            color: #c4c4c4;
             transition: ease 0.3s all;
 
+            i {
+                width: 20%;
+                font-size: 31px;
+                margin-right: .5rem;
+            }
+
             h3 {
+                width: 30%;
                 font-weight: 500;
+                font-size: 18px;
             }
 
             &:hover {
                 background-color: rgba(242, 241, 239, 1);
+                color: black;
             }
 
             &:focus {
                 background-color: rgba(242, 241, 239, 1);
+                color: black;
             }
 
         }

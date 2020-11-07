@@ -17,10 +17,25 @@ export const SideBar = () => {
                 </div>
 
                 <div className={Styles.Tabs}>
-                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Home</h3></a>
-                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Messages</h3></a>
-                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Profile</h3></a>
-                    <a href="/#" onClick={(e) => e.preventDefault()}><h3>Saved Posts</h3></a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                        <i class="fas fa-home"></i>
+                        <h3>Home</h3>
+                    </a>
+                    
+                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Messages</h3>
+                    </a>
+
+                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                        <i class="fas fa-user-alt"></i>
+                        <h3>Profile</h3>
+                    </a>
+
+                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Saved</h3>
+                    </a>
                 </div>
 
                 <div className={Styles.Account}>

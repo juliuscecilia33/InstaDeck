@@ -4,6 +4,7 @@ import { Detailed } from './components/Detailed/Detailed';
 import { Feed } from './components/Feed/Feed';
 import { SideBar } from './components/Sidebar/SideBar';
 import { db, auth } from './firebase';
+import { PopularFeed } from './PopularFeed/PopularFeed';
 
 function App() {
   const [posts, setPosts] = useState ([]);
@@ -12,7 +13,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('julius');
 
   useEffect(() => {
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
@@ -23,12 +24,13 @@ function App() {
     })
   }, []);
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className="App">
       <SideBar />
-      <Feed />
+      <Feed posts={posts} user={user} />
+      <PopularFeed />
       <Detailed />
     </div>
   );
