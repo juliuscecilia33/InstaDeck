@@ -4,7 +4,6 @@ import { Detailed } from './components/Detailed/Detailed';
 import { Feed } from './components/Feed/Feed';
 import { SideBar } from './components/Sidebar/SideBar';
 import { db, auth } from './firebase';
-import { PopularFeed } from './PopularFeed/PopularFeed';
 
 function App() {
   const [posts, setPosts] = useState ([]);
@@ -30,7 +29,6 @@ function App() {
     <div className="App">
       <SideBar />
       <Feed posts={posts} user={user} />
-      <PopularFeed />
       <Detailed />
     </div>
   );
