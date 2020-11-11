@@ -1,19 +1,23 @@
 .FeedBg {
     width: 65%;
     height: 100vh;
+    overflow: hidden;
     background-color: #F6F6F2;
     display: flex;
     flex-direction: column;
 
     .UserFeed {
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 9%;
         
         .FollowingFeed {
             width: 50%;
-            height: 80%;
+            height: 100%;
+            overflow: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +26,7 @@
     
         .PopularFeed {
             width: 50%;
-            height: 80%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;

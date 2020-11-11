@@ -15,6 +15,7 @@ export const Feed = ({ posts, user }) => {
                 <Stories />
 
                 <div className={Styles.UserFeed}>
+                    
                     <div className={Styles.FollowingFeed}>
                         <Posts posts={posts} user={user} />
                     </div>
@@ -24,6 +25,7 @@ export const Feed = ({ posts, user }) => {
                     </div>
                 </div>
 
+                
                 <ImageUpload />
             </div>
         </>

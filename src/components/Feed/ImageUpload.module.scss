@@ -1,7 +1,12 @@
 .ImageUpload {
-    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 65%;
     height: 7%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F6F6F2;
+    border-top: 1px solid #c4c4c4;
 }
