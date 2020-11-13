@@ -11,17 +11,38 @@
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-top: 9%;
+        margin-top: 90px;
         
         .FollowingFeed {
             width: 50%;
-            height: 100%;
+            height: 84%;
             overflow: auto;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-right: 1px solid #c4c4c4;
+            padding-top: 0.9rem;
+
+            &:first-child {
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+                margin-left: 0.5rem;
+            }
+
+            &::-webkit-scrollbar {
+                width: 8px;
+                background-color: #F6F6F2;
+                
+                border-radius: 15px;
+            }
+
+            &::-webkit-scrollbar-thumb {   
+                background-color: #C4C4C4;
+                border-radius: 15px;
+            }
         }
     
         .PopularFeed {

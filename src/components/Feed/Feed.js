@@ -17,6 +17,8 @@ export const Feed = ({ posts, user }) => {
                 <div className={Styles.UserFeed}>
                     
                     <div className={Styles.FollowingFeed}>
+                        <h1>Following</h1>
+
                         <Posts posts={posts} user={user} />
                     </div>
 
