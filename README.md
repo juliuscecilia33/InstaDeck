@@ -1,4 +1,4 @@
-# instadeck
+# InstaDeck
 A semi-dashboard interface of Instagram.
 
 
