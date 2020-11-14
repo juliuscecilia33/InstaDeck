@@ -3,11 +3,10 @@ import Styles from './Feed.module.scss';
 import { Posts } from './Posts';
 import { Stories } from './Stories';
 import { ImageUpload } from './ImageUpload';
+import { PopularPosts } from './PopularPosts';
 
 
-export const Feed = ({ posts, user }) => {
-    console.log(posts);
-    console.log(user);
+export const Feed = ({ posts, user, popPosts }) => {
 
     return (
         <>
@@ -23,7 +22,9 @@ export const Feed = ({ posts, user }) => {
                     </div>
 
                     <div className={Styles.PopularFeed}>
-                        <h3>Popular</h3>
+                        <h1>Popular</h1>
+
+                        <PopularPosts popPosts={popPosts} user={user} />
                     </div>
                 </div>
 
