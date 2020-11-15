@@ -22,7 +22,12 @@ export const Feed = ({ posts, user, popPosts }) => {
                     </div>
 
                     <div className={Styles.PopularFeed}>
-                        <h1>Popular</h1>
+                        <div className={Styles.Links}>
+                            <a href="/#"><h3>Popular</h3></a>
+                            <a href="/#"><h3>Notifications</h3></a>
+                            <a href="/#"><h3>Messages</h3></a>
+                            <a href="/#"><h3>Saved</h3></a>
+                        </div>
 
                         <PopularPosts popPosts={popPosts} user={user} />
                     </div>

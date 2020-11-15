@@ -8,28 +8,30 @@
 
     .UserFeed {
         width: 100%;
-        height: 100%;
+        height: 84%;
         display: flex;
         justify-content: center;
         margin-top: 90px;
+        padding-top: 1rem;
         
         .FollowingFeed {
             width: 50%;
-            height: 84%;
+            height: 100%;
             overflow: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding-top: 0.9rem;
+            padding-top: 0.7rem;
 
             &:first-child {
                 align-items: flex-start;
             }
 
             h1 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+                font-weight: 500;
                 margin-left: 0.5rem;
+                margin-bottom: 0.5rem;
             }
 
             &::-webkit-scrollbar {
@@ -47,19 +49,29 @@
     
         .PopularFeed {
             width: 50%;
-            height: 84%;
+            height: 100%;
             overflow: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding-top: 0.9rem;
+            padding-top: 0.7rem;
 
-            h1 {
-                align-items: flex-start;
-                font-size: 1.3rem;
-                margin-left: 0.5rem;
+            .Links {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 0.5rem;
+                margin-bottom: 0.5rem;
+
+                h3 {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    margin-right: 2rem;
+                    color: black;
+                }
             }
+
 
             &::-webkit-scrollbar {
                 width: 8px;
