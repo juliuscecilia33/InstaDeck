@@ -30,7 +30,7 @@
             h1 {
                 font-size: 1.1rem;
                 font-weight: 500;
-                margin-left: 0.5rem;
+                margin-left: 1.3rem;
                 margin-bottom: 0.5rem;
             }
 
@@ -61,15 +61,28 @@
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;
-                padding-left: 0.5rem;
+                padding-left: 1.5rem;
                 margin-bottom: 0.5rem;
 
-                h3 {
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    margin-right: 2rem;
-                    color: black;
+                a {
+                    color: #C4C4C4;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        color: black;
+                    }
+
+                    &:focus {
+                        color: black;
+                    }
+
+                    h3 {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        margin-right: 2rem;
+                    }
                 }
+
             }
 
 

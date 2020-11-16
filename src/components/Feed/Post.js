@@ -5,12 +5,12 @@ import firebase from 'firebase';
 import JuanSoto from '../images/juansotolol.jpg';
 
 export const Post = ({ user, username, caption, imageUrl, postId }) => {
-
+    
     return (
         <>
             <div className={Styles.Post}>
 
-                <img src={imageUrl} alt="post" className={Styles.Post__Image} />
+                <a href="#/"><img src={imageUrl} alt="post" className={Styles.Post__Image} /></a>
 
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>

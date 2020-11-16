@@ -4,6 +4,7 @@ import { Detailed } from './components/Detailed/Detailed';
 import { Feed } from './components/Feed/Feed';
 import { SideBar } from './components/Sidebar/SideBar';
 import { db, auth } from './firebase';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState ([]);
