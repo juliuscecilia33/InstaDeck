@@ -38,9 +38,9 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar />
-      <Feed posts={posts} user={user} popPosts={popPosts} />
-      <Detailed />
+        <SideBar />
+        <Feed posts={posts} user={user} popPosts={popPosts} />
+        <Detailed />
     </div>
   );
 }
