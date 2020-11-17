@@ -37,7 +37,65 @@ export const Detailed = () => {
                     </div>
 
                     <div className={Styles.Statistics}>
-                        
+
+                        <div className={Styles.FirstRow}>
+
+                            <div className={Styles.FirstItem}>
+                                <div className={Styles.Icon}>
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div className={Styles.Number}>
+                                    <h2>26</h2>
+                                </div>
+                                <div className={Styles.Text}>
+                                    <p>New</p>
+                                    <p>Followers</p>
+                                </div>
+                            </div>
+
+                            <div className={Styles.SecondItem}>
+                                <div className={Styles.Icon}>
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div className={Styles.Number}>
+                                    <h2>6</h2>
+                                </div>
+                                <div className={Styles.Text}>
+                                    <p>New</p>
+                                    <p>Comments</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div className={Styles.SecondRow}>
+                            <div className={Styles.ThirdItem}>
+                                <div className={Styles.Icon}>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div className={Styles.Number}>
+                                    <h2>73</h2>
+                                </div>
+                                <div className={Styles.Text}>
+                                    <p>New</p>
+                                    <p>Likes</p>
+                                </div>
+                            </div>
+
+                            <div className={Styles.FourthItem}>
+                                <div className={Styles.Icon}>
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div className={Styles.Number}>
+                                    <h2>49</h2>
+                                </div>
+                                <div className={Styles.Text}>
+                                    <p>Profile</p>
+                                    <p>Views</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>

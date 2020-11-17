@@ -18,6 +18,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-bottom: 2rem;
 
             img {
                 max-width: 203px;
@@ -61,6 +62,110 @@
                     font-weight: 500;
                 }
             }
+        }
+
+        .Statistics {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+
+            .FirstRow {
+                width: 100%;
+                display: flex;
+                margin-bottom: 4rem;
+
+                .Icon {
+                    width: 61px;
+                    height: 61px;
+                    border-radius: 10px;
+                    background-color: #F6F6F2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 32px;
+                        color: black;
+                    }
+                }
+
+                h2 {
+                    font-size: 35px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #c4c4c4;
+                }
+
+                .FirstItem {
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0 1rem;
+                }
+    
+                .SecondItem {
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0 1rem;
+                }
+
+            }
+
+            .SecondRow {
+                width: 100%;
+                display: flex;
+
+                .Icon {
+                    width: 61px;
+                    height: 61px;
+                    border-radius: 10px;
+                    background-color: #F6F6F2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 32px;
+                        color: black;
+                    }
+                }
+
+                h2 {
+                    font-size: 35px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #c4c4c4;
+                }
+
+                .ThirdItem {
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0 1rem;
+                }
+    
+                .FourthItem {
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0 1rem;
+                }
+            }
+
         }
     }
 
