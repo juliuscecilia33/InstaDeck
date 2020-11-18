@@ -1,6 +1,10 @@
 import React from 'react';
 import { DetailedBg } from './Detailed.module.scss';
 import Kellenic from '../images/jkellenic.jpg';
+import Dabin from '../images/dabin.jpg';
+import Verified from '../images/verified.png';
+import Bichette from '../images/bichette.jpg';
+import Julio from '../images/julio.jpg';
 import Styles from './Detailed.module.scss';
 
 export const Detailed = () => {
@@ -101,7 +105,68 @@ export const Detailed = () => {
                 </div>
 
 
-                <div className={Styles.Suggestions}></div>
+                <div className={Styles.Suggestions}>
+                    <div className={Styles.TopText}>
+                        <h2>Suggestions For You</h2>
+                        <h3>See All</h3>
+                    </div>
+
+                    <div className={Styles.ToFollow}>
+                        <div className={Styles.SuggestedFollow}>
+                            <div className={Styles.FollowUser}>
+                                <img src={Dabin} alt="Profile Image" /> 
+
+                                <div className={Styles.FollowUserText}>
+                                    <h3>Dabin</h3>
+                                    <p>@dabinmusic</p>
+                                    {/* <div className={Styles.VerifiedUser}>
+                                        <img src={Verified} alt="Verified Logo" />
+                                    </div> */}
+                                </div>
+                            </div>
+
+                            <a className={Styles.FollowButton}>
+                                <h3>Follow</h3>
+                            </a>
+                        </div>
+
+                        <div className={Styles.SuggestedFollow}>
+                            <div className={Styles.FollowUser}>
+                                <img src={Bichette} alt="Profile Image" /> 
+
+                                <div className={Styles.FollowUserText}>
+                                    <h3>Bo Bichette</h3>
+                                    <p>@bobichette</p>
+                                    {/* <div className={Styles.VerifiedUser}>
+                                        <img src={Verified} alt="Verified Logo" />
+                                    </div> */}
+                                </div>
+                            </div>
+
+                            <a className={Styles.FollowButton}>
+                                <h3>Follow</h3>
+                            </a>
+                        </div>
+
+                        <div className={Styles.SuggestedFollow}>
+                            <div className={Styles.FollowUser}>
+                                <img src={Julio} alt="Profile Image" /> 
+
+                                <div className={Styles.FollowUserText}>
+                                    <h3>Julio Rodriguez</h3>
+                                    <p>@j_rod</p>
+                                    {/* <div className={Styles.VerifiedUser}>
+                                        <img src={Verified} alt="Verified Logo" />
+                                    </div> */}
+                                </div>
+                            </div>
+
+                            <a className={Styles.FollowButton}>
+                                <h3>Follow</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </>
