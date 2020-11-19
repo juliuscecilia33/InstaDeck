@@ -153,7 +153,7 @@ export const Detailed = () => {
                                 <img src={Julio} alt="Profile Image" /> 
 
                                 <div className={Styles.FollowUserText}>
-                                    <h3>Julio Rodriguez</h3>
+                                    <h3>JROD</h3>
                                     <p>@j_rod</p>
                                     {/* <div className={Styles.VerifiedUser}>
                                         <img src={Verified} alt="Verified Logo" />
