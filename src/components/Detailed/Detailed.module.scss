@@ -14,15 +14,15 @@
 
         .TopProfile {
             width: 100%;
+            height: 60%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.2553407934893186vh;
 
             img {
-                max-width: 203px;
-                width: 100%;
+                width: 10.572916666666666vw;
                 height: auto;
                 border-radius: 10px;
                 margin-bottom: 1rem;
@@ -43,6 +43,7 @@
 
             .Stats {
                 width: 100%;
+                height: 40%;
                 display: flex;
                 justify-content: space-around;
                 text-align: center;
@@ -68,14 +69,13 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            margin-top: .5rem;
 
             .FirstRow {
                 width: 100%;
                 display: flex;
-                margin-bottom: 2.5rem;
+                margin-bottom: 2.5vh;
 
                 .Icon {
                     width: 3.1770833333333335vw;
