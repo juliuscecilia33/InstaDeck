@@ -5,6 +5,7 @@ import { Feed } from './components/Feed/Feed';
 import { SideBar } from './components/Sidebar/SideBar';
 import { db, auth } from './firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { MainPage } from './pages/MainPage';
 
 function App() {
   const [posts, setPosts] = useState ([]);
@@ -38,9 +39,7 @@ function App() {
 
   return (
     <div className="App">
-        <SideBar />
-        <Feed posts={posts} user={user} popPosts={popPosts} />
-        <Detailed />
+       <MainPage posts={posts} user={user} popPosts={popPosts} />
     </div>
   );
 }
