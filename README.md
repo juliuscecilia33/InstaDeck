@@ -2,7 +2,8 @@
 A semi-dashboard interface of Instagram.
 
 Prototype (Built in Figma)
-![InstaDeck](/src/components/images/Sign Up Page.jpg)
+<br />
+![SignUpPage](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20Up%20Page.jpg)
 <br />
 Page 0 (Sign Up Page)
 
