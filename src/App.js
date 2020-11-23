@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import { Detailed } from './components/Detailed/Detailed';
-import { Feed } from './components/Feed/Feed';
-import { SideBar } from './components/Sidebar/SideBar';
+import * as ROUTES from './constants/routes';
 import { db, auth } from './firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import { MainPage } from './pages/MainPage';
+import { MainPage, SignUpPage, SignInPage } from './pages';
 
 function App() {
   const [posts, setPosts] = useState ([]);
@@ -39,7 +37,22 @@ function App() {
 
   return (
     <div className="App">
-       <MainPage posts={posts} user={user} popPosts={popPosts} />
+      <Router>
+        <Switch>
+          <Route path={ROUTES.SIGN_UP} exact>
+            <SignUpPage />
+          </Route>
+
+          <Route path={ROUTES.SIGN_IN} exact>
+            <SignInPage />
+          </Route>
+
+          <Route path={ROUTES.HOME} exact>
+            <MainPage posts={posts} user={user} popPosts={popPosts} />  
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }
