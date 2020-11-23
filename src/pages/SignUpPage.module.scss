@@ -1,0 +1,109 @@
+.InputSec {
+    width: 35%;
+    height: 100vh;
+    background: #F6F6F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .LogoImage {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 4vw;
+            height: auto;
+        }
+    }
+
+
+    .SignUpTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 10%;
+
+        h2 {
+            font-size: 3vw;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .RedLine {
+            width: 8.958333333333334vw;
+            height: 2px;
+            background: #E45257;
+        }
+
+        h3 {
+            color: #E45257;
+            font-size: 0.8333333333333334vw;
+            font-weight: 500;
+        }
+    }
+
+    .InputArea {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+
+        input {
+            width: 31.96875vw;
+            height: 6.5158697863682605vh;
+            background: #F3EEE8;
+            border: #E5E5E5 solid 1px;
+            border-radius: 10px;
+            outline: none;
+            padding-left: 1rem;
+
+            &::placeholder {
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.25vw;
+                font-size: 400;
+                color: #C4C4C4;
+            }
+
+        }
+
+        .Username {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+
+            h3 {
+                font-size: 1.25vw;
+                font-weight: 500;
+                color: #000000;
+                margin-bottom: 0.6rem;
+            }
+        }
+
+        .Password {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3 {
+                font-size: 1.25vw;
+                font-weight: 500;
+                color: #000000;
+                margin-bottom: 0.6rem;
+            }
+        }
+    }
+}
+
+.DisplaySec {
+    width: 65%;
+    height: 100vh;
+    background: #F3EEE8;
+}
