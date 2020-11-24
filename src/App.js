@@ -8,11 +8,6 @@ import { MainPage, SignUpPage, SignInPage } from './pages';
 function App() {
   const [posts, setPosts] = useState ([]);
   const [popPosts, setPopPosts] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [openSignIn, setOpenSignIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
   const [user, setUser] = useState('julius');
 
   useEffect(() => {
@@ -33,7 +28,25 @@ function App() {
     })
   }, []);
 
-  // console.log(posts);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((authUser) => {
+  //     if (authUser) {
+  //       // user has logged in...
+  //       console.log(authUser);
+  //       setUser(authUser);
+
+  //     } else {
+  //       // user has logged out...
+  //       setUser(null);
+  //     }
+  //   })
+
+  //   return () => {
+  //     // perform some cleanup actions
+  //     unsubscribe(); // used for efficiency since it will be an infinite loop of change
+  //   }
+
+  // }, [user, username]);
 
   return (
     <div className="App">

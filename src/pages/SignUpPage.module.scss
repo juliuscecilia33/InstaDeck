@@ -52,6 +52,7 @@
         height: 80%;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
         padding-top: 2rem;
 
@@ -79,26 +80,11 @@
             }
 
         }
-
-        .Username {
+        
+        .InputText {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 2.5rem;
-
-            h3 {
-                font-size: 1vw;
-                font-weight: 500;
-                color: #000000;
-                margin-bottom: 0.6rem;
-            }
-        }
-
-        .Password {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2.5rem;
 
             h3 {
                 font-size: 1vw;
@@ -112,7 +98,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 2.5rem;
 
             img {
                 width: 5.458333333333333vw;
@@ -130,6 +115,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            margin-bottom: 1rem;
 
             button {
                 width: 31.96875vw;
@@ -155,6 +141,28 @@
                     font-size: 1.2625vw;
                     color: #ffffff;
                 }
+            }
+        }
+
+        h3 {
+            font-size: 0.8vw;
+            font-weight: 400;
+            color: #c4c4c4;
+            text-align: center;
+            
+            span {
+                text-decoration: underline;
+            }
+        }
+
+        h2 {
+            font-size: 0.9vw;
+            font-weight: 400;
+            color: #000000;
+
+            Span {
+                color: #E45257;
+                font-weight: 500;
             }
         }
     }
