@@ -7,6 +7,9 @@ import UploadImageIcon from '../components/images/UploadImageIcon.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
 
+
+// Have to create Firebase Context, look at BrowseContainer of Netflix clone and selectProfileCOntainer
+
 export const SignUpPage = () => {
     const history = useHistory();
 
