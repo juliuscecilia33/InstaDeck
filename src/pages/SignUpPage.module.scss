@@ -56,19 +56,26 @@
         padding-top: 2rem;
 
         input {
-            width: 31.96875vw;
-            height: 6.5158697863682605vh;
+            width: 30.96875vw;
+            height: 5.5158697863682605vh;
             background: #F3EEE8;
             border: #E5E5E5 solid 1px;
             border-radius: 10px;
             outline: none;
             padding-left: 1rem;
+            transition: .3s ease-in-out all;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.15vw;
 
             &::placeholder {
                 font-family: 'Roboto', sans-serif;
-                font-size: 1.25vw;
+                font-size: 1.15vw;
                 font-size: 400;
                 color: #C4C4C4;
+            }
+
+            &:focus {
+                border:#E45257 solid 1.5px;
             }
 
         }
@@ -80,7 +87,7 @@
             margin-bottom: 2.5rem;
 
             h3 {
-                font-size: 1.25vw;
+                font-size: 1vw;
                 font-weight: 500;
                 color: #000000;
                 margin-bottom: 0.6rem;
@@ -91,12 +98,63 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 2.5rem;
 
             h3 {
-                font-size: 1.25vw;
+                font-size: 1vw;
                 font-weight: 500;
                 color: #000000;
                 margin-bottom: 0.6rem;
+            }
+        }
+
+        .UploadImage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+
+            img {
+                width: 5.458333333333333vw;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 0.7291666666666666vw;
+                font-weight: 500;
+            }
+        }
+
+        .CreateAccButton {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            button {
+                width: 31.96875vw;
+                height: 5.8158697863682605vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                background: #E45257;
+                border: solid 1px #E5E5E5;
+                border-radius: 10px;
+                cursor: pointer;
+
+                i {
+                    font-size: 1.3666666666666667vw;
+                    color: #ffffff;
+                    text-align: center;
+                    margin-right: 1.5rem;
+                }
+
+                h3 {
+                    font-weight: 500;
+                    font-size: 1.2625vw;
+                    color: #ffffff;
+                }
             }
         }
     }
