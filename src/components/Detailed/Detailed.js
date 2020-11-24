@@ -2,7 +2,6 @@ import React from 'react';
 import { DetailedBg } from './Detailed.module.scss';
 import Kellenic from '../images/jkellenic.jpg';
 import Dabin from '../images/dabin.jpg';
-import Verified from '../images/verified.png';
 import Bichette from '../images/bichette.jpg';
 import Julio from '../images/julio.jpg';
 import Styles from './Detailed.module.scss';
@@ -15,7 +14,7 @@ export const Detailed = () => {
                 <div className={Styles.ProfileData}>
                     
                     <div className={Styles.TopProfile}>
-                        <img src={Kellenic} alt="Profile Picture" className={Styles.ProfileImage} />
+                        <img src={Kellenic} alt="UserProfile" className={Styles.ProfileImage} />
 
                         <h2>jarredkellenic</h2>
                         <p>Admin</p>
@@ -114,7 +113,7 @@ export const Detailed = () => {
                     <div className={Styles.ToFollow}>
                         <div className={Styles.SuggestedFollow}>
                             <div className={Styles.FollowUser}>
-                                <img src={Dabin} alt="Profile Image" /> 
+                                <img src={Dabin} alt="Suggested 1" /> 
 
                                 <div className={Styles.FollowUserText}>
                                     <h3>Dabin</h3>
@@ -125,14 +124,14 @@ export const Detailed = () => {
                                 </div>
                             </div>
 
-                            <a className={Styles.FollowButton}>
+                            <a className={Styles.FollowButton} href="#/">
                                 <h3>Follow</h3>
                             </a>
                         </div>
 
                         <div className={Styles.SuggestedFollow}>
                             <div className={Styles.FollowUser}>
-                                <img src={Bichette} alt="Profile Image" /> 
+                                <img src={Bichette} alt="Suggested 2" /> 
 
                                 <div className={Styles.FollowUserText}>
                                     <h3>Bo Bichette</h3>
@@ -143,14 +142,14 @@ export const Detailed = () => {
                                 </div>
                             </div>
 
-                            <a className={Styles.FollowButton}>
+                            <a className={Styles.FollowButton} href="#/">
                                 <h3>Follow</h3>
                             </a>
                         </div>
 
                         <div className={Styles.SuggestedFollow}>
                             <div className={Styles.FollowUser}>
-                                <img src={Julio} alt="Profile Image" /> 
+                                <img src={Julio} alt="Suggested 3" /> 
 
                                 <div className={Styles.FollowUserText}>
                                     <h3>JROD</h3>
@@ -161,7 +160,7 @@ export const Detailed = () => {
                                 </div>
                             </div>
 
-                            <a className={Styles.FollowButton}>
+                            <a className={Styles.FollowButton} href="#/">
                                 <h3>Follow</h3>
                             </a>
                         </div>

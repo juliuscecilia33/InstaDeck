@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Styles from './SideBar.module.scss';
 import DeckLogo from '../images/Decklol.png';
 import DownArrow from '../images/DownArrow.png';
 import Illenium from '../images/illenium.jpg';
 import Fairlane from '../images/fairlane.jpg';
 import Dabin from '../images/dabin.jpg';
+import { FirebaseContext } from '../../context/firebase';
+import { Link } from 'react-router-dom';
+import { auth } from '../../firebase';
 
-export const SideBar = () => {
+export const SideBar = ({ user }) => {
+    const { firebaseApp } = useContext(FirebaseContext);
+    const firebaseUser = firebaseApp.auth().currentUser || {};
+    console.log(user);
+    console.log(firebaseUser)
 
     return (
 
@@ -81,11 +88,18 @@ export const SideBar = () => {
 
 
                     <div className={Styles.AccountBottom}>
-                        <a href="#/">
-                            <h3>Log Out</h3>
-                        </a>
+                        
+                        {user ? (
+                            <a href="#/" onClick={() => auth.signOut()}>
+                                <h3>Log Out</h3>
+                            </a>
+                        ) : (
+                            <Link to="/signin"><h3>Sign In</h3></Link>
+                        )}
+
                         <p>InstaDeck Business</p>
                     </div>
+
 
                 </div>
             </div>

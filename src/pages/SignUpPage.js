@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { db, auth } from '../firebase';
+import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import Styles from './SignUpPage.module.scss';
 import Logo from '../components/images/Decklol.png';
@@ -89,7 +89,7 @@ export const SignUpPage = () => {
                     </div>
 
                     <div className={Styles.UploadImage}>
-                        <img src={UploadImageIcon} alt="Upload Image"/>
+                        <img src={UploadImageIcon} alt="Upload"/>
                         <h3>Upload Image</h3>
                     </div>
 

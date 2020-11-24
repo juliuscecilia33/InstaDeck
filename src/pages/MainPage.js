@@ -7,7 +7,7 @@ import Styles from './MainPage.module.scss';
 export const MainPage = ({ posts, user, popPosts }) => {
     return (
         <div className={Styles.MainPage}>
-            <SideBar />
+            <SideBar user={user} />
             <Feed posts={posts} user={user} popPosts={popPosts} />
             <Detailed />
         </div>
