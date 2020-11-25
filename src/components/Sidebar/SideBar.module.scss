@@ -166,11 +166,28 @@
             a {
                 color: black;
                 height: 50%;
+                margin-bottom: 0.5rem;
 
                 h3 {
                     font-size: 0.9375vw;
                     font-weight: 400;
                 }
+            }
+
+            .SignInOrUp {
+                width: 75%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-bottom: 0.5rem;
+
+                h3 {
+                    font-size: 0.9375vw;
+                    font-weight: 400;
+                    color: #000000;
+                }
+
+                
             }
 
 

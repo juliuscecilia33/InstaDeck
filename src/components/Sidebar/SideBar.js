@@ -94,7 +94,10 @@ export const SideBar = ({ user }) => {
                                 <h3>Log Out</h3>
                             </a>
                         ) : (
-                            <Link to="/signin"><h3>Sign In</h3></Link>
+                            <div className={Styles.SignInOrUp}>
+                                <Link to="/signin"><h3>Sign In</h3></Link>
+                                <Link to="/signup"><h3>Sign Up</h3></Link>
+                            </div>
                         )}
 
                         <p>InstaDeck Business</p>
