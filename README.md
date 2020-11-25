@@ -7,6 +7,11 @@ Prototype (Built in Figma)
 <br />
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/SignUpPages.jpg)
+
+<br />
+<br />
+
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20In%20Page.jpg)
 <br />
 Page 0 (Sign Up Page / Sign In Page)
 
