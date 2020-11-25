@@ -1,0 +1,151 @@
+.InputSec {
+    width: 35%;
+    height: 100vh;
+    background: #F6F6F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .SignUpTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        padding-top: 2rem;
+
+        h2 {
+            font-size: 3vw;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        span {
+            color: #E45257;
+        }
+    }
+
+    .InputArea {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .Inputs {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        input {
+            width: 30.96875vw;
+            height: 5.5158697863682605vh;
+            background: #F3EEE8;
+            border: #E5E5E5 solid 1px;
+            border-radius: 10px;
+            outline: none;
+            padding-left: 1rem;
+            transition: .3s ease-in-out all;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.15vw;
+
+            &::placeholder {
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.15vw;
+                font-size: 400;
+                color: #C4C4C4;
+            }
+
+            &:focus {
+                border:#E45257 solid 1.5px;
+            }
+
+        }
+        
+        .InputText {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3 {
+                font-size: 1vw;
+                font-weight: 500;
+                color: #000000;
+                margin-bottom: 0.6rem;
+            }
+        }
+
+        .ButtonAgreement {
+            width: 100%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .CreateAccButton {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 1rem;
+    
+                button {
+                    width: 17.78125vw;
+                    height: 5.8158697863682605vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    outline: none;
+                    background: #E45257;
+                    border: none;
+                    border-radius: 10px;
+                    box-shadow: -5px 7px 10px rgba(0, 0, 0, 0.15);
+                    cursor: pointer;
+    
+                    h3 {
+                        font-weight: 500;
+                        font-size: 1.2625vw;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            h3 {
+                font-size: 0.8vw;
+                font-weight: 400;
+                color: #c4c4c4;
+                text-align: center;
+                
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        
+
+
+        h2 {
+            font-size: 0.9vw;
+            font-weight: 400;
+            color: #000000;
+            text-align: center;
+
+            Span {
+                color: #E45257;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.DisplaySec {
+    width: 65%;
+    height: 100vh;
+    background: #F3EEE8;
+}
