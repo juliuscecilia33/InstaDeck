@@ -10,7 +10,7 @@ export const PopularPosts = ({ popPosts, user }) => {
         <div className={Styles.PopularPosts} >
             {
                 popPosts.map(({id, post}) => (
-                    <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} likes={post.likes} comments={post.comments} />
+                    <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} likes={post.likes} comments={post.comments} usernamepic={post.usernamepic} />
                 ))
             }
         </div>

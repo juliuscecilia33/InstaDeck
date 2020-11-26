@@ -1,8 +1,7 @@
 import React from 'react';
 import Styles from './Post.module.scss';
-import JuanSoto from '../images/juansotolol.jpg';
 
-export const Post = ({ user, username, caption, imageUrl, postId, likes, comments }) => {
+export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
     // <Route exact path="/detailed" render={(props) => <PropsPage {...props} title={`Props through render`} />}/>
     
     
@@ -14,7 +13,9 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
-                        <img src={JuanSoto} alt="Avatar"/>
+                        <div className={Styles.Post__ProfileImg}>
+                            <img src={usernamepic} alt="Avatar"/>  
+                        </div>
 
                         <h3>{username}</h3>
                     </div>
