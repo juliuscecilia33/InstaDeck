@@ -3,8 +3,6 @@ import Styles from './SideBar.module.scss';
 import DeckLogo from '../images/Decklol.png';
 import DownArrow from '../images/DownArrow.png';
 import Illenium from '../images/illenium.jpg';
-import Fairlane from '../images/fairlane.jpg';
-import Dabin from '../images/dabin.jpg';
 import { FirebaseContext } from '../../context/firebase';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
@@ -12,9 +10,7 @@ import { auth } from '../../firebase';
 
 export const SideBar = ({ user }) => {
     const { firebaseApp } = useContext(FirebaseContext);
-    const firebaseUser = firebaseApp.auth().currentUser || {};
-    console.log(user);
-    console.log(firebaseUser)
+    const firebaseUser = firebaseApp.auth().currentUser || {}; 
 
     return (
 
@@ -65,11 +61,11 @@ export const SideBar = ({ user }) => {
                             <img src={Illenium} alt="illenium-profile"/>
                             <div className={Styles.Label}>
                                 <h3>Admin</h3>
-                                <p>@illeniunmusic</p>
+                                <p>{firebaseUser.displayName}</p>
                             </div>
                         </div>
 
-                        <div className={Styles.Profile}>
+                        {/* <div className={Styles.Profile}>
                             <img src={Fairlane} alt="Fairlane-profile"/>
                             <div className={Styles.Label}>
                                 <h3>Editor</h3>
@@ -83,7 +79,7 @@ export const SideBar = ({ user }) => {
                                 <h3>Moderator</h3>
                                 <p>@dabinmusic</p>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
 

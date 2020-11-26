@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { DetailedBg } from './Detailed.module.scss';
 import Kellenic from '../images/jkellenic.jpg';
 import Dabin from '../images/dabin.jpg';
 import Bichette from '../images/bichette.jpg';
 import Julio from '../images/julio.jpg';
 import Styles from './Detailed.module.scss';
+import { FirebaseContext } from '../../context/firebase';
 
 export const Detailed = () => {
+    const { firebaseApp } = useContext(FirebaseContext);
+    const firebaseUser = firebaseApp.auth().currentUser || {};
+    console.log(firebaseUser)
+
     return (
         <>
             <div className={DetailedBg}>
@@ -16,7 +21,7 @@ export const Detailed = () => {
                     <div className={Styles.TopProfile}>
                         <img src={Kellenic} alt="UserProfile" className={Styles.ProfileImage} />
 
-                        <h2>jarredkellenic</h2>
+                        <h2>{firebaseUser.displayName}</h2>
                         <p>Admin</p>
 
                         <div className={Styles.Stats}>
