@@ -85,7 +85,7 @@ export const SignUpPage = () => {
                     </div>
                     <div className={Styles.InputText}>
                         <h3>Password</h3>
-                        <input type="password" placeholder="Password" className={Styles.UsernameInput} onChange={(e) => setPassword(e.target.value)}/>
+                        <input type="password" placeholder="Password" className={Styles.UsernameInput} onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <div className={Styles.UploadImage}>

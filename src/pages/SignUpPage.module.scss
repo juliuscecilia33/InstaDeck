@@ -130,6 +130,10 @@
                 border-radius: 10px;
                 cursor: pointer;
 
+                &:disabled {
+                    background: #c4c4c4;
+                }
+
                 i {
                     font-size: 1.3666666666666667vw;
                     color: #ffffff;
@@ -161,7 +165,7 @@
             font-weight: 400;
             color: #000000;
 
-            Span {
+            span {
                 color: #E45257;
                 font-weight: 500;
             }

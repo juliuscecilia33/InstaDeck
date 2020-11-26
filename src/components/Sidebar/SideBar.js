@@ -7,6 +7,7 @@ import Fairlane from '../images/fairlane.jpg';
 import Dabin from '../images/dabin.jpg';
 import { FirebaseContext } from '../../context/firebase';
 import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import { auth } from '../../firebase';
 
 export const SideBar = ({ user }) => {
@@ -90,9 +91,11 @@ export const SideBar = ({ user }) => {
                     <div className={Styles.AccountBottom}>
                         
                         {user ? (
-                            <a href="#/" onClick={() => auth.signOut()}>
-                                <h3>Log Out</h3>
-                            </a>
+                            <Link to={ROUTES.SIGN_IN}>
+                                <a href="#/" onClick={() => auth.signOut()}>
+                                    <h3>Log Out</h3>
+                                </a>
+                            </Link>
                         ) : (
                             <div className={Styles.SignInOrUp}>
                                 <Link to="/signin"><h3>Sign In</h3></Link>
