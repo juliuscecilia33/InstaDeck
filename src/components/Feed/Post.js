@@ -2,7 +2,7 @@ import React from 'react';
 import Styles from './Post.module.scss';
 import JuanSoto from '../images/juansotolol.jpg';
 
-export const Post = ({ user, username, caption, imageUrl, postId }) => {
+export const Post = ({ user, username, caption, imageUrl, postId, likes, comments }) => {
     // <Route exact path="/detailed" render={(props) => <PropsPage {...props} title={`Props through render`} />}/>
     
     
@@ -23,13 +23,13 @@ export const Post = ({ user, username, caption, imageUrl, postId }) => {
                         <div className={Styles.Post__Button}>
                             <i class="fas fa-heart"></i>
                             
-                            <p>757</p>
+                            <p>{likes}</p>
                         </div>
 
                         <div className={Styles.Post__Button}>
                             <i class="fas fa-comments"></i>
                             
-                            <p>750</p>
+                            <p>{comments}</p>
                         </div>
 
                         <div className={Styles.Post__Button}>
