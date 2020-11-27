@@ -10,7 +10,6 @@ import { FirebaseContext } from '../../context/firebase';
 export const Detailed = () => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
-    console.log(firebaseUser)
 
     return (
         <>
