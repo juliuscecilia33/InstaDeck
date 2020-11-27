@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Styles from './SideBar.module.scss';
 import DeckLogo from '../images/Decklol.png';
 import DownArrow from '../images/DownArrow.png';
-import Illenium from '../images/illenium.jpg';
+import BlankImage from '../images/UploadImageIcon.png';
 import { FirebaseContext } from '../../context/firebase';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
@@ -58,7 +58,7 @@ export const SideBar = ({ user }) => {
                     <div className={Styles.Profiles}>
 
                         <div className={`${Styles.Profile} ${Styles.Admin}`}>
-                            <img src={Illenium} alt="illenium-profile"/>
+                        {firebaseUser.usernamepic ? <img src={firebaseUser.usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                             <div className={Styles.Label}>
                                 <h3>Admin</h3>
                                 <p>{firebaseUser.displayName}</p>

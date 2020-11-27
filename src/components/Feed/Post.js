@@ -1,5 +1,6 @@
 import React from 'react';
 import Styles from './Post.module.scss';
+import BlankImage from '../images/UploadImageIcon.png'
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
     // <Route exact path="/detailed" render={(props) => <PropsPage {...props} title={`Props through render`} />}/>
@@ -14,7 +15,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
                         <div className={Styles.Post__ProfileImg}>
-                            <img src={usernamepic} alt="Avatar"/>  
+                            {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                         </div>
 
                         <h3>{username}</h3>

@@ -10,7 +10,73 @@
     background-color: #F6F6F2;
     border-top: 1px solid #c4c4c4;
 
-    .Progress {
-        width: 80%;
+    .Container {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .InputStuff {
+
+            .inputfile {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+            
+            .inputfile + label {
+                max-width: 80%;
+                font-size: 1.25rem;
+                /* 20px */
+                font-weight: 700;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+                display: inline-block;
+                overflow: hidden;
+                padding: 0.625rem 1.25rem;
+                /* 10px 20px */
+                color: #f1e5e6;
+                background-color: #d3394c;
+                border-radius: 10px;
+            }
+            
+            .no-js .inputfile + label {
+                display: none;
+            }
+            
+            .inputfile:focus + label,
+            .inputfile.has-focus + label {
+                outline: 1px dotted #000;
+                outline: -webkit-focus-ring-color auto 5px;
+            }
+            
+            .inputfile:focus + label,
+            .inputfile.has-focus + label,
+            .inputfile + label:hover {
+                background-color: #722040;
+            }
+            
+            .inputfile + label svg {
+                width: 1em;
+                height: 1em;
+                vertical-align: middle;
+                fill: currentColor;
+                margin-top: -0.25em;
+                /* 4px */
+                margin-right: 0.25em;
+                /* 4px */
+            }
+        }
+
+
+        .Progress {
+            width: 30%;
+        }
     }
+
 }
