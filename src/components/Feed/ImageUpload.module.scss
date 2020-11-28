@@ -36,13 +36,15 @@
             .inputfile + label {
                 width: 13.28125vw;
                 height: 70%;
-                font-size: 1.1vw;
+                font-size: 1vw;
                 /* 20px */
                 font-weight: 700;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 cursor: pointer;
-                display: inline-block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 overflow: hidden;
                 outline: none;
                 padding: 0.625rem 1.25rem;
@@ -50,6 +52,7 @@
                 color: #f1e5e6;
                 background-color:#E45257;
                 border-radius: 10px;
+                transition: .5s all ease;
             }
             
             .no-js .inputfile + label {
@@ -69,8 +72,8 @@
             }
             
             .inputfile + label svg {
-                width: 1em;
-                height: 1em;
+                width: 1.25vw;
+                height: auto;
                 vertical-align: middle;
                 fill: currentColor;
                 margin-top: -0.25em;
