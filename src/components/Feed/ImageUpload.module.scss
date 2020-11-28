@@ -11,13 +11,18 @@
     border-top: 1px solid #c4c4c4;
 
     .Container {
-        width: 90%;
+        width: 92%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .InputStuff {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             .inputfile {
                 width: 0.1px;
@@ -29,8 +34,9 @@
             }
             
             .inputfile + label {
-                max-width: 80%;
-                font-size: 1.25rem;
+                width: 13.28125vw;
+                height: 70%;
+                font-size: 1.1vw;
                 /* 20px */
                 font-weight: 700;
                 text-overflow: ellipsis;
@@ -38,10 +44,11 @@
                 cursor: pointer;
                 display: inline-block;
                 overflow: hidden;
+                outline: none;
                 padding: 0.625rem 1.25rem;
                 /* 10px 20px */
                 color: #f1e5e6;
-                background-color: #d3394c;
+                background-color:#E45257;
                 border-radius: 10px;
             }
             

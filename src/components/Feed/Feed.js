@@ -34,7 +34,7 @@ export const Feed = ({ posts, user, popPosts }) => {
                 </div>
 
                 
-                <ImageUpload />
+                <ImageUpload user={user} />
             </div>
         </>
     )

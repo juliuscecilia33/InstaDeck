@@ -5,7 +5,7 @@ import { storage, db } from '../../firebase';
 import firebase from "firebase";
 
 
-export const ImageUpload = () => {
+export const ImageUpload = ({ user }) => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {}; 
     const [image, setImage] = useState(null);
@@ -69,7 +69,7 @@ export const ImageUpload = () => {
                 </div>
                 <input type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption} />
                 <progress className={Styles.Progress} value={progress} max="100" />
-                <button onClick={handleUpload}>
+                <button onClick={handleUpload} disabled={user ? false : true }>
                     Upload
                 </button>
             </div>
