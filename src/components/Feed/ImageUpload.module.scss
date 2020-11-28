@@ -11,14 +11,14 @@
     border-top: 1px solid #c4c4c4;
 
     .Container {
-        width: 92%;
+        width: 95%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .InputStuff {
-            width: 30%;
+            width: 25%;
             height: 100%;
             display: flex;
             justify-content: center;
@@ -80,6 +80,35 @@
                 /* 4px */
                 margin-right: 0.25em;
                 /* 4px */
+            }
+        }
+
+        .CaptionInput {
+            width: 13.28125vw;
+            height: 70%;
+            border: none;
+            outline: none;
+            background: none;
+            border: 1px solid #c4c4c4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            transition: .5s ease all;
+
+            &:focus {
+                border: 1.5px solid #E45257;
+            }
+
+            &::placeholder {
+                font-size: 12px;
+                color: #c4c4c4;
+            }
+
+            &::-ms-value {
+                font-size: 12px;
+                font-weight: 500;
+                color: #000000;
             }
         }
 
