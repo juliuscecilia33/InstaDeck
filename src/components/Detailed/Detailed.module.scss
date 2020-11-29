@@ -21,11 +21,16 @@
             align-items: center;
             margin-bottom: 2.2553407934893186vh;
 
+            .InputStuff {
+                width: 35%;
+                height: 100%;
+            }
+
             img {
-                width: 10.572916666666666vw;
+                width: 9.572916666666666vw;
                 height: auto;
                 border-radius: 10px;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
             }
 
             h2 {
@@ -39,6 +44,11 @@
                 font-size: 0.8333333333333334vw;
                 font-weight: 400;
                 color:#c4c4c4;
+                transition: .5s ease all;
+
+                &:hover {
+                    color: #000000;
+                }
             }
 
             .Stats {

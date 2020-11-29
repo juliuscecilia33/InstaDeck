@@ -11,6 +11,7 @@ import { auth } from '../../firebase';
 export const SideBar = ({ user }) => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {}; 
+    console.log(firebaseUser);
 
     return (
 
@@ -58,9 +59,9 @@ export const SideBar = ({ user }) => {
                     <div className={Styles.Profiles}>
 
                         <div className={`${Styles.Profile} ${Styles.Admin}`}>
-                        {firebaseUser.usernamepic ? <img src={firebaseUser.usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                        {firebaseUser.photoURL ? <img src={firebaseUser.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                             <div className={Styles.Label}>
-                                <h3>Admin</h3>
+                                { user ? <h3>Admin</h3> : <h3>...</h3>}
                                 <p>{firebaseUser.displayName}</p>
                             </div>
                         </div>

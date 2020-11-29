@@ -1,64 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import Styles from './SignUpPage.module.scss';
 import Logo from '../components/images/Decklol.png';
-import UploadImageIcon from '../components/images/UploadImageIcon.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
-
+import { FirebaseContext } from '../context/firebase';
 
 // Have to create Firebase Context, look at BrowseContainer of Netflix clone and selectProfileCOntainer
 
 export const SignUpPage = () => {
-    const history = useHistory();
+  const { firebaseApp } = useContext(FirebaseContext);
+  const firebaseUser = firebaseApp.auth().currentUser || {}; 
+  console.log(firebaseUser);
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [user, setUser] = useState(null);
+  const history = useHistory();
 
-    const isInvalid = username === '' || password === '' || email === ''; 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((authUser) => {
-          if (authUser) {
-            // user has logged in...
-            setUser(authUser);
-    
-          } else {
-            // user has logged out...
-            setUser(null);
-          }
-        })
-    
-        return () => {
-          // perform some cleanup actions
-          unsubscribe(); // used for efficiency since it will be an infinite loop of change
+  const isInvalid = username === '' || password === '' || email === ''; 
+
+  useEffect(() => {
+      const unsubscribe = auth.onAuthStateChanged((authUser) => {
+        if (authUser) {
+          // user has logged in...
+          setUser(authUser);
+  
+        } else {
+          // user has logged out...
+          setUser(null);
         }
-    
-      }, [user, username]);
-    
-      const signUp = (event) => {
-        event.preventDefault();
-      
-        auth
-          .createUserWithEmailAndPassword(email, password) // passed from state variables
-          .then((authUser) => {
-            return authUser.user.updateProfile({
-              displayName: username,
-            })
-            .then(() => {
-                history.push(ROUTES.HOME)
-            })
-          })
-          .catch((error) => {
-            setEmail('');
-            setUsername('');
-            setPassword('');
-            alert(error.message);
-          })
+      })
+  
+      return () => {
+        // perform some cleanup actions
+        unsubscribe(); // used for efficiency since it will be an infinite loop of change
       }
+  
+    }, [user, username]);
+  
+    const signUp = (event) => {
+      event.preventDefault();
+    
+      auth
+        .createUserWithEmailAndPassword(email, password) // passed from state variables
+        .then((authUser) => {
+          return authUser.user.updateProfile({
+            displayName: username,
+          })
+          .then(() => {
+              history.push(ROUTES.HOME)
+          })
+        })
+        .catch((error) => {
+          setEmail('');
+          setUsername('');
+          setPassword('');
+          alert(error.message);
+        })
+    }
 
     return (
         <>
@@ -85,11 +88,6 @@ export const SignUpPage = () => {
                     <div className={Styles.InputText}>
                         <h3>Password</h3>
                         <input type="password" placeholder="Password" className={Styles.UsernameInput} onChange={(e) => setPassword(e.target.value)} />
-                    </div>
-
-                    <div className={Styles.UploadImage}>
-                        <img src={UploadImageIcon} alt="Upload"/>
-                        <h3>Upload Image</h3>
                     </div>
 
                     <div className={Styles.CreateAccButton}>

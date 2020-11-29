@@ -9,7 +9,7 @@ export const MainPage = ({ posts, user, popPosts }) => {
         <div className={Styles.MainPage}>
             <SideBar user={user} />
             <Feed posts={posts} user={user} popPosts={popPosts} />
-            <Detailed />
+            <Detailed user={user} />
         </div>
     )
 }
