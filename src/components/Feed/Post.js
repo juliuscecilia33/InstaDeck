@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Styles from './Post.module.scss';
-import BlankImage from '../images/UploadImageIcon.png'
+import BlankImage from '../images/UploadImageIcon.png';
+import { FirebaseContext } from '../../context/firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
-    // <Route exact path="/detailed" render={(props) => <PropsPage {...props} title={`Props through render`} />}/>
+    const { firebaseApp } = useContext(FirebaseContext);
+    const firebaseUser = firebaseApp.auth().currentUser || {};
     
     
     return (
@@ -15,7 +17,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
                         <div className={Styles.Post__ProfileImg}>
-                            {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                            {user.photoURL ? <img src={user.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                         </div>
 
                         <h3>{username}</h3>

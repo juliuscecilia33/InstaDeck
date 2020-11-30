@@ -17,31 +17,32 @@
         .FollowingFeed {
             width: 50%;
             height: 100%;
-            overflow: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding-top: 0.7rem;
 
-            &:first-child {
+            .Link {
                 align-items: flex-start;
+                height: 5%;
+
+                h1 {
+                    font-size: 1.25vw;
+                    font-weight: 500;
+                    margin-left: 1.625vw;
+                }
             }
 
-            h1 {
-                font-size: 1.25vw;
-                font-weight: 500;
-                margin-left: 1.625vw;
-            }
 
             &::-webkit-scrollbar {
-                width: 8px;
+                width: 0.4166666666666667vw;
                 background-color: #F6F6F2;
                 
                 border-radius: 15px;
             }
 
             &::-webkit-scrollbar-thumb {   
-                background-color: #C4C4C4;
+                background-color: red;
                 border-radius: 15px;
             }
         }
