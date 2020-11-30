@@ -46,7 +46,10 @@ export const ImageUpload = ({ user }) => {
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
                             caption: caption,
                             imageUrl: url,
-                            username: firebaseUser.displayName
+                            username: firebaseUser.displayName,
+                            usernamepic: firebaseUser.photoURL,
+                            likes: 0,
+                            comments: 0,
                         });
 
                         setProgress(0);

@@ -17,7 +17,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
                         <div className={Styles.Post__ProfileImg}>
-                            {user.photoURL ? <img src={user.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                            {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                         </div>
 
                         <h3>{username}</h3>
