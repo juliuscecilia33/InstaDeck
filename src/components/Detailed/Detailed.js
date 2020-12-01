@@ -16,6 +16,8 @@ export const Detailed = ({ user }) => {
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
 
+    console.log(user);
+
     const handleChange = (e) => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
@@ -46,7 +48,7 @@ export const Detailed = ({ user }) => {
                     .getDownloadURL() // thet image is already uploaded, this gives us a download link for the uploaded image
                     .then(url => {
                         // post image inside database
-                        firebaseUser.updateProfile({
+                        user.updateProfile({
                             photoURL: url
                         })
                     }); 
@@ -61,7 +63,7 @@ export const Detailed = ({ user }) => {
                 <div className={Styles.ProfileData}>
                     
                     <div className={Styles.TopProfile}>
-                        { user ? firebaseUser.photoURL ? <img src={firebaseUser.photoURL} alt="Avatar"/>  : <img src={BlankAvatar} alt="Avatar"/> : <img src={BlankAvatar} alt="Avatar"/>}
+                        { user ? user.photoURL ? <img src={user.photoURL} alt="Avatar"/>  : <img src={BlankAvatar} alt="Avatar"/> : <img src={BlankAvatar} alt="Avatar"/>}
                         
                         <div className={Styles.InputStuff}>
                             
