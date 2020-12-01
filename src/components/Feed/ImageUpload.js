@@ -77,7 +77,7 @@ export const ImageUpload = ({ user }) => {
                 <input className={Styles.CaptionInput} type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption} />
                 <progress className={Styles.Progress} value={progress} max="100" />
                 <button onClick={handleUpload} disabled={user ? false : true }>
-                    Upload
+                    Post!
                 </button>
             </div>
         </div>
