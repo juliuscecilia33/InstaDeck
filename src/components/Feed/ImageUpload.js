@@ -31,7 +31,6 @@ export const ImageUpload = ({ user }) => {
             },
             (error) => {
                 // Error function...
-                console.log(error);
                 alert(error.message);
             },
             () => {

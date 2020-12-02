@@ -16,8 +16,6 @@ export const Detailed = ({ user }) => {
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
 
-    console.log(user);
-
     const handleChange = (e) => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
@@ -37,7 +35,6 @@ export const Detailed = ({ user }) => {
             },
             (error) => {
                 // Error function...
-                console.log(error);
                 alert(error.message);
             },
             () => {

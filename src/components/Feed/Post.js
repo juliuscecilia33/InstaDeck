@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
 import { FirebaseContext } from '../../context/firebase';
+import { storage, db } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
-    
     
     return (
         <>
@@ -23,19 +23,19 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                     <div className={Styles.Post__Buttons}>
                         <div className={Styles.Post__Button}>
-                            <i class="fas fa-heart"></i>
+                            <button><i class="fas fa-heart"></i></button>
                             
                             <p>{likes}</p>
                         </div>
 
                         <div className={Styles.Post__Button}>
-                            <i class="fas fa-comments"></i>
+                            <button><i class="fas fa-comments"></i></button>
                             
                             <p>{comments}</p>
                         </div>
 
                         <div className={Styles.Post__Button}>
-                            <i class="fas fa-bookmark"></i>
+                            <button><i class="fas fa-bookmark"></i></button>
                         </div>
                     </div>
                     
