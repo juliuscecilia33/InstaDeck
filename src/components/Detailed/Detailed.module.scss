@@ -6,33 +6,150 @@
     
     .ProfileData {
         width: 100%;
-        height: 60%;
+        height: 65%;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        padding-top: 1.5rem;
-
+        
         .TopProfile {
             width: 100%;
-            height: 60%;
+            height: 70%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 2.2553407934893186vh;
-
-            .InputStuff {
-                width: 35%;
-                height: 100%;
-            }
-
+            
             img {
-                width: 9.572916666666666vw;
-                height: 18.69786368260427vh;
+                width: 200px;
+                height: 200px;
                 object-fit: cover;
                 border-radius: 10px;
                 margin-bottom: 0.5rem;
+    
+                @media (max-width: 1500px) {
+                    width: 150px;
+                    height: 150px;
+                }
             }
+
+            .ProfileInput {
+                width: 100%;
+                height: 15%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .InputStuff {
+                    // width: 35%;
+                    // height: 100%;
+    
+                    width: 100%;
+                    height: 55%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: .5rem;
+    
+                    .inputfile {
+                        width: 0.1px;
+                        height: 0.1px;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        z-index: -1;
+                    }
+                    
+                    .inputfile + label {
+                        width: 8.28125vw;
+                        height: 100%;
+                        font-size: 0.6vw;
+                        /* 20px */
+                        font-weight: 700;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        outline: none;
+                        padding: 0.625rem 1.25rem;
+                        /* 10px 20px */
+                        color: #f1e5e6;
+                        background-color:#E45257;
+                        border-radius: 10px;
+                        transition: .5s all ease;
+                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    }
+                    
+                    .no-js .inputfile + label {
+                        display: none;
+                    }
+                    
+                    .inputfile:focus + label,
+                    .inputfile.has-focus + label {
+                        outline: 1px dotted #000;
+                        outline: -webkit-focus-ring-color auto 5px;
+                    }
+                    
+                    .inputfile:focus + label,
+                    .inputfile.has-focus + label,
+                    .inputfile + label:hover {
+                        background-color: #722040;
+                    }
+                    
+                    .inputfile + label svg {
+                        width: 0.8vw;
+                        height: auto;
+                        vertical-align: middle;
+                        fill: currentColor;
+                        margin-top: -0.25em;
+                        /* 4px */
+                        margin-right: 0.25em;
+                        /* 4px */
+                    }
+                }
+    
+                progress[value] {
+                    appearance: none;
+                
+                    width: 40%;
+                    height: 15%;
+                }
+        
+                progress[value]::-webkit-progress-bar {
+                    background-color: #eee;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+                }          
+        
+                progress[value]::-webkit-progress-value {
+                    background-image:
+                            -webkit-linear-gradient(-45deg, 
+                                                    transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                                                    rgba(0,0, 0, .1) 66%, transparent 66%),
+                            -webkit-linear-gradient(top, 
+                                                    rgba(255, 255, 255, .25), 
+                                                    rgba(0, 0, 0, .25)),
+                            -webkit-linear-gradient(left,#E45257, #E45257);
+                    
+                        border-radius: 10px; 
+                        background-size: 35px 20px, 100% 100%, 100% 100%;
+                        animation: animate-stripes 5s linear infinite;
+                }
+        
+                @-webkit-keyframes animate-stripes {
+                    100% { background-position: -100px 0px; }
+                    }
+                    
+                    @keyframes animate-stripes {
+                    100% { background-position: -100px 0px; }
+                    }
+            }
+
+
+
 
             h2 {
                 font-size: 1.25vw;
@@ -54,12 +171,10 @@
 
             .Stats {
                 width: 100%;
-                height: 40%;
                 display: flex;
                 justify-content: space-around;
                 text-align: center;
-                padding: 0 2.5rem;
-                margin-top: 1.3rem;
+                padding: 0 2.0833333333333335vw;
 
                 h3 {
                     font-size: 1.25vw;
@@ -184,9 +299,10 @@
 
     .Suggestions {
         width: 100%;
-        height: 40%;
+        height: 35%;
         display: flex;
         flex-direction: column;
+        padding-top: .5rem;
 
         .TopText {
             width: 100%;

@@ -7,6 +7,9 @@ import { storage, db } from '../../firebase';
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
+
+    // when you click on the like button post, you have to do e.target.value 
+    // to get that event's id
     
     return (
         <>
