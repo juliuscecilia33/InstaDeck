@@ -138,14 +138,6 @@
                         background-size: 35px 20px, 100% 100%, 100% 100%;
                         animation: animate-stripes 5s linear infinite;
                 }
-        
-                @-webkit-keyframes animate-stripes {
-                    100% { background-position: -100px 0px; }
-                    }
-                    
-                    @keyframes animate-stripes {
-                    100% { background-position: -100px 0px; }
-                    }
             }
 
 
