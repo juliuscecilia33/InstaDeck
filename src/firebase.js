@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyC4JPOq1Omh0aHjJuhj4WT37oRk-iFKLIk",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: "instadeck-c9606.firebaseapp.com",
     databaseURL: "https://instadeck-c9606.firebaseio.com",
     projectId: "instadeck-c9606",

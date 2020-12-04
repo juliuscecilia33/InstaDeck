@@ -3,7 +3,6 @@
     height: 100vh;
     background-color: #F3EEE8;
 
-    
     .ProfileData {
         width: 100%;
         height: 65%;
@@ -45,7 +44,7 @@
                     // height: 100%;
     
                     width: 100%;
-                    height: 55%;
+                    height: 45%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -61,9 +60,9 @@
                     }
                     
                     .inputfile + label {
-                        width: 8.28125vw;
+                        width: 6.28125vw;
                         height: 100%;
-                        font-size: 0.6vw;
+                        font-size: 0.5vw;
                         /* 20px */
                         font-weight: 700;
                         text-overflow: ellipsis;
@@ -74,7 +73,7 @@
                         align-items: center;
                         overflow: hidden;
                         outline: none;
-                        padding: 0.625rem 1.25rem;
+                        // padding: 0.625rem 1.25rem;
                         /* 10px 20px */
                         color: #f1e5e6;
                         background-color:#E45257;
@@ -100,7 +99,7 @@
                     }
                     
                     .inputfile + label svg {
-                        width: 0.8vw;
+                        width: 0.7vw;
                         height: auto;
                         vertical-align: middle;
                         fill: currentColor;
@@ -192,41 +191,42 @@
             justify-content: space-between;
             align-items: center;
 
+            .Icon {
+                width: 2.1770833333333335vw;
+                height: 4.205493387589013vh;
+                border-radius: 10px;
+                background-color: #F6F6F2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 1.2vh;
+
+                i {
+                    font-size: 1.1666666666666667vw;
+                    color: black;
+                }
+            }
+
+            h2 {
+                font-size: 1.5229166666666667vw;
+                margin-right: .7vh;
+            }
+
+            p {
+                font-size: 0.6291666666666666vw;
+                font-weight: 500;
+                color: #c4c4c4;
+            }
+
             .FirstRow {
                 width: 100%;
                 display: flex;
                 margin-bottom: 2.5vh;
 
-                .Icon {
-                    width: 3.1770833333333335vw;
-                    height: 6.205493387589013vh;
-                    border-radius: 10px;
-                    background-color: #F6F6F2;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-right:.5rem;
-
-                    i {
-                        font-size: 1.6666666666666667vw;
-                        color: black;
-                    }
-                }
-
-                h2 {
-                    font-size: 1.8229166666666667vw;
-                }
-
-                p {
-                    font-size: 0.7291666666666666vw;
-                    font-weight: 500;
-                    color: #c4c4c4;
-                }
-
                 .FirstItem {
                     width: 50%;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
                     padding: 0 0.5rem;
                 }
@@ -234,7 +234,7 @@
                 .SecondItem {
                     width: 50%;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
                     padding: 0 0.5rem;
                 }
@@ -245,36 +245,10 @@
                 width: 100%;
                 display: flex;
 
-                .Icon {
-                    width: 3.1770833333333335vw;
-                    height: 6.205493387589013vh;
-                    border-radius: 10px;
-                    background-color: #F6F6F2;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-right:.5rem;
-
-                    i {
-                        font-size: 1.6666666666666667vw;
-                        color: black;
-                    }
-                }
-
-                h2 {
-                    font-size: 1.8229166666666667vw;
-                }
-
-                p {
-                    font-size: 0.7291666666666666vw;
-                    font-weight: 500;
-                    color: #c4c4c4;
-                }
-
                 .ThirdItem {
                     width: 50%;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
                     padding: 0 0.5rem;
                 }
@@ -282,7 +256,7 @@
                 .FourthItem {
                     width: 50%;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
                     padding: 0 0.5rem;
                 }
