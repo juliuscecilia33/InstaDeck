@@ -1,7 +1,5 @@
 import React from 'react';
-import { Detailed } from '../components/Detailed/Detailed';
-import { Feed } from '../components/Feed/Feed';
-import { SideBar } from '../components/Sidebar/SideBar';
+import { Detailed, Feed, SideBar } from '../components';
 import Styles from './MainPage.module.scss';
 
 export const MainPage = ({ posts, user, popPosts }) => {
