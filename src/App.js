@@ -3,7 +3,7 @@ import './App.scss';
 import * as ROUTES from './constants/routes';
 import { db, auth } from './firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import { MainPage, SignUpPage, SignInPage } from './pages';
+import { MainPage, SignUpPage, SignInPage, HomePage } from './pages';
 
 function App() {
   const [posts, setPosts] = useState ([]);
@@ -51,6 +51,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path={ROUTES.START} exact>
+            <HomePage />
+          </Route>
+
           <Route path={ROUTES.SIGN_UP} exact>
             <SignUpPage />
           </Route>
