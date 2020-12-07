@@ -10,6 +10,14 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
     // when you click on the like button post, you have to do e.target.value 
     // to get that event's id
+
+    const updateLike = (postId) => {
+        console.log(postId)
+
+        db.collection("posts").doc(postId).update({
+            likes: likes + 1
+        });
+    }
     
     return (
         <>
@@ -26,7 +34,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                     <div className={Styles.Post__Buttons}>
                         <div className={Styles.Post__Button}>
-                            <button><i class="fas fa-heart"></i></button>
+                            <button onClick={() => updateLike(postId)}><i class="fas fa-heart"></i></button>
                             
                             <p>{likes}</p>
                         </div>
