@@ -1,17 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import Styles from './SignUpPage.module.scss';
 import Logo from '../components/images/Decklol.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
-import { FirebaseContext } from '../context/firebase';
 
 // Have to create Firebase Context, look at BrowseContainer of Netflix clone and selectProfileCOntainer
 
 export const SignUpPage = () => {
-  const { firebaseApp } = useContext(FirebaseContext);
-  const firebaseUser = firebaseApp.auth().currentUser || {}; 
 
   const history = useHistory();
 

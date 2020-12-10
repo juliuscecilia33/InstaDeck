@@ -1,12 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
-import { FirebaseContext } from '../../context/firebase';
-import { storage, db } from '../../firebase';
+import { db } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
-    const { firebaseApp } = useContext(FirebaseContext);
-    const firebaseUser = firebaseApp.auth().currentUser || {};
 
     // when you click on the like button post, you have to do e.target.value 
     // to get that event's id

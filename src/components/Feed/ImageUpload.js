@@ -1,13 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Styles from './ImageUpload.module.scss';
-import { FirebaseContext } from '../../context/firebase';
 import { storage, db } from '../../firebase';
 import firebase from "firebase";
 
 
 export const ImageUpload = ({ user }) => {
-    const { firebaseApp } = useContext(FirebaseContext);
-    const firebaseUser = firebaseApp.auth().currentUser || {}; 
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
     const [caption, setCaption] = useState('');
