@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './Feed.module.scss';
 import { Posts } from './Posts';
-import { Stories } from './Stories';
+import { Stories } from './Stories'
 import { ImageUpload } from './ImageUpload';
 import { PopularPosts } from './PopularPosts';
 
@@ -10,6 +10,7 @@ export const Feed = ({ posts, user, popPosts }) => {
 
     return (
         <>
+            
             <div className={Styles.FeedBg}>
                 <Stories />
 
