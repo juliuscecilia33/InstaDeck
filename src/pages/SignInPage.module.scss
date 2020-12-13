@@ -154,4 +154,28 @@
     width: 65%;
     height: 100vh;
     background: #F3EEE8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .DisplayLogo {
+        margin-top: 1.5vh;
+
+        img {
+            width: 4.166666666666667vw;
+            height: auto;
+        }
+    }
+
+    .DisplayImage {
+        margin-top: 10vh;
+
+        img {
+            width: 54.895833333333336vw;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: -3px 10px 10px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+
 }

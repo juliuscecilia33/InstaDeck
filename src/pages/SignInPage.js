@@ -4,6 +4,8 @@ import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
+import PageOne from '../components/images/Page1.jpg';
+import Logo from '../components/images/Decklol.png';
 
 export const SignInPage = () => {
     const history = useHistory();
@@ -52,7 +54,12 @@ export const SignInPage = () => {
         <>
               
             <div className={Styles.DisplaySec}>
-            
+                <div className={Styles.DisplayLogo}>
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <div className={Styles.DisplayImage}>
+                    <img src={PageOne} alt="Page Model"/>
+                </div>
             </div>  
             
             <div className={Styles.InputSec}>
