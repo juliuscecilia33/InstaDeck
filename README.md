@@ -6,19 +6,6 @@
 Prototype (Built in Figma)
 <br />
 
-![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/SignUpPages.jpg)
-
-<br />
-<br />
-
-![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20In%20Page.jpg)
-<br />
-Page 0 (Sign Up Page / Sign In Page)
-
-
-<br />
-<br />
-
 ![InstaDeck](/src/components/images/Page1.jpg)
 <br />
 Page 1 (Home Page)
@@ -29,3 +16,18 @@ Page 1 (Home Page)
 ![InstaDeck](/src/components/images/Page2.jpg)
 <br />
 Page 2 (Specified Post)
+
+<br />
+<br />
+
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/SignUpPages.jpg)
+
+<br />
+<br />
+
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20In%20Page.jpg)
+<br />
+Page 0 (Sign Up Page / Sign In Page)
+
+
+
