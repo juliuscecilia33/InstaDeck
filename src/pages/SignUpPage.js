@@ -5,8 +5,10 @@ import Styles from './SignUpPage.module.scss';
 import Logo from '../components/images/Decklol.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
+import Accounts from '../components/images/AccountsAD.jpg';
+import Analytics from '../components/images/AnalyticsAD.jpg';
+import Feed from '../components/images/FeedAD.jpg';
 
-// Have to create Firebase Context, look at BrowseContainer of Netflix clone and selectProfileCOntainer
 
 export const SignUpPage = () => {
 
@@ -99,7 +101,8 @@ export const SignUpPage = () => {
                 </div>
             </div>
 
-            <div className={Styles.DisplaySec}></div>
+            <div className={Styles.DisplaySec}>
+            </div>
         </>
     )
 }

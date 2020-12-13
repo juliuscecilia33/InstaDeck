@@ -55,7 +55,7 @@ export const SignInPage = () => {
               
             <div className={Styles.DisplaySec}>
                 <div className={Styles.DisplayLogo}>
-                    <img src={Logo} alt="Logo" />
+                    <Link to={ROUTES.START}><img src={Logo} alt="Logo" /></Link>
                 </div>
                 <div className={Styles.DisplayImage}>
                     <img src={PageOne} alt="Page Model"/>
@@ -93,7 +93,7 @@ export const SignInPage = () => {
 
                     
 
-                    <h2>If you don't have an account <br /><Link to="/signup"><span>Sign Up Here</span></Link></h2>
+                    <h2>If you don't have an account <br /><Link to={ROUTES.SIGN_UP}><span>Sign Up Here</span></Link></h2>
                 </div>
             </div>
         </>
