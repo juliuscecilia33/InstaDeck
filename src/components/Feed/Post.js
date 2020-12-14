@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
+import { DetailedContext } from '../../context/detailed';
 import { db } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 
-    // when you click on the like button post, you have to do e.target.value 
-    // to get that event's id
+    const { detail, setDetail, selectedDetail, setSelectedDetail } = useContext(DetailedContext);
+    console.log(detail);
+    console.log(selectedDetail);
+
+    const updateDetail = (postId) => {
+        setDetail(true);
+        setSelectedDetail(postId);
+    }
 
     const updateLike = (postId) => {
         console.log(postId)
@@ -20,7 +27,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
         <>
             <div className={Styles.Post}>
 
-                <a href="#/"><img src={imageUrl} alt="post" className={Styles.Post__Image} /></a>
+                <a href="#/" onClick={() => updateDetail(postId)}><img src={imageUrl} alt="post" className={Styles.Post__Image} /></a>
 
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>

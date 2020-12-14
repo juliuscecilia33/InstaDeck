@@ -4,11 +4,14 @@ import * as ROUTES from './constants/routes';
 import { db, auth } from './firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { MainPage, SignUpPage, SignInPage, HomePage } from './pages';
+import { DetailedContext } from './context/detailed';
 
 function App() {
   const [posts, setPosts] = useState ([]);
   const [popPosts, setPopPosts] = useState([]);
   const [user, setUser] = useState('julius');
+  const [ selectedDetail, setSelectedDetail ] = useState(null);
+  const [ detail, setDetail ] = useState(false);
 
   useEffect(() => {
     db.collection('popularposts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
@@ -49,26 +52,28 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path={ROUTES.START} exact>
-            <HomePage />
-          </Route>
+      <DetailedContext.Provider value={{ selectedDetail, setSelectedDetail, detail, setDetail }}>
+        <Router>
+          <Switch>
+            <Route path={ROUTES.START} exact>
+              <HomePage />
+            </Route>
 
-          <Route path={ROUTES.SIGN_UP} exact>
-            <SignUpPage />
-          </Route>
+            <Route path={ROUTES.SIGN_UP} exact>
+              <SignUpPage />
+            </Route>
 
-          <Route path={ROUTES.SIGN_IN} exact>
-            <SignInPage />
-          </Route>
+            <Route path={ROUTES.SIGN_IN} exact>
+              <SignInPage />
+            </Route>
 
-          <Route path={ROUTES.HOME} exact>
-            <MainPage posts={posts} user={user} popPosts={popPosts} />  
-          </Route>
+            <Route path={ROUTES.HOME} exact>
+              <MainPage posts={posts} user={user} popPosts={popPosts} />  
+            </Route>
 
-        </Switch>
-      </Router>
+          </Switch>
+        </Router>
+      </DetailedContext.Provider>
     </div>
   );
 }
