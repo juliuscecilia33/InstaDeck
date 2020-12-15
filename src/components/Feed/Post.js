@@ -7,8 +7,6 @@ import { db } from '../../firebase';
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 
     const { detail, setDetail, selectedDetail, setSelectedDetail } = useContext(DetailedContext);
-    console.log(detail);
-    console.log(selectedDetail);
 
     const updateDetail = (postId) => {
         setDetail(true);
@@ -16,7 +14,6 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
     }
 
     const updateLike = (postId) => {
-        console.log(postId)
 
         db.collection("posts").doc(postId).update({
             likes: likes + 1

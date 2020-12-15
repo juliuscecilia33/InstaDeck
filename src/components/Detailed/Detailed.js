@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { DetailedBg } from './Detailed.module.scss';
 import Dabin from '../images/dabin.jpg';
 import Bichette from '../images/bichette.jpg';
@@ -10,13 +10,40 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { storage } from '../../firebase';
 import { DetailedContext } from '../../context/detailed';
+import { db } from '../../firebase';
 
 export const Detailed = ({ user }) => {
     const { detail, setDetail, selectedDetail, setSelectedDetail } = useContext(DetailedContext);
+    const [ detailedLikes, setDetailedLikes ] = useState(0);
+    const [ error, setError ] = useState('');
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+
+        if (selectedDetail) {
+
+            db.collection("posts").doc(selectedDetail).get().then(doc => {
+                
+                if (doc.exists) {
+
+                    let docData = doc.data();
+                    console.log(docData);
+                    setDetailedLikes(docData.likes);
+
+                } else {
+                    setError('doc not found')
+                }
+
+                
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
+        }
+        
+    }, [detailedLikes, selectedDetail, setError, setDetailedLikes])
 
     const handleChange = (e) => {
         if (e.target.files[0]) {
@@ -64,7 +91,10 @@ export const Detailed = ({ user }) => {
 
                 { detail 
                 ? 
-                    <h2>{selectedDetail}</h2>
+                    <>
+                        <h2>{selectedDetail}</h2>
+                        <h2>{detailedLikes}</h2>
+                    </>
                 : 
                     <>
                         <div className={Styles.ProfileData}>
