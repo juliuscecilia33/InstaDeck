@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
 import { DetailedContext } from '../../context/detailed';
@@ -6,7 +6,7 @@ import { db } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 
-    const { detail, setDetail, selectedDetail, setSelectedDetail } = useContext(DetailedContext);
+    const { setDetail, setSelectedDetail } = useContext(DetailedContext);
 
     const updateDetail = (postId) => {
         setDetail(true);

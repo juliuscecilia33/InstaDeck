@@ -13,8 +13,13 @@ import { DetailedContext } from '../../context/detailed';
 import { db } from '../../firebase';
 
 export const Detailed = ({ user }) => {
-    const { detail, setDetail, selectedDetail, setSelectedDetail } = useContext(DetailedContext);
+    const { detail, selectedDetail } = useContext(DetailedContext);
     const [ detailedLikes, setDetailedLikes ] = useState(0);
+    const [ detailedImage, setDetailedImage ] = useState(null);
+    const [ detailedUser, setDetailedUser ] = useState('');
+    const [ detailedUserPic, setDetailedUserPic ] = useState(null);
+    const [ detailedCaption, setDetailedCaption ] = useState('');
+    const [ detailedTime, setDetailedTime ] = useState('');
     const [ error, setError ] = useState('');
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
@@ -30,8 +35,16 @@ export const Detailed = ({ user }) => {
                 if (doc.exists) {
 
                     let docData = doc.data();
+
                     console.log(docData);
+
                     setDetailedLikes(docData.likes);
+                    setDetailedImage(docData.imageUrl);
+                    setDetailedUser(docData.username);
+                    setDetailedUserPic(docData.usernamepic);
+                    setDetailedCaption(docData.caption);
+                    setDetailedTime(docData.timestamp);
+
 
                 } else {
                     setError('doc not found')
@@ -43,7 +56,14 @@ export const Detailed = ({ user }) => {
             });
         }
         
-    }, [detailedLikes, selectedDetail, setError, setDetailedLikes])
+    }, [selectedDetail])
+
+    const updateLike = (selectedDetail) => {
+
+        db.collection("posts").doc(selectedDetail).update({
+            likes: detailedLikes + 1
+        });
+    }
 
     const handleChange = (e) => {
         if (e.target.files[0]) {
@@ -92,8 +112,53 @@ export const Detailed = ({ user }) => {
                 { detail 
                 ? 
                     <>
-                        <h2>{selectedDetail}</h2>
-                        <h2>{detailedLikes}</h2>
+                        <div className={Styles.Container}>
+
+                            <div className={Styles.DetailedImage}>
+                                <img src={detailedImage} alt="Detailed Post" />
+                            </div>
+
+                            <div className={Styles.DetailedCaption}>
+                                <h3>{detailedCaption}</h3>
+                                <p>Timestamp</p>
+                            </div>
+
+                            <div className={Styles.DetailedComments}>
+                                <h2>Comments</h2>
+                            </div>
+
+                            <div className={Styles.AddComment}>
+                                <input type="text" />
+                            </div>
+
+                            <div className={Styles.DetailedIcons}>
+                                <div className={Styles.DetailedIcon}>
+                                    <button onClick={() => updateLike(selectedDetail)}><i class="fas fa-heart"></i></button>
+                            
+                                    <p>{detailedLikes}</p>
+                                </div>
+
+                                <div className={Styles.DetailedIcon}>
+                                    <button><i class="fas fa-comments"></i></button>
+                            
+                                    <p>40</p>
+                                </div>
+
+                                <div className={Styles.DetailedIcon}>
+                                    <button><i class="fas fa-bookmark"></i></button>
+                                </div>
+
+                                <div className={Styles.DetailedIcon}>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+
+                            <div className={Styles.DetailedUser}>
+                                <img src={detailedUserPic} alt="User Profile Pic"/>
+                                <h3>{detailedUser}</h3>
+                            </div>
+
+                        </div>
                     </>
                 : 
                     <>
