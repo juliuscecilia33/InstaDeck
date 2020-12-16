@@ -4,6 +4,7 @@ import DeckLogo from '../images/Decklol.png';
 import DownArrow from '../images/DownArrow.png';
 import BlankImage from '../images/UploadImageIcon.png';
 import { FirebaseContext } from '../../context/firebase';
+import { DetailedContext } from'../../context/detailed';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import { auth } from '../../firebase';
@@ -11,6 +12,7 @@ import { auth } from '../../firebase';
 export const SideBar = ({ user }) => {
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {}; 
+    const { setDetail } = useContext(DetailedContext);
 
     return (
 
@@ -21,25 +23,25 @@ export const SideBar = ({ user }) => {
                 </div>
 
                 <div className={Styles.Tabs}>
-                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                    <button >
                         <i class="fas fa-home"></i>
                         <h3>Home</h3>
-                    </a>
+                    </button>
                     
-                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                    <button>
                         <i class="fas fa-comment-dots"></i>
                         <h3>Messages</h3>
-                    </a>
+                    </button>
 
-                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                    <button onClick={() => setDetail(false)}>
                         <i class="fas fa-user-alt"></i>
                         <h3>Profile</h3>
-                    </a>
+                    </button>
 
-                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                    <button>
                         <i class="fas fa-bookmark"></i>
                         <h3>Saved</h3>
-                    </a>
+                    </button>
                 </div>
 
                 <div className={Styles.Account}>
