@@ -176,6 +176,11 @@
             &:hover {
                 background-color: #722040;
             }
+
+            &:disabled {
+                background-color: #A5A5A5;
+                cursor: default;
+            }
         }
 
          
