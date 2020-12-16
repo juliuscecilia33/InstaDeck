@@ -112,7 +112,7 @@ export const Detailed = ({ user }) => {
                 { detail 
                 ? 
                     <>
-                        <div className={Styles.Container}>
+                        <div className={Styles.DetailedContainer}>
 
                             <div className={Styles.DetailedImage}>
                                 <img src={detailedImage} alt="Detailed Post" />
@@ -127,9 +127,9 @@ export const Detailed = ({ user }) => {
                                 <h2>Comments</h2>
                             </div>
 
-                            <div className={Styles.AddComment}>
-                                <input type="text" />
-                            </div>
+                            
+                            <input type="text" placeholder="Add a comment..." />
+                            
 
                             <div className={Styles.DetailedIcons}>
                                 <div className={Styles.DetailedIcon}>
@@ -154,7 +154,9 @@ export const Detailed = ({ user }) => {
                             </div>
 
                             <div className={Styles.DetailedUser}>
-                                <img src={detailedUserPic} alt="User Profile Pic"/>
+                                <div className={Styles.DetailedUserImage}>
+                                    <img src={detailedUserPic} alt="User Profile Pic"/>
+                                </div>
                                 <h3>{detailedUser}</h3>
                             </div>
 
