@@ -12,21 +12,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: .7rem;
         
         .TopProfile {
             width: 100%;
             height: 70%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+            margin-bottom: 0.5rem;
+            
             
             img {
                 width: 200px;
                 height: 200px;
                 object-fit: cover;
                 border-radius: 10px;
-                margin-bottom: 0.5rem;
+                
     
                 @media (max-width: 1500px) {
                     width: 150px;
@@ -36,81 +39,116 @@
 
             .ProfileInput {
                 width: 100%;
-                height: 15%;
+                height: 25%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
-                .InputStuff {
-                    // width: 35%;
-                    // height: 100%;
-    
-                    width: 100%;
-                    height: 45%;
+                .ProfileButtons {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     margin-bottom: .5rem;
-    
-                    .inputfile {
-                        width: 0.1px;
-                        height: 0.1px;
-                        opacity: 0;
-                        overflow: hidden;
-                        position: absolute;
-                        z-index: -1;
-                    }
-                    
-                    .inputfile + label {
+                    width: 100%;
+                    height: 65%;
+
+                    .InputStuff {
+                        // width: 35%;
+                        // height: 100%;
+        
                         width: 6.28125vw;
-                        height: 100%;
-                        font-size: 0.5vw;
-                        /* 20px */
-                        font-weight: 700;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        cursor: pointer;
+                        height: 40%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        overflow: hidden;
+                        margin-right: .5rem;
+        
+                        .inputfile {
+                            width: 0.1px;
+                            height: 0.1px;
+                            opacity: 0;
+                            overflow: hidden;
+                            position: absolute;
+                            z-index: -1;
+                        }
+                        
+                        .inputfile + label {
+                            width: 100%;
+                            height: 100%;
+                            font-size: 0.6vw;
+                            /* 20px */
+                            font-weight: 700;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            outline: none;
+                            // padding: 0.625rem 1.25rem;
+                            /* 10px 20px */
+                            color: #f1e5e6;
+                            background-color:#E45257;
+                            border-radius: 10px;
+                            transition: .5s all ease;
+                            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        }
+                        
+                        .no-js .inputfile + label {
+                            display: none;
+                        }
+                        
+                        .inputfile:focus + label,
+                        .inputfile.has-focus + label {
+                            outline: 1px dotted #000;
+                            outline: -webkit-focus-ring-color auto 5px;
+                        }
+                        
+                        .inputfile:focus + label,
+                        .inputfile.has-focus + label,
+                        .inputfile + label:hover {
+                            background-color: #722040;
+                        }
+                        
+                        .inputfile + label svg {
+                            width: 0.7vw;
+                            height: auto;
+                            vertical-align: middle;
+                            fill: currentColor;
+                            margin-top: -0.25em;
+                            /* 4px */
+                            margin-right: 0.25em;
+                            /* 4px */
+                        }
+                    }
+
+                    button {
                         outline: none;
-                        // padding: 0.625rem 1.25rem;
-                        /* 10px 20px */
+                        text-decoration: none;
+                        border: none;
                         color: #f1e5e6;
                         background-color:#E45257;
                         border-radius: 10px;
                         transition: .5s all ease;
                         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-                    }
-                    
-                    .no-js .inputfile + label {
-                        display: none;
-                    }
-                    
-                    .inputfile:focus + label,
-                    .inputfile.has-focus + label {
-                        outline: 1px dotted #000;
-                        outline: -webkit-focus-ring-color auto 5px;
-                    }
-                    
-                    .inputfile:focus + label,
-                    .inputfile.has-focus + label,
-                    .inputfile + label:hover {
-                        background-color: #722040;
-                    }
-                    
-                    .inputfile + label svg {
-                        width: 0.7vw;
-                        height: auto;
-                        vertical-align: middle;
-                        fill: currentColor;
-                        margin-top: -0.25em;
-                        /* 4px */
-                        margin-right: 0.25em;
-                        /* 4px */
+                        width: 6.28125vw;
+                        height: 40%;
+                        cursor: pointer;
+                        font-size: 0.6vw;
+                        font-weight: 700;
+
+                        &:hover {
+                            background-color:#722040;
+                        }
+
+                        &:disabled {
+                            background-color: #A5A5A5;
+                            cursor: default;
+                        }
                     }
                 }
+
     
                 progress[value] {
                     appearance: none;
@@ -141,9 +179,7 @@
                 }
             }
 
-            button {
-                margin-bottom: 0.8333333333333334vw;
-            }
+            
 
             h2 {
                 font-size: 1.25vw;
