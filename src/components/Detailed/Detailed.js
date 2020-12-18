@@ -36,8 +36,6 @@ export const Detailed = ({ user }) => {
 
                     let docData = doc.data();
 
-                    console.log(docData);
-
                     setDetailedLikes(docData.likes);
                     setDetailedImage(docData.imageUrl);
                     setDetailedUser(docData.username);

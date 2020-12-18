@@ -19,6 +19,8 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
             likes: likes + 1
         });
     }
+
+    console.log(user.photoURL);
     
     return (
         <>
@@ -28,7 +30,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
-                        {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                        {user.photoURL ? <img src={user.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
 
                         <h3>{username}</h3>
                     </div>
