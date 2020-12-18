@@ -32,7 +32,7 @@ export const Feed = ({ posts, user, popPosts }) => {
                             <a href="/#"><h3>Saved</h3></a>
                         </div>
 
-                        <PopularPosts popPosts={popPosts} user={user} />
+                        <PopularPosts posts={posts} user={user} />
                     </div>
                 </div>
 
