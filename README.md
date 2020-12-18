@@ -17,6 +17,8 @@ Page 1 (Home Page)
 
 ![InstaDeck](/src/components/images/Page2.jpg)
 <br />
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page2DarkMode.jpg)
+<br />
 Page 2 (Specified Post)
 
 <br />
