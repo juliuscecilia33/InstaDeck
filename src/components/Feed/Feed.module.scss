@@ -17,9 +17,12 @@
         .FollowingFeed {
             width: 50%;
             height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            // align-items: center;
             padding-top: 0.7rem;
 
             .Link {
