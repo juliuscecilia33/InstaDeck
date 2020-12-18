@@ -8,6 +8,8 @@ Prototype (Built in Figma)
 
 ![InstaDeck](/src/components/images/Page1.jpg)
 <br />
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1DarkMode.jpg)
+<br />
 Page 1 (Home Page)
 
 <br />
