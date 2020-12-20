@@ -1,5 +1,5 @@
 # InstaDeck
-<h2>A semi-dashboard interface of Instagram.</h2>
+<h2>A semi-dashboard interface of Instagram made with React and Firebase!.</h2>
 
 
 
