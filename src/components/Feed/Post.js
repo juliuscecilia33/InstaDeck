@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
 import { DetailedContext } from '../../context/detailed';
-import { db } from '../../firebase';
+import { db, storage } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 
@@ -19,8 +19,6 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
             likes: likes + 1
         });
     }
-
-    console.log(user.photoURL);
     
     return (
         <>
@@ -30,7 +28,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                 <div className={Styles.Post__Footer}>
                     <div className={Styles.Post__Avatar}>
-                        {user.photoURL ? <img src={user.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                        {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
 
                         <h3>{username}</h3>
                     </div>

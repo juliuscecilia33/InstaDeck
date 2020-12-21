@@ -12,7 +12,7 @@ import { storage } from '../../firebase';
 import { DetailedContext } from '../../context/detailed';
 import { db } from '../../firebase';
 
-export const Detailed = ({ user }) => {
+export const Detailed = ({ user, posts }) => {
     const { detail, selectedDetail } = useContext(DetailedContext);
     const [ detailedLikes, setDetailedLikes ] = useState(0);
     const [ detailedImage, setDetailedImage ] = useState(null);
@@ -139,7 +139,7 @@ export const Detailed = ({ user }) => {
                                 <div className={Styles.DetailedIcon}>
                                     <button><i class="fas fa-comments"></i></button>
                             
-                                    <p>40</p>
+                                    <p>0</p>
                                 </div>
 
                                 <div className={Styles.DetailedIcon}>
@@ -147,7 +147,7 @@ export const Detailed = ({ user }) => {
                                 </div>
 
                                 <div className={Styles.DetailedIcon}>
-                                    <i class="fas fa-share"></i>
+                                    <button><i class="fas fa-share"></i></button>
                                 </div>
                             </div>
 
