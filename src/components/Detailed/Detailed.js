@@ -18,6 +18,7 @@ export const Detailed = ({ user, posts }) => {
     const [ detailedImage, setDetailedImage ] = useState(null);
     const [ detailedUser, setDetailedUser ] = useState('');
     const [ detailedUserPic, setDetailedUserPic ] = useState(null);
+    const [ postData, setPostData ] = useState(null);
     const [ detailedCaption, setDetailedCaption ] = useState('');
     const [ detailedTime, setDetailedTime ] = useState('');
     const [ error, setError ] = useState('');

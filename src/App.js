@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
 import * as ROUTES from './constants/routes';
 import { db, auth } from './firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -51,7 +50,7 @@ function App() {
   }, [user]);
 
   return (
-    <div className="App">
+    <>
       <DetailedContext.Provider value={{ selectedDetail, setSelectedDetail, detail, setDetail }}>
         <Router>
           <Switch>
@@ -74,7 +73,7 @@ function App() {
           </Switch>
         </Router>
       </DetailedContext.Provider>
-    </div>
+    </>
   );
 }
 
