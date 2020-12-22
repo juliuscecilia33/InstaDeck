@@ -10,7 +10,7 @@ Prototype (Built in Figma)
 <br />
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1DarkMode.jpg)
 <br />
-Page 1 (Home Page)
+(Home Page)
 
 <br />
 <br />
@@ -19,10 +19,14 @@ Page 1 (Home Page)
 <br />
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page2DarkMode.jpg)
 <br />
-Page 2 (Specified Post)
+(Specified Post)
 
 <br />
 <br />
+
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Home%20page.jpg)
+<br />
+(Landing Page)
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/SignUpPages.jpg)
 
@@ -31,7 +35,7 @@ Page 2 (Specified Post)
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20In%20Page.jpg)
 <br />
-Page 0 (Sign Up Page / Sign In Page)
+(Sign Up Page / Sign In Page)
 
 
 
