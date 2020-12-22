@@ -9,20 +9,19 @@ Prototype (Built in Figma)
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/PagesPNG.jpg)
 
 <br />
-<br />
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/HomePagePNG.png)
+
 <br />
-(Landing Page)
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/SignUpPages.jpg)
 
 <br />
-<br />
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Sign%20In%20Page.jpg)
+
 <br />
-(Sign Up Page / Sign In Page)
+
 
 
 
