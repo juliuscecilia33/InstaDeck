@@ -6,20 +6,7 @@
 Prototype (Built in Figma)
 <br />
 
-![InstaDeck](/src/components/images/Page1.jpg)
-<br />
-![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1DarkMode.jpg)
-<br />
-(Home Page)
-
-<br />
-<br />
-
-![InstaDeck](/src/components/images/Page2.jpg)
-<br />
-![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page2DarkMode.jpg)
-<br />
-(Specified Post)
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/PagesPNG.jpg)
 
 <br />
 <br />
