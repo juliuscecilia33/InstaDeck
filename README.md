@@ -11,7 +11,7 @@ Prototype (Built in Figma)
 <br />
 <br />
 
-![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Home%20page.jpg)
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/HomePagePNG.png)
 <br />
 (Landing Page)
 
