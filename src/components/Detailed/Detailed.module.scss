@@ -458,24 +458,48 @@
             height: 45.670143415906125vh;
             background-color: #F6F6F2;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-around;
             align-items: center;
             border-radius: 10px;
         }
 
-        input {
+        .CommentBox {
             width: 90%;
             height: 4.023989569752282vh;
             outline: none;
             background-color: #F6F6F2;
             border: 1px solid #A5A5A5;
-            border-radius: 30px;
-            padding: 0 1rem;
+            border-radius: 10px;
+            padding: 0 0.5rem 0 1rem;
             transition: .5s ease all;
 
-            &:focus {
+            &:hover {
                 border: 1.5px solid #E45257;
             }
+
+            input {
+                width: 80%;
+                height: 100%;
+                outline: none;
+                border: none;
+                background: none;
+            }
+
+            button {
+                width: 20%;
+                height: 100%;
+                border: none;
+                background: none;
+                outline: none;
+                cursor: pointer;
+                border-left: 1px solid #C4C4C4;
+
+                &:disabled {
+                    color: #c4c4c4;
+                }
+            }
+
         }
 
         .DetailedIcons {
@@ -529,6 +553,11 @@
                     height: 100%;
                     object-fit: cover;
                     border-radius: 50%;
+                }
+
+                @media (max-width: 1500px) {
+                    width: 30px;
+                    height: 30px;
                 }
             }
 

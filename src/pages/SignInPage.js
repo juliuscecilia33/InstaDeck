@@ -52,17 +52,18 @@ export const SignInPage = () => {
     
     return (
         <>
-              
-            <div className={Styles.DisplaySec}>
-                <div className={Styles.DisplayLogo}>
-                    <Link to={ROUTES.START}><img src={Logo} alt="Logo" /></Link>
-                </div>
-                <div className={Styles.DisplayImage}>
-                    <img src={PageOne} alt="Page Model"/>
-                </div>
-            </div>  
-            
-            <div className={Styles.InputSec}>
+            <div className={Styles.SignInPg}>
+                
+                <div className={Styles.DisplaySec}>
+                    <div className={Styles.DisplayLogo}>
+                        <Link to={ROUTES.START}><img src={Logo} alt="Logo" /></Link>
+                    </div>
+                    <div className={Styles.DisplayImage}>
+                        <img src={PageOne} alt="Page Model"/>
+                    </div>
+                </div>  
+                
+                <div className={Styles.InputSec}>
 
                 <div className={Styles.SignUpTitle}>
                     <h2>Sign In <br />to <span>InstaDeck</span></h2>
@@ -95,6 +96,8 @@ export const SignInPage = () => {
 
                     <h2>If you don't have an account <br /><Link to={ROUTES.SIGN_UP}><span>Sign Up Here</span></Link></h2>
                 </div>
+            </div>
+        
             </div>
         </>
     )

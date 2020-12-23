@@ -12,6 +12,7 @@ import { storage } from '../../firebase';
 import { DetailedContext } from '../../context/detailed';
 import { db } from '../../firebase';
 import { mapTime } from '../../mappers/mapTime';
+import firebase from 'firebase';
 
 export const Detailed = ({ user, posts }) => {
     const { detail, selectedDetail } = useContext(DetailedContext);
@@ -26,8 +27,11 @@ export const Detailed = ({ user, posts }) => {
     const firebaseUser = firebaseApp.auth().currentUser || {};
     const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
+    const [ comment, setComment ] = useState([]);
+    const [ comments, setComments ] = useState([]);
 
     useEffect(() => {
+        let unsubscribe;
 
         if (selectedDetail) {
 
@@ -53,7 +57,20 @@ export const Detailed = ({ user, posts }) => {
             }).catch(function(error) {
                 console.log("Error getting document:", error);
             });
+
+            unsubscribe = db   
+                .collection("posts")
+                .doc(selectedDetail)
+                .collection("comments")
+                .orderBy('timestamp', 'desc')
+                .onSnapshot((snapshot) => {
+                    setComments(snapshot.docs.map((doc) => doc.data()))
+                });
         }
+
+        return () => {
+            unsubscribe();
+        };
         
     }, [selectedDetail])
 
@@ -105,6 +122,18 @@ export const Detailed = ({ user, posts }) => {
         )
     }
 
+    const postComment = (event) => {
+        event.preventDefault();
+
+        db.collection("posts").doc(selectedDetail).collection("comments").add({
+            text: comment,
+            username: firebaseUser.displayName,
+            timestamp: mapTime(firebase.firestore.FieldValue.serverTimestamp())
+        });
+
+        setComment('');
+    }
+
     return (
         <>
             <div className={DetailedBg}>
@@ -124,24 +153,43 @@ export const Detailed = ({ user, posts }) => {
                             </div>
 
                             <div className={Styles.DetailedComments}>
-                                <h2>Comments</h2>
+                                {comments.map((comment) => (
+                                    <p>
+                                        <strong>{comment.username}</strong> {comment.text}
+                                    </p>
+                                ))}
                             </div>
 
                             
-                            <input type="text" placeholder="Add a comment..." />
+                            <form className={Styles.CommentBox}>
+                                <input  
+                                    type="text" 
+                                    placeholder="Add a comment..." 
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                />
+
+                                <button
+                                    disabled={!comment}
+                                    type="submit"
+                                    onClick={postComment}
+                                >
+                                    Post
+                                </button>
+                            </form>
                             
 
                             <div className={Styles.DetailedIcons}>
                                 <div className={Styles.DetailedIcon}>
                                     <button onClick={() => updateLike(selectedDetail)}><i class="fas fa-heart"></i></button>
                             
-                                    <p>{detailedLikes}</p>
+                                    {/* <p>{detailedLikes}</p> */}
                                 </div>
 
                                 <div className={Styles.DetailedIcon}>
                                     <button><i class="fas fa-comments"></i></button>
                             
-                                    <p>0</p>
+                                    {/* <p>0</p> */}
                                 </div>
 
                                 <div className={Styles.DetailedIcon}>
