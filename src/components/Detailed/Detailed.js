@@ -11,6 +11,7 @@ import * as ROUTES from '../../constants/routes';
 import { storage } from '../../firebase';
 import { DetailedContext } from '../../context/detailed';
 import { db } from '../../firebase';
+import { mapTime } from '../../mappers/mapTime';
 
 export const Detailed = ({ user, posts }) => {
     const { detail, selectedDetail } = useContext(DetailedContext);
@@ -18,7 +19,6 @@ export const Detailed = ({ user, posts }) => {
     const [ detailedImage, setDetailedImage ] = useState(null);
     const [ detailedUser, setDetailedUser ] = useState('');
     const [ detailedUserPic, setDetailedUserPic ] = useState(null);
-    const [ postData, setPostData ] = useState(null);
     const [ detailedCaption, setDetailedCaption ] = useState('');
     const [ detailedTime, setDetailedTime ] = useState('');
     const [ error, setError ] = useState('');
@@ -60,8 +60,9 @@ export const Detailed = ({ user, posts }) => {
     const updateLike = (selectedDetail) => {
 
         db.collection("posts").doc(selectedDetail).update({
-            likes: detailedLikes + 1
+            likes: detailedLikes + 1,
         });
+
     }
 
     const handleChange = (e) => {
@@ -119,7 +120,7 @@ export const Detailed = ({ user, posts }) => {
 
                             <div className={Styles.DetailedCaption}>
                                 <h3>{detailedCaption}</h3>
-                                <p>Timestamp</p>
+                                <p>{mapTime(detailedTime.seconds)}</p>
                             </div>
 
                             <div className={Styles.DetailedComments}>
