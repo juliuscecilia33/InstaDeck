@@ -19,7 +19,7 @@ export const SideBar = ({ user }) => {
         <>
             <div className={Styles.SidebarBg}>
                 <div className={Styles.Logo}>
-                    <img src={DeckLogo} alt="Logo" />
+                    <a href={ROUTES.START}><img src={DeckLogo} alt="Logo" /></a>
                 </div>
 
                 <div className={Styles.Tabs}>

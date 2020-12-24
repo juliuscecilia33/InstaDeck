@@ -63,9 +63,11 @@ export const SignUpPage = () => {
 
     return (
         <>
+          <div className={Styles.SignUpPg}>
+
             <div className={Styles.InputSec}>
                 <div className={Styles.LogoImage}>
-                    <img src={Logo} alt="Logo"/>    
+                    <a href={ROUTES.START}><img src={Logo} alt="Logo"/></a>
                 </div>
 
                 <div className={Styles.SignUpTitle}>
@@ -103,6 +105,8 @@ export const SignUpPage = () => {
 
             <div className={Styles.DisplaySec}>
             </div>
+        
+          </div>
         </>
     )
 }
