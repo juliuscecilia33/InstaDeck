@@ -164,9 +164,14 @@ export const Detailed = ({ user, posts }) => {
 
                             <div className={Styles.DetailedComments}>
                                 {comments.map((comment) => (
-                                    <p>
-                                        <strong>{comment.username}</strong> {comment.text}
-                                    </p>
+                                    <div className={Styles.Comment}>
+                                        <h3>
+                                            {comment.username}
+                                        </h3>
+                                        <p>
+                                            {comment.text}
+                                        </p>
+                                    </div>
                                 ))}
                             </div>
 
