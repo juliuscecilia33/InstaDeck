@@ -31,7 +31,6 @@ export const Detailed = ({ user, posts }) => {
     const [ comments, setComments ] = useState([]);
 
     useEffect(() => {
-        let unsubscribe;
 
         if (selectedDetail) {
 
@@ -58,7 +57,18 @@ export const Detailed = ({ user, posts }) => {
                 console.log("Error getting document:", error);
             });
 
-            unsubscribe = db   
+            
+        }
+
+        
+        
+    }, [selectedDetail])
+
+    useEffect(() => {
+        // let unsubscribe;
+
+        if (selectedDetail) {
+           db   
                 .collection("posts")
                 .doc(selectedDetail)
                 .collection("comments")
@@ -68,10 +78,10 @@ export const Detailed = ({ user, posts }) => {
                 });
         }
 
-        return () => {
-            unsubscribe();
-        };
         
+        // return () => {
+        //     unsubscribe();
+        // };
     }, [selectedDetail])
 
     const updateLike = (selectedDetail) => {
