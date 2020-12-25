@@ -61,6 +61,8 @@ export const Detailed = ({ user, posts }) => {
             
         }
 
+        setHeartColor(false);
+
         
         
     }, [selectedDetail])
@@ -91,7 +93,7 @@ export const Detailed = ({ user, posts }) => {
             likes: detailedLikes + 1,
         });
 
-        setHeartColor(true);
+        setHeartColor(!heartColor);
 
     }
 
