@@ -34,11 +34,13 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
     }
 
     let inputStyle= {
+        transition: '.5s ease all',
         color: '#c4c4c4'
     };
 
     if (heartColor) {
         inputStyle ={
+            transition: '.5s ease all',
             color: '#E45257'
         }
     }
@@ -64,7 +66,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                         </div>
 
                         <div className={Styles.Post__Button}>
-                            <button><i class="fas fa-comments"></i></button>
+                            <a href="#/" onClick={() => updateDetail(postId)}><button><i class="fas fa-comments"></i></button></a>
                             
                             <p>{comments}</p>
                         </div>
