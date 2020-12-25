@@ -29,6 +29,7 @@ export const Detailed = ({ user, posts }) => {
     const [progress, setProgress] = useState(0);
     const [ comment, setComment ] = useState([]);
     const [ comments, setComments ] = useState([]);
+    const [ heartColor, setHeartColor ] = useState(false);
 
     useEffect(() => {
 
@@ -90,6 +91,8 @@ export const Detailed = ({ user, posts }) => {
             likes: detailedLikes + 1,
         });
 
+        setHeartColor(true);
+
     }
 
     const handleChange = (e) => {
@@ -144,6 +147,16 @@ export const Detailed = ({ user, posts }) => {
         setComment('');
     }
 
+    let inputStyle= {
+        color: '#c4c4c4'
+    };
+
+    if (heartColor) {
+        inputStyle ={
+            color: '#E45257'
+        }
+    }
+
     return (
         <>
             <div className={DetailedBg}>
@@ -196,7 +209,7 @@ export const Detailed = ({ user, posts }) => {
 
                             <div className={Styles.DetailedIcons}>
                                 <div className={Styles.DetailedIcon}>
-                                    <button onClick={() => updateLike(selectedDetail)}><i class="fas fa-heart"></i></button>
+                                    <button onClick={() => updateLike(selectedDetail)}><i class="fas fa-heart" style={inputStyle}></i></button>
                             
                                     {/* <p>{detailedLikes}</p> */}
                                 </div>
