@@ -16,11 +16,21 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
     const updateLike = (postId) => {
 
-        db.collection("posts").doc(postId).update({
-            likes: likes + 1
-        });
+        setHeartColor(!heartColor);
 
-        setHeartColor(true);
+        if (heartColor) {
+
+            db.collection("posts").doc(postId).update({
+                likes: likes - 1
+            });
+
+        } else {
+            db.collection("posts").doc(postId).update({
+                likes: likes + 1
+            });
+        }
+
+
     }
 
     let inputStyle= {
