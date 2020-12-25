@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
 import { DetailedContext } from '../../context/detailed';
@@ -7,6 +7,7 @@ import { db, storage } from '../../firebase';
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 
     const { setDetail, setSelectedDetail } = useContext(DetailedContext);
+    const [ heartColor, setHeartColor ] = useState(false);
 
     const updateDetail = (postId) => {
         setDetail(true);
@@ -18,6 +19,18 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
         db.collection("posts").doc(postId).update({
             likes: likes + 1
         });
+
+        setHeartColor(true);
+    }
+
+    let inputStyle= {
+        color: '#c4c4c4'
+    };
+
+    if (heartColor) {
+        inputStyle ={
+            color: '#E45257'
+        }
     }
     
     return (
@@ -35,7 +48,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
                     <div className={Styles.Post__Buttons}>
                         <div className={Styles.Post__Button}>
-                            <button onClick={() => updateLike(postId)}><i class="fas fa-heart"></i></button>
+                            <button onClick={() => updateLike(postId)}><i class="fas fa-heart" style={inputStyle}></i></button>
                             
                             <p>{likes}</p>
                         </div>
