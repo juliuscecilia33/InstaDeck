@@ -38,8 +38,7 @@
                 }
     
                 p {
-                    font-style: normal;
-                    font-weight: normal;
+                    font-weight: 400;
                     font-size: 10px;
                     color: #000000;
                 }
@@ -54,8 +53,7 @@
             }
 
             p {
-                font-style: normal;
-                font-weight: normal;
+                font-weight: 400;
                 font-size: 10px;
                 color: #000000;
             }
@@ -70,12 +68,15 @@
         align-items: center;
 
         .SearchBox {
-            width: 233px;
+            width: 250px;
             height: 39px;
             background: #F3EEE8;
             border: 1.5px solid #C4C4C4;
             border-radius: 10px;
             outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             transition: .5s ease all;
 
             button {
@@ -89,7 +90,7 @@
                 align-items: center;
 
                 i {
-                    color: #ffffff;
+                    color: #c4c4c4;
                     font-size: 22px;
                 }
             }
@@ -110,8 +111,8 @@
             
             i {
                 color: #C4C4C4;
-                font-size: 32px;
-                margin-right: 1rem;
+                font-size: 26px;
+                margin-right: 2rem;
             }
         }
     }
