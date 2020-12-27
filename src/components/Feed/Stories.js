@@ -1,6 +1,11 @@
 import React from 'react';
 import Styles from './Stories.module.scss';
 import Soto from '../images/juansotolol.jpg';
+import Dabin from '../images/dabin.jpg';
+import Fairlane from '../images/fairlane1.jpg';
+import Kellenic from '../images/jkellenic.jpg';
+import Nurko from '../images/nurko.jpg';
+import Illenium from '../images/illenium.jpg';
 
 export const Stories = () => {
     return (
@@ -8,22 +13,32 @@ export const Stories = () => {
             <div className={Styles.StoriesList}>
                 <div className={Styles.Story}>
                     <img src={Soto} alt="InstaDeck Story" />
-                    {/* <p>juansoto</p> */}
+                    <p>juansoto</p>
                 </div>
 
                 <div className={Styles.Story}>
-                    <img src={Soto} alt="InstaDeck Story" />
-                    {/* <p>juansoto</p> */}
+                    <img src={Dabin} alt="InstaDeck Story" />
+                    <p>dabinmusic</p>
                 </div>
 
                 <div className={Styles.Story}>
-                    <img src={Soto} alt="InstaDeck Story" />
-                    {/* <p>juansoto</p> */}
+                    <img src={Fairlane} alt="InstaDeck Story" />
+                    <p>fairlanemusic</p>
                 </div>
 
                 <div className={Styles.Story}>
-                    <img src={Soto} alt="InstaDeck Story" />
-                    {/* <p>juansoto</p> */}
+                    <img src={Kellenic} alt="InstaDeck Story" />
+                    <p>jarredkelenic</p>
+                </div>
+
+                <div className={Styles.Story}>
+                    <img src={Nurko} alt="InstaDeck Story" />
+                    <p>nurkomusic</p>
+                </div>
+
+                <div className={Styles.Story}>
+                    <img src={Illenium} alt="InstaDeck Story" />
+                    <p>illeniummusic</p>
                 </div>
             </div>
 
