@@ -44,6 +44,8 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
             color: '#E45257'
         }
     }
+
+    console.log(user);
     
     return (
         <>
@@ -74,6 +76,10 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                         <div className={Styles.Post__Button}>
                             <button><i class="fas fa-bookmark"></i></button>
                         </div>
+
+                        { username === user.displayName && <div className={Styles.Post__Button}>
+                            <button><i class="fas fa-trash"></i></button>
+                        </div> }
                     </div>
                     
                 </div>  
