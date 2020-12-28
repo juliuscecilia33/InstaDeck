@@ -33,6 +33,14 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
 
     }
 
+    const deletePost = (postId) => {
+        db.collection("posts").doc(postId).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    }
+
     let inputStyle= {
         transition: '.5s ease all',
         color: '#c4c4c4'
@@ -78,7 +86,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
                         </div>
 
                         { username === user.displayName && <div className={Styles.Post__Button}>
-                            <button><i class="fas fa-trash"></i></button>
+                            <button onClick={() => deletePost(postId)}><i class="fas fa-trash"></i></button>
                         </div> }
                     </div>
                     
