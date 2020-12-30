@@ -55,7 +55,7 @@ function App() {
         <Router>
           <Switch>
             <Route path={ROUTES.START} exact>
-              <HomePage />
+              <HomePage user={user} />
             </Route>
 
             <Route path={ROUTES.SIGN_UP} exact>
