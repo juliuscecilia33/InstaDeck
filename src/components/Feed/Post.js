@@ -57,42 +57,43 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
     
     return (
         <>
-            <div className={Styles.Post}>
+            { user && <div className={Styles.Post}>
 
-                <a href="#/" onClick={() => updateDetail(postId)}><img src={imageUrl} alt="post" className={Styles.Post__Image} /></a>
+                    <a href="#/" onClick={() => updateDetail(postId)}><img src={imageUrl} alt="post" className={Styles.Post__Image} /></a>
 
-                <div className={Styles.Post__Footer}>
-                    <div className={Styles.Post__Avatar}>
-                        {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                    <div className={Styles.Post__Footer}>
+                        <div className={Styles.Post__Avatar}>
+                            {usernamepic ? <img src={usernamepic} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
 
-                        <h3>{username}</h3>
-                    </div>
-
-                    <div className={Styles.Post__Buttons}>
-                        <div className={Styles.Post__Button}>
-                            <button onClick={() => updateLike(postId)}><i class="fas fa-heart" style={inputStyle}></i></button>
-                            
-                            <p>{likes}</p>
+                            <h3>{username}</h3>
                         </div>
 
-                        <div className={Styles.Post__Button}>
-                            <a href="#/" onClick={() => updateDetail(postId)}><button><i class="fas fa-comments"></i></button></a>
-                            
-                            <p>{comments}</p>
+                        <div className={Styles.Post__Buttons}>
+                            <div className={Styles.Post__Button}>
+                                <button onClick={() => updateLike(postId)}><i class="fas fa-heart" style={inputStyle}></i></button>
+                                
+                                <p>{likes}</p>
+                            </div>
+
+                            <div className={Styles.Post__Button}>
+                                <a href="#/" onClick={() => updateDetail(postId)}><button><i class="fas fa-comments"></i></button></a>
+                                
+                                <p>{comments}</p>
+                            </div>
+
+                            <div className={Styles.Post__Button}>
+                                <button><i class="fas fa-bookmark"></i></button>
+                            </div>
+
+                            { username === user.displayName && <div className={Styles.Post__Button}>
+                                <button onClick={() => deletePost(postId)}><i class="fas fa-trash"></i></button>
+                            </div> }
                         </div>
+                        
+                    </div>  
 
-                        <div className={Styles.Post__Button}>
-                            <button><i class="fas fa-bookmark"></i></button>
-                        </div>
-
-                        { username === user.displayName && <div className={Styles.Post__Button}>
-                            <button onClick={() => deletePost(postId)}><i class="fas fa-trash"></i></button>
-                        </div> }
-                    </div>
-                    
-                </div>  
-
-            </div>
+                </div> 
+            }
         </>
     )
 }

@@ -8,7 +8,7 @@ import { DetailedContext } from './context/detailed';
 function App() {
   const [posts, setPosts] = useState ([]);
   const [popPosts, setPopPosts] = useState([]);
-  const [user, setUser] = useState('julius');
+  const [user, setUser] = useState(null);
   const [ selectedDetail, setSelectedDetail ] = useState(null);
   const [ detail, setDetail ] = useState(false);
 
