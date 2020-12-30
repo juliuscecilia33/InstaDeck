@@ -22,6 +22,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
 
                 return null;
             }}
+            exact
         />
     )
 }
@@ -48,6 +49,7 @@ export function ProtectedRoute({ user, children, ...rest }) {
 
                 return null;
             }}
+            exact
         />
     )
 }
