@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { SideBar } from '../components';
+
 import * as ROUTES from '../constants/routes';
 import DeckLogo from '../components/images/Decklol.png';
 import BlankImage from '../components/images/UploadImageIcon.png';
@@ -64,6 +65,6 @@ export function SideBarContainer({ user }) {
             </SideBar.Account>
 
         </SideBar.Container>
-        
+
     )
 }
