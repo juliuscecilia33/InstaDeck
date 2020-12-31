@@ -22,7 +22,7 @@ export const Detailed = ({ user, posts }) => {
     const [ detailedUserPic, setDetailedUserPic ] = useState(null);
     const [ detailedCaption, setDetailedCaption ] = useState('');
     const [ detailedTime, setDetailedTime ] = useState('');
-    const [ error, setError ] = useState('');
+    const [ setError ] = useState('');
     const { firebaseApp } = useContext(FirebaseContext);
     const firebaseUser = firebaseApp.auth().currentUser || {};
     const [image, setImage] = useState(null);
@@ -65,7 +65,7 @@ export const Detailed = ({ user, posts }) => {
 
         
         
-    }, [selectedDetail])
+    }, [selectedDetail, setError])
 
     useEffect(() => {
         // let unsubscribe;

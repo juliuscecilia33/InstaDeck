@@ -60,28 +60,12 @@ export const SideBar = ({ user }) => {
                     <div className={Styles.Profiles}>
 
                         <div className={`${Styles.Profile} ${Styles.Admin}`}>
-                        {firebaseUser.photoURL ? <img src={firebaseUser.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
+                            {firebaseUser.photoURL ? <img src={firebaseUser.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                             <div className={Styles.Label}>
                                 { user ? <h3>Admin</h3> : <h3>...</h3>}
                                 <p>{firebaseUser.displayName}</p>
                             </div>
                         </div>
-
-                        {/* <div className={Styles.Profile}>
-                            <img src={Fairlane} alt="Fairlane-profile"/>
-                            <div className={Styles.Label}>
-                                <h3>Editor</h3>
-                                <p>@fairlanemusic</p>
-                            </div>
-                        </div>
-
-                        <div className={Styles.Profile}>
-                            <img src={Dabin} alt="Dabin-profile"/>
-                            <div className={Styles.Label}>
-                                <h3>Moderator</h3>
-                                <p>@dabinmusic</p>
-                            </div>
-                        </div> */}
 
                     </div>
 

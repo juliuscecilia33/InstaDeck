@@ -5,10 +5,6 @@ import Styles from './SignUpPage.module.scss';
 import Logo from '../components/images/Decklol.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
-import Accounts from '../components/images/AccountsAD.jpg';
-import Analytics from '../components/images/AnalyticsAD.jpg';
-import Feed from '../components/images/FeedAD.jpg';
-
 
 export const SignUpPage = () => {
 

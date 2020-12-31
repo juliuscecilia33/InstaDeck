@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Styles from './Post.module.scss';
 import BlankImage from '../images/UploadImageIcon.png';
 import { DetailedContext } from '../../context/detailed';
-import { db, storage } from '../../firebase';
+import { db } from '../../firebase';
 
 export const Post = ({ user, username, caption, imageUrl, postId, likes, comments, usernamepic }) => {
 

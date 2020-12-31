@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as ROUTES from './constants/routes';
 import { db, auth } from './firebase';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { MainPage, SignUpPage, SignInPage, HomePage } from './pages';
 import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 import { DetailedContext } from './context/detailed';
@@ -55,6 +55,7 @@ function App() {
       <DetailedContext.Provider value={{ selectedDetail, setSelectedDetail, detail, setDetail }}>
         <Router>
           <Switch>
+          
             <IsUserRedirect user={user} loggedInPath={ROUTES.HOME} path={ROUTES.START} exact>
               <HomePage user={user} />
             </IsUserRedirect>
