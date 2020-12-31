@@ -40,5 +40,8 @@ export const GlobalStyles = createGlobalStyle `
         padding: 0;
         text-decoration: none;
         color: #fff;
+        background: none;
+        outline: none;
+        border: none;
     }
 `;
