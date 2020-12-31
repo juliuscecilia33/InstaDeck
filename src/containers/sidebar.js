@@ -64,6 +64,6 @@ export function SideBarContainer({ user }) {
             </SideBar.Account>
 
         </SideBar.Container>
-
+        
     )
 }
