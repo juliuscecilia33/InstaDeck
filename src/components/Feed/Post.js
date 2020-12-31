@@ -53,7 +53,7 @@ export const Post = ({ user, username, caption, imageUrl, postId, likes, comment
         }
     }
 
-    console.log(user);
+    // console.log(user);
     
     return (
         <>

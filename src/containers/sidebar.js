@@ -13,9 +13,11 @@ export function SideBarContainer({ user }) {
     const firebaseUser = firebaseApp.auth().currentUser || {}; 
     const { setDetail } = useContext(DetailedContext);
 
+    console.log('here');
+
     return (
 
-        <SideBar.Container>
+        <SideBar>
 
             <SideBar.Logo to={ROUTES.START}>
                 <img src={DeckLogo} alt="Logo" />
@@ -64,7 +66,7 @@ export function SideBarContainer({ user }) {
                 </SideBar.AccountFooter>
             </SideBar.Account>
 
-        </SideBar.Container>
+        </SideBar>
 
     )
 }
