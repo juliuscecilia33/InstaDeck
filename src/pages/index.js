@@ -1,4 +1,4 @@
-export { MainPage } from './MainPage';
-export { SignInPage } from './SignInPage';
-export { SignUpPage } from './SignUpPage';
-export { HomePage } from './HomePage';
+export { default as MainPage } from './MainPage';
+export { default as SignInPage } from './SignInPage';
+export { default as SignUpPage } from './SignUpPage';
+export { default as HomePage } from './HomePage';

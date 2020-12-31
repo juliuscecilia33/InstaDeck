@@ -1,9 +1,8 @@
-import React from 'react';
-import { SideBar } from '../components/Sidebar';
+import React, { useContext } from 'react';
+import { SideBar } from '../components';
 import * as ROUTES from '../constants/routes';
 import DeckLogo from '../components/images/Decklol.png';
-import DownArrow from '..components/images/DownArrow.png';
-import BlankImage from '..components/images/UploadImageIcon.png';
+import BlankImage from '../components/images/UploadImageIcon.png';
 import { FirebaseContext } from '../context/firebase';
 import { DetailedContext } from '../context/detailed';
 import { auth } from '../firebase';
@@ -31,7 +30,7 @@ export function SideBarContainer({ user }) {
                     <i class="fas fa-comment-dots"></i>
                 </SideBar.Tab>
 
-                <SideBar.Tab label="Profile">
+                <SideBar.Tab label="Profile" onClick={() => setDetail(false)}>
                     <i class="fas fa-user-alt"></i>
                 </SideBar.Tab>
 
@@ -49,6 +48,19 @@ export function SideBarContainer({ user }) {
                         {firebaseUser.photoURL ? <img src={firebaseUser.photoURL} alt="Avatar"/>  : <img src={BlankImage} alt="Avatar"/>}
                     </SideBar.Profile>
                 </SideBar.Profiles>
+
+                <SideBar.AccountFooter>
+                    { user ? (
+                        <SideBar.LogOut>
+                            <SideBar.Option onClick={() => auth.signOut()} to={ROUTES.SIGN_IN}>Log Out</SideBar.Option>
+                        </SideBar.LogOut>
+                    ) : (
+                        <SideBar.SignInOrUp>
+                            <SideBar.Option to={ROUTES.SIGN_IN}>Sign In</SideBar.Option>
+                            <SideBar.Option to={ROUTES.SIGN_UP}>Sign Up</SideBar.Option>
+                        </SideBar.SignInOrUp>
+                    )}
+                </SideBar.AccountFooter>
             </SideBar.Account>
 
         </SideBar.Container>

@@ -6,7 +6,7 @@ import Logo from '../components/images/Decklol.png';
 import * as ROUTES from '../constants/routes';
 import { Link } from 'react-router-dom';
 
-export const SignUpPage = () => {
+export default function SignUpPage() {
 
   const history = useHistory();
 

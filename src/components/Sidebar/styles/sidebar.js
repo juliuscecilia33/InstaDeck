@@ -202,3 +202,7 @@ export const Option = styled.a`
         color: #000000;
     }
 `;
+
+export const LogOut = styled.div`
+    
+`;

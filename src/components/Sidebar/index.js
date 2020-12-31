@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import DownArrow from '../images/DownArrow.png';
 
-import { Container, Logo, Link, Tabs, Tab, Account, AccountBar, Top, Bottom, Border, Profiles, Profile, Label, Heading, DisplayName, AccountFooter, SignInOrUp, Option } from './styles/sidebar';
+import { Container, Logo, Link, Tabs, Tab, Account, AccountBar, Top, Bottom, Border, Profiles, Profile, Label, Heading, DisplayName, AccountFooter, SignInOrUp, Option, LogOut } from './styles/sidebar';
 
 export default function SideBar({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -80,9 +80,25 @@ SideBar.AccountFooter = function SideBarAccountFooter({ children, ...restProps }
 SideBar.SignInOrUp = function SideBarSignInOrUp({ to, children, ...restProps }) {
     return (
         <SignInOrUp {...restProps}>
-            <ReactRouterLink to={to}>
-                <Option>{children}</Option>
-            </ReactRouterLink>
+            {children}
         </SignInOrUp>
+    )
+}
+
+SideBar.LogOut = function SideBarLogOut({ to, children, ...restProps }) {
+    return (
+        <LogOut {...restProps}>
+            {children}
+        </LogOut>
+    )
+}
+
+SideBar.Option = function SideBarOption({ to, children, ...restProps }) {
+    return (
+        <ReactRouterLink to={to}>
+            <Option {...restProps}>
+                <h3>{children}</h3>
+            </Option>
+        </ReactRouterLink>
     )
 }

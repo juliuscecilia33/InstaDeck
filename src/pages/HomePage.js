@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Styles from './HomePage.module.scss';
 
 
-export const HomePage = ({ user }) => {
+export default function HomePage({ user }) {
     return (
         <div className={Styles.HomePg}>
             <h1>Welcome to Instadeck</h1>

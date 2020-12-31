@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import PageOne from '../components/images/Page1.jpg';
 import Logo from '../components/images/Decklol.png';
 
-export const SignInPage = () => {
+export default function SignInPage() {
     const history = useHistory();
 
     const [password, setPassword] = useState('');
