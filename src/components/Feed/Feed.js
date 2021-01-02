@@ -1,7 +1,8 @@
 import React from 'react';
 import Styles from './Feed.module.scss';
 import { Posts } from './Posts';
-import { Stories } from './Stories'
+// import { Stories } from './Stories'
+import { StoriesContainer } from '../../containers';
 import { ImageUpload } from './ImageUpload';
 import { PopularPosts } from './PopularPosts';
 
@@ -12,7 +13,7 @@ export const Feed = ({ posts, user, popPosts }) => {
         <>
             
             <div className={Styles.FeedBg}>
-                <Stories />
+                <StoriesContainer />
 
                 <div className={Styles.UserFeed}>
                     

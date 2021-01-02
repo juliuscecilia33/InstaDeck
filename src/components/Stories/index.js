@@ -12,7 +12,7 @@ Stories.List = function StoriesList({ children, ...restProps }) {
 Stories.Story = function StoriesStory({ src, children, ...restProps }) {
     return (
         <Story>
-            <img src={`../images/${src}.jpg`} alt="Story Display" />
+            <img src={src} alt="Story Display" />
             <p>{children}</p>
         </Story>
     )
