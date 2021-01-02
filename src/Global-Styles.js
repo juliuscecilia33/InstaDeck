@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle `
         padding: 0;
     }
 
-    a {
+    a, button {
         margin: 0;
         padding: 0;
         text-decoration: none;
