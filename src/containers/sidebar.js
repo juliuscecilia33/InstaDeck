@@ -13,8 +13,6 @@ export function SideBarContainer({ user }) {
     const firebaseUser = firebaseApp.auth().currentUser || {}; 
     const { setDetail } = useContext(DetailedContext);
 
-    console.log('here');
-
     return (
 
         <SideBar>
