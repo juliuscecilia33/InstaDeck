@@ -24,6 +24,14 @@ import {
   Status,
   Stats,
   Stat,
+  Statistics,
+  Row,
+  Item,
+  SecondaryIcon,
+  Number,
+  Text,
+  Suggestions,
+  SuggestionsText,
 } from './styles/detailed';
 
 export default function Detailed({ children, ...restProps }) {
@@ -241,5 +249,62 @@ Detailed.Stat = function DetailedStat({
       <h3>{quantity}</h3>
       <h3>{label}</h3>
     </Stat>
+  );
+};
+
+Detailed.Statistics = function DetailedStatistics({
+  children,
+  ...restProps
+}) {
+  return <Statistics {...restProps}>{children}</Statistics>;
+};
+
+Detailed.Row = function DetailedRow({ children, ...restProps }) {
+  return <Row {...restProps}>{children}</Row>;
+};
+
+Detailed.Item = function DetailedItem({ children, ...restProps }) {
+  return <Item {...restProps}>{children}</Item>;
+};
+
+Detailed.SecondaryIcon = function DetailedSecondaryIcon({
+  children,
+  ...restProps
+}) {
+  return <SecondaryIcon {...restProps}>{children}</SecondaryIcon>;
+};
+
+Detailed.Number = function DetailedNumber({
+  children,
+  ...restProps
+}) {
+  return <Number {...restProps}>{children}</Number>;
+};
+
+Detailed.Text = function DetailedText({ children, ...restProps }) {
+  return (
+    <Text {...restProps}>
+      <p>New</p>
+      <p>{children}</p>
+    </Text>
+  );
+};
+
+Detailed.Suggestions = function DetailedSuggestions({
+  children,
+  ...restProps
+}) {
+  return <Suggestions {...restProps}>{children}</Suggestions>;
+};
+
+Detailed.SuggestionsText = function DetailedSuggestionsText({
+  children,
+  ...restProps
+}) {
+  return (
+    <SuggestionsText {...restProps}>
+      <h2>Suggestions For You</h2>
+      <h3>See All</h3>
+    </SuggestionsText>
   );
 };
