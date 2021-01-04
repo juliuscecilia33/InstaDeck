@@ -247,7 +247,7 @@ Detailed.Stat = function DetailedStat({
   return (
     <Stat {...restProps}>
       <h3>{quantity}</h3>
-      <h3>{label}</h3>
+      <p>{label}</p>
     </Stat>
   );
 };
@@ -282,12 +282,7 @@ Detailed.Number = function DetailedNumber({
 };
 
 Detailed.Text = function DetailedText({ children, ...restProps }) {
-  return (
-    <Text {...restProps}>
-      <p>New</p>
-      <p>{children}</p>
-    </Text>
-  );
+  return <Text {...restProps}>{children}</Text>;
 };
 
 Detailed.Suggestions = function DetailedSuggestions({
