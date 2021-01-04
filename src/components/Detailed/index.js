@@ -16,6 +16,14 @@ import {
   ProfileData,
   TopProfile,
   ProfileImage,
+  ProfileButtons,
+  InputStuff,
+  UploadButton,
+  ProfileProgress,
+  DisplayName,
+  Status,
+  Stats,
+  Stat,
 } from './styles/detailed';
 
 export default function Detailed({ children, ...restProps }) {
@@ -148,4 +156,90 @@ Detailed.ProfileInput = function DetailedProfileInput({
   ...restProps
 }) {
   return <ProfileInput {...restProps}>{children}</ProfileInput>;
+};
+
+Detailed.ProfileButtons = function DetailedProfileButtons({
+  children,
+  ...restProps
+}) {
+  return <ProfileButtons {...restProps}>{children}</ProfileButtons>;
+};
+
+Detailed.InputStuff = function DetailedInputStuff({
+  handleChange,
+  children,
+  ...restProps
+}) {
+  return (
+    <InputStuff {...restProps}>
+      <input
+        type="file"
+        name="file-2[]"
+        id="file-2"
+        data-multiple-caption="{count} files selected"
+        multiple
+        onChange={handleChange}
+      />
+      <label for="file-2">{children}</label>
+    </InputStuff>
+  );
+};
+
+Detailed.UploadButton = function DetailedUploadButton({
+  image,
+  handleUpload,
+  children,
+  ...restProps
+}) {
+  return (
+    <UploadButton
+      disabled={!image}
+      onClick={handleUpload}
+      {...restProps}
+    >
+      Upload
+    </UploadButton>
+  );
+};
+
+Detailed.ProfileProgress = function DetailedProfileProgress({
+  progress,
+  children,
+  ...restProps
+}) {
+  return (
+    <ProfileProgress value={progress} max="100" {...restProps} />
+  );
+};
+
+Detailed.DisplayName = function DetailedDisplayName({
+  children,
+  ...restProps
+}) {
+  return <DisplayName {...restProps}>{children}</DisplayName>;
+};
+
+Detailed.Status = function DetailedStatus({
+  children,
+  ...restProps
+}) {
+  return <Status {...restProps}>{children}</Status>;
+};
+
+Detailed.Stats = function DetailedStats({ children, ...restProps }) {
+  return <Stats {...restProps}>{children}</Stats>;
+};
+
+Detailed.Stat = function DetailedStat({
+  quantity,
+  label,
+  children,
+  ...restProps
+}) {
+  return (
+    <Stat {...restProps}>
+      <h3>{quantity}</h3>
+      <h3>{label}</h3>
+    </Stat>
+  );
 };
