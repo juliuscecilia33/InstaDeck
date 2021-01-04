@@ -13,6 +13,9 @@ import {
   Icon,
   User,
   UserImage,
+  ProfileData,
+  TopProfile,
+  ProfileImage,
 } from './styles/detailed';
 
 export default function Detailed({ children, ...restProps }) {
@@ -117,4 +120,32 @@ Detailed.User = function DetailedUser({
       <h3>{children}</h3>
     </User>
   );
+};
+
+Detailed.ProfileData = function DetailedProfileData({
+  children,
+  ...restProps
+}) {
+  return <ProfileData {...restProps}>{children}</ProfileData>;
+};
+
+Detailed.TopProfile = function DetailedTopProfile({
+  children,
+  ...restProps
+}) {
+  return <TopProfile {...restProps}>{children}</TopProfile>;
+};
+
+Detailed.ProfileImage = function DetailedProfileImage({
+  children,
+  ...restProps
+}) {
+  return <ProfileImage src={src} alt="Avatar" {...restProps} />;
+};
+
+Detailed.ProfileInput = function DetailedProfileInput({
+  children,
+  ...restProps
+}) {
+  return <ProfileInput {...restProps}>{children}</ProfileInput>;
 };
