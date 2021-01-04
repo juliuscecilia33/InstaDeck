@@ -7,7 +7,7 @@ export default function ImageUpload({ children, ...restProps }) {
 }
 
 ImageUpload.Contain = function ImageUploadContain({ children, ...restProps }) {
-    return <Contain>{children}</Contain>
+    return <Contain {...restProps}>{children}</Contain>
 }
 
 ImageUpload.InputStuff = function ImageUploadInputStuff({ handleChange, children, ...restProps }) {
