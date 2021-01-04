@@ -118,20 +118,20 @@ export const CaptionInput = styled.input`
 `;
 
 export const Progress = styled.progress`
-    progress[value] {
+    &[value] {
         appearance: none;
     
         width: 25%;
         height: 25%;
     }
 
-    progress[value]::-webkit-progress-bar {
+    &[value]::-webkit-progress-bar {
         background-color: #eee;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
     }          
 
-    progress[value]::-webkit-progress-value {
+    &[value]::-webkit-progress-value {
         background-image:
             -webkit-linear-gradient(-45deg, 
                                     transparent 33%, rgba(0, 0, 0, .1) 33%, 
