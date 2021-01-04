@@ -24,11 +24,11 @@ ImageUpload.InputStuff = function ImageUploadInputStuff({ handleChange, children
 }
 
 ImageUpload.CaptionInput = function ImageUploadCaptionInput({ setCaption, caption, children, ...restProps }) {
-    return <CaptionInput type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption} />
+    return <CaptionInput type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption} {...restProps} />
 }
 
 ImageUpload.Progress = function ImageUploadProgress({ progress, children, ...restProps }) {
-    return <Progress value={progress} max="100" />
+    return <Progress value={progress} max="100" {...restProps} />
 }
 
 ImageUpload.PostButton = function ImageUploadPostButton({ handleUpload, image, children, ...restProps }) {

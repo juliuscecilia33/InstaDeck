@@ -2,8 +2,7 @@ import React from 'react';
 import Styles from './Feed.module.scss';
 import { Posts } from './Posts';
 // import { Stories } from './Stories'
-import { StoriesContainer } from '../../containers';
-import { ImageUpload } from './ImageUpload';
+import { StoriesContainer, ImageUploadContainer } from '../../containers';
 import { PopularPosts } from './PopularPosts';
 
 
@@ -38,7 +37,7 @@ export const Feed = ({ posts, user, popPosts }) => {
                 </div>
 
                 
-                <ImageUpload user={user} />
+                <ImageUploadContainer user={user} />
             </div>
         </>
     )
