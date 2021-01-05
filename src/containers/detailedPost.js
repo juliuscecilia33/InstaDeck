@@ -1,15 +1,20 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { Detailed } from '../components';
+import React, { useContext, useState, useEffect } from "react";
+import { Detailed } from "../components";
+import { db } from "../firebase";
+import { DetailedContext } from "../context/detailed";
+import { FirebaseContext } from "../context/firebase";
+import firebase from "firebase";
+import { mapTime } from "../mappers/mapTime";
 
 export function DetailedPostContainer() {
   const { selectedDetail } = useContext(DetailedContext);
   const [detailedLikes, setDetailedLikes] = useState(0);
   const [detailedImage, setDetailedImage] = useState(null);
-  const [detailedUser, setDetailedUser] = useState('');
+  const [detailedUser, setDetailedUser] = useState("");
   const [detailedUserPic, setDetailedUserPic] = useState(null);
-  const [detailedCaption, setDetailedCaption] = useState('');
-  const [detailedTime, setDetailedTime] = useState('');
-  const [setError] = useState('');
+  const [detailedCaption, setDetailedCaption] = useState("");
+  const [detailedTime, setDetailedTime] = useState("");
+  const [setError] = useState("");
   const { firebaseApp } = useContext(FirebaseContext);
   const firebaseUser = firebaseApp.auth().currentUser || {};
   const [comment, setComment] = useState([]);
@@ -18,7 +23,7 @@ export function DetailedPostContainer() {
 
   useEffect(() => {
     if (selectedDetail) {
-      db.collection('posts')
+      db.collection("posts")
         .doc(selectedDetail)
         .get()
         .then((doc) => {
@@ -32,11 +37,11 @@ export function DetailedPostContainer() {
             setDetailedCaption(docData.caption);
             setDetailedTime(docData.timestamp);
           } else {
-            setError('doc not found');
+            setError("doc not found");
           }
         })
         .catch(function (error) {
-          console.log('Error getting document:', error);
+          console.log("Error getting document:", error);
         });
     }
 
@@ -45,10 +50,10 @@ export function DetailedPostContainer() {
 
   useEffect(() => {
     if (selectedDetail) {
-      db.collection('posts')
+      db.collection("posts")
         .doc(selectedDetail)
-        .collection('comments')
-        .orderBy('timestamp', 'desc')
+        .collection("comments")
+        .orderBy("timestamp", "desc")
         .onSnapshot((snapshot) => {
           setComments(snapshot.docs.map((doc) => doc.data()));
         });
@@ -56,7 +61,7 @@ export function DetailedPostContainer() {
   }, [selectedDetail]);
 
   const updateLike = (selectedDetail) => {
-    db.collection('posts')
+    db.collection("posts")
       .doc(selectedDetail)
       .update({
         likes: detailedLikes + 1,
@@ -68,27 +73,25 @@ export function DetailedPostContainer() {
   const postComment = (event) => {
     event.preventDefault();
 
-    db.collection('posts')
+    db.collection("posts")
       .doc(selectedDetail)
-      .collection('comments')
+      .collection("comments")
       .add({
         text: comment,
         username: firebaseUser.displayName,
-        timestamp: mapTime(
-          firebase.firestore.FieldValue.serverTimestamp(),
-        ),
+        timestamp: mapTime(firebase.firestore.FieldValue.serverTimestamp()),
       });
 
-    setComment('');
+    setComment("");
   };
 
   let inputStyle = {
-    color: '#c4c4c4',
+    color: "#c4c4c4",
   };
 
   if (heartColor) {
     inputStyle = {
-      color: '#E45257',
+      color: "#E45257",
     };
   }
 
@@ -139,9 +142,7 @@ export function DetailedPostContainer() {
         </Detailed.Icon>
       </Detailed.Icons>
 
-      <Detailed.User src={detailedUserPic}>
-        {detailedUser}
-      </Detailed.User>
+      <Detailed.User src={detailedUserPic}>{detailedUser}</Detailed.User>
     </Detailed.Container>
   );
 }

@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { Detailed } from '../components';
-import BlankAvatar from '../components/images/BlankAvatarSquare.jpg';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
+import React, { useState, useContext } from "react";
+import { Detailed } from "../components";
+import BlankAvatar from "../components/images/BlankAvatarSquare.jpg";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../constants/routes";
+import { FirebaseContext } from '../context/firebase';
+import { storage } from '../firebase';
 
 export function DetailedAccountContainer({ user }) {
   const [progress, setProgress] = useState(0);
@@ -19,11 +21,11 @@ export function DetailedAccountContainer({ user }) {
   const handleUpload = () => {
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
     uploadTask.on(
-      'state_changed',
+      "state_changed",
       (snapshot) => {
         // progress function ...
         const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
         setProgress(progress);
       },
@@ -34,7 +36,7 @@ export function DetailedAccountContainer({ user }) {
       () => {
         // when the upload completes...
         storage
-          .ref('images')
+          .ref("images")
           .child(image.name)
           .getDownloadURL() // thet image is already uploaded, this gives us a download link for the uploaded image
           .then((url) => {
@@ -46,7 +48,7 @@ export function DetailedAccountContainer({ user }) {
 
         setProgress(0);
         setImage(null);
-      },
+      }
     );
   };
 

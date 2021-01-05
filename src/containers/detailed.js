@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import {
-  DetailedAccountContainer,
-  DetailedPostContainer,
-} from '../containers';
-import { Detailed } from '../components';
+import React, { useContext } from "react";
+import { DetailedAccountContainer, DetailedPostContainer } from "../containers";
+import { DetailedContext } from "../context/detailed";
+import { Detailed } from "../components";
 
 export function DetailedContainer({ user }) {
   const { detail } = useContext(DetailedContext);

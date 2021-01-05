@@ -17,6 +17,7 @@ import {
   TopProfile,
   ProfileImage,
   ProfileButtons,
+  ProfileInput,
   InputStuff,
   UploadButton,
   ProfileProgress,
