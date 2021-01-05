@@ -51,58 +51,114 @@ export function DetailedAccountContainer() {
   };
 
   return (
-    <Detailed.ProfileData>
-      <Detailed.TopProfile>
-        {user ? (
-          user.photoURL ? (
-            <Detailed.ProfileImage src={user.photoURL} />
+    <>
+      <Detailed.ProfileData>
+        <Detailed.TopProfile>
+          {user ? (
+            user.photoURL ? (
+              <Detailed.ProfileImage src={user.photoURL} />
+            ) : (
+              <Detailed.ProfileImage src={BlankAvatar} />
+            )
           ) : (
             <Detailed.ProfileImage src={BlankAvatar} />
-          )
-        ) : (
-          <Detailed.ProfileImage src={BlankAvatar} />
-        )}
+          )}
 
-        <Detailed.ProfileInput>
-          <Detailed.ProfileButtons>
-            <Detailed.InputStuff handleChange={handleChange}>
-              {image ? (
-                <span>Ready to Upload</span>
-              ) : (
-                <span>Upload An Image</span>
-              )}
-            </Detailed.InputStuff>
-            <Detailed.UploadButton
-              image={image}
-              handleUpload={handleUpload}
-            />
-          </Detailed.ProfileButtons>
+          <Detailed.ProfileInput>
+            <Detailed.ProfileButtons>
+              <Detailed.InputStuff handleChange={handleChange}>
+                {image ? (
+                  <span>Ready to Upload</span>
+                ) : (
+                  <span>Upload An Image</span>
+                )}
+              </Detailed.InputStuff>
+              <Detailed.UploadButton
+                image={image}
+                handleUpload={handleUpload}
+              />
+            </Detailed.ProfileButtons>
 
-          <Detailed.ProfileProgress progress={progress} />
-        </Detailed.ProfileInput>
+            <Detailed.ProfileProgress progress={progress} />
+          </Detailed.ProfileInput>
 
-        <Detailed.DisplayName>
-          {firebaseUser.displayName}
-        </Detailed.DisplayName>
+          <Detailed.DisplayName>
+            {firebaseUser.displayName}
+          </Detailed.DisplayName>
 
-        {user ? (
-          <Detailed.Status>Admin</Detailed.Status>
-        ) : (
-          <Link to={ROUTES.SIGN_IN}>
-            <Detailed.Status>Log In</Detailed.Status>
-          </Link>
-        )}
+          {user ? (
+            <Detailed.Status>Admin</Detailed.Status>
+          ) : (
+            <Link to={ROUTES.SIGN_IN}>
+              <Detailed.Status>Log In</Detailed.Status>
+            </Link>
+          )}
+
+          {user && (
+            <Detailed.Stats>
+              <Detailed.Stat quantity="15" label="Posts" />
+              <Detailed.Stat quantity="100,000" label="Followers" />
+              <Detailed.Stat quantity="100" label="Following" />
+            </Detailed.Stats>
+          )}
+        </Detailed.TopProfile>
 
         {user && (
-          <Detailed.Stats>
-            <Detailed.Stat quantity="15" label="Posts" />
-            <Detailed.Stat quantity="100,000" label="Followers" />
-            <Detailed.Stat quantity="100" label="Following" />
-          </Detailed.Stats>
-        )}
-      </Detailed.TopProfile>
+          <Detailed.Statistics>
+            <Detailed.Row>
+              <Detailed.Item>
+                <Detailed.SecondaryIcon>
+                  <i class="fas fa-user-friends"></i>
+                </Detailed.SecondaryIcon>
+                <Detailed.Number>25</Detailed.Number>
+                <Detailed.Text>
+                  <p>New</p>
+                  <p>Followers</p>
+                </Detailed.Text>
+              </Detailed.Item>
 
-      <Detailed.Statistics></Detailed.Statistics>
-    </Detailed.ProfileData>
+              <Detailed.Item>
+                <Detailed.SecondaryIcon>
+                  <i class="fas fa-comments"></i>
+                </Detailed.SecondaryIcon>
+                <Detailed.Number>5</Detailed.Number>
+                <Detailed.Text>
+                  <p>New</p>
+                  <p>Comments</p>
+                </Detailed.Text>
+              </Detailed.Item>
+            </Detailed.Row>
+
+            <Detailed.Row>
+              <Detailed.Item>
+                <Detailed.SecondaryIcon>
+                  <i class="fas fa-heart"></i>
+                </Detailed.SecondaryIcon>
+                <Detailed.Number>75</Detailed.Number>
+                <Detailed.Text>
+                  <p>New</p>
+                  <p>Likes</p>
+                </Detailed.Text>
+              </Detailed.Item>
+
+              <Detailed.Item>
+                <Detailed.SecondaryIcon>
+                  <i class="fas fa-user-circle"></i>
+                </Detailed.SecondaryIcon>
+                <Detailed.Number>49</Detailed.Number>
+                <Detailed.Text>
+                  <p>Profile</p>
+                  <p>Views</p>
+                </Detailed.Text>
+              </Detailed.Item>
+            </Detailed.Row>
+          </Detailed.Statistics>
+        )}
+      </Detailed.ProfileData>
+
+      <Detailed.Suggestions>
+        <Detailed.SuggestionsText />
+      </Detailed.Suggestions>
+    </>
   );
 }

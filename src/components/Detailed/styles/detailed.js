@@ -446,10 +446,12 @@ export const Number = styled.h2`
   margin-right: 0.7vh;
 `;
 
-export const Text = styled.p`
-  font-size: 0.6291666666666666vw;
-  font-weight: 500;
-  color: #c4c4c4;
+export const Text = styled.div`
+  p {
+    font-size: 0.6291666666666666vw;
+    font-weight: 500;
+    color: #c4c4c4;
+  }
 `;
 
 export const Suggestions = styled.div`
