@@ -4,7 +4,7 @@ import BlankAvatar from '../components/images/BlankAvatarSquare.jpg';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
-export function DetailedAccountContainer() {
+export function DetailedAccountContainer({ user }) {
   const [progress, setProgress] = useState(0);
   const [image, setImage] = useState(null);
   const { firebaseApp } = useContext(FirebaseContext);

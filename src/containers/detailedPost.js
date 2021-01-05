@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Detailed } from '../components';
 
-export function DetailedPostContainer({ user }) {
+export function DetailedPostContainer() {
   const { selectedDetail } = useContext(DetailedContext);
   const [detailedLikes, setDetailedLikes] = useState(0);
   const [detailedImage, setDetailedImage] = useState(null);
