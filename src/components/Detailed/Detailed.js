@@ -59,8 +59,6 @@ export const Detailed = ({ user, posts }) => {
   }, [selectedDetail, setError]);
 
   useEffect(() => {
-    // let unsubscribe;
-
     if (selectedDetail) {
       db.collection('posts')
         .doc(selectedDetail)
@@ -70,10 +68,6 @@ export const Detailed = ({ user, posts }) => {
           setComments(snapshot.docs.map((doc) => doc.data()));
         });
     }
-
-    // return () => {
-    //     unsubscribe();
-    // };
   }, [selectedDetail]);
 
   const updateLike = (selectedDetail) => {
