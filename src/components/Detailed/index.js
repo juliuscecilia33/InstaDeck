@@ -153,6 +153,7 @@ Detailed.TopProfile = function DetailedTopProfile({
 };
 
 Detailed.ProfileImage = function DetailedProfileImage({
+  src,
   children,
   ...restProps
 }) {
