@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Detailed } from '../components';
 
 export function DetailedPostContainer({ user }) {
-  const { detail, selectedDetail } = useContext(DetailedContext);
+  const { selectedDetail } = useContext(DetailedContext);
   const [detailedLikes, setDetailedLikes] = useState(0);
   const [detailedImage, setDetailedImage] = useState(null);
   const [detailedUser, setDetailedUser] = useState('');
@@ -12,8 +12,6 @@ export function DetailedPostContainer({ user }) {
   const [setError] = useState('');
   const { firebaseApp } = useContext(FirebaseContext);
   const firebaseUser = firebaseApp.auth().currentUser || {};
-  const [image, setImage] = useState(null);
-  const [progress, setProgress] = useState(0);
   const [comment, setComment] = useState([]);
   const [comments, setComments] = useState([]);
   const [heartColor, setHeartColor] = useState(false);
@@ -95,10 +93,55 @@ export function DetailedPostContainer({ user }) {
   }
 
   return (
-    <Detailed>
-      <Detailed.Container>
-        <Detailed.Image src={detailedImage} />
-      </Detailed.Container>
-    </Detailed>
+    <Detailed.Container>
+      <Detailed.Image src={detailedImage} />
+
+      <Detailed.Caption
+        detailedCaption={detailedCaption}
+        detailedTime={detailedTime}
+      />
+
+      <Detailed.Comments>
+        {comments.map((comment) => (
+          <Detailed.Comment comment={comment} />
+        ))}
+      </Detailed.Comments>
+
+      <Detailed.CommentBox
+        comment={comment}
+        setComment={setComment}
+        postComment={postComment}
+      />
+
+      <Detailed.Icons>
+        <Detailed.Icon>
+          <button onClick={() => updateLike(selectedDetail)}>
+            <i class="fas fa-heart" style={inputStyle}></i>
+          </button>
+        </Detailed.Icon>
+
+        <Detailed.Icon>
+          <button>
+            <i class="fas fa-comments"></i>
+          </button>
+        </Detailed.Icon>
+
+        <Detailed.Icon>
+          <button>
+            <i class="fas fa-bookmark"></i>
+          </button>
+        </Detailed.Icon>
+
+        <Detailed.Icon>
+          <button>
+            <i class="fas fa-share"></i>
+          </button>
+        </Detailed.Icon>
+      </Detailed.Icons>
+
+      <Detailed.User src={detailedUserPic}>
+        {detailedUser}
+      </Detailed.User>
+    </Detailed.Container>
   );
 }
