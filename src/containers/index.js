@@ -1,6 +1,9 @@
-export { SideBarContainer } from './sidebar';
-export { StoriesContainer } from './stories';
-export { ImageUploadContainer } from './imageUpload';
-export { DetailedContainer } from './detailed';
-export { DetailedAccountContainer } from './detailedAccount';
-export { DetailedPostContainer } from './detailedPost';
+export { SideBarContainer } from "./sidebar";
+export { StoriesContainer } from "./stories";
+export { ImageUploadContainer } from "./imageUpload";
+export { DetailedContainer } from "./detailed";
+export { DetailedAccountContainer } from "./detailedAccount";
+export { DetailedPostContainer } from "./detailedPost";
+export { PostContainer } from "./post";
+export { PostsContainer } from "./posts";
+export { PopularPostsContainer } from "./popularPosts";

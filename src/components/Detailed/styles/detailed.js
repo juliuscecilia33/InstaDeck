@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Background = styled.div`
   width: 22%;
@@ -121,6 +121,7 @@ export const CommentBox = styled.form`
     outline: none;
     cursor: pointer;
     border-left: 1px solid #c4c4c4;
+    color: #000000;
 
     &:disabled {
       color: #c4c4c4;

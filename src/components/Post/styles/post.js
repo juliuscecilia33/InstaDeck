@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const Image = styled.a`
   margin-bottom: 1.017293997965412vh;
+  cursor: pointer;
 
   img {
     max-width: 450px;

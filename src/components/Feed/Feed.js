@@ -1,12 +1,14 @@
-import React from 'react';
-import Styles from './Feed.module.scss';
-import { Posts } from './Posts';
+import React from "react";
+import Styles from "./Feed.module.scss";
+// import { Posts } from "./Posts";
 // import { Stories } from './Stories'
 import {
   StoriesContainer,
   ImageUploadContainer,
-} from '../../containers';
-import { PopularPosts } from './PopularPosts';
+  PopularPostsContainer,
+  PostsContainer,
+} from "../../containers";
+// import { PopularPosts } from "./PopularPosts";
 
 export const Feed = ({ posts, user, popPosts }) => {
   return (
@@ -20,7 +22,7 @@ export const Feed = ({ posts, user, popPosts }) => {
               <h1>Following</h1>
             </div>
 
-            <Posts posts={posts} user={user} />
+            <PostsContainer posts={posts} user={user} />
           </div>
 
           <div className={Styles.PopularFeed}>
@@ -39,7 +41,7 @@ export const Feed = ({ posts, user, popPosts }) => {
               </a>
             </div>
 
-            <PopularPosts posts={posts} user={user} />
+            <PopularPostsContainer posts={posts} user={user} />
           </div>
         </div>
 
