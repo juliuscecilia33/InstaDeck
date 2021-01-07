@@ -1,14 +1,11 @@
 import React from "react";
 import Styles from "./Feed.module.scss";
-// import { Posts } from "./Posts";
-// import { Stories } from './Stories'
 import {
   StoriesContainer,
   ImageUploadContainer,
   PopularPostsContainer,
   PostsContainer,
 } from "../../containers";
-// import { PopularPosts } from "./PopularPosts";
 
 export const Feed = ({ posts, user, popPosts }) => {
   return (
