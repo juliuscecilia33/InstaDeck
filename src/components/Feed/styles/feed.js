@@ -51,6 +51,7 @@ export const Links = styled.div`
 export const Link = styled.a`
   color: #c4c4c4;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     color: black;

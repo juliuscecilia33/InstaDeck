@@ -1,13 +1,16 @@
-import React from 'react';
-import { Feed } from '../components';
-import { SideBarContainer, DetailedContainer } from '../containers';
-import Styles from './MainPage.module.scss';
+import React from "react";
+import {
+  SideBarContainer,
+  DetailedContainer,
+  FeedContainer,
+} from "../containers";
+import Styles from "./MainPage.module.scss";
 
-export default function MainPage({ posts, user, popPosts }) {
+export default function MainPage({ posts, user }) {
   return (
     <div className={Styles.MainPage}>
       <SideBarContainer user={user} />
-      <Feed posts={posts} user={user} popPosts={popPosts} />
+      <FeedContainer posts={posts} user={user} />
       <DetailedContainer user={user} />
     </div>
   );

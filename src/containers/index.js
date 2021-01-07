@@ -7,3 +7,4 @@ export { DetailedPostContainer } from "./detailedPost";
 export { PostContainer } from "./post";
 export { PostsContainer } from "./posts";
 export { PopularPostsContainer } from "./popularPosts";
+export { FeedContainer } from "./feed";
