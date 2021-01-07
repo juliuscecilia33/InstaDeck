@@ -49,16 +49,10 @@ Post.Buttons = function PostButtons({ children, ...restProps }) {
   return <Buttons {...restProps}>{children}</Buttons>;
 };
 
-Post.Button = function PostButton({
-  updateAction,
-  postId,
-  action,
-  children,
-  ...restProps
-}) {
+Post.Button = function PostButton({ action, children, ...restProps }) {
   return (
     <Button {...restProps}>
-      <button onClick={() => updateAction(postId)}>{children}</button>
+      {children}
       <p>{action}</p>
     </Button>
   );
