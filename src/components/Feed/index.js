@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, User, Following, Link, Links } from "./styles/feed";
+import { Container, User, Layout, Link, Links } from "./styles/feed";
 
 export default function Feed({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -10,8 +10,8 @@ Feed.User = function FeedUser({ children, ...restProps }) {
   return <User {...restProps}>{children}</User>;
 };
 
-Feed.Following = function FeedFollowing({ children, ...restProps }) {
-  return <Following {...restProps}>{children}</Following>;
+Feed.Layout = function FeedLayout({ children, ...restProps }) {
+  return <Layout {...restProps}>{children}</Layout>;
 };
 
 Feed.Links = function FeedLinks({ children, ...restProps }) {
