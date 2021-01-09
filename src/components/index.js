@@ -8,3 +8,4 @@ export { default as Posts } from "./Posts";
 export { default as Post } from "./Post";
 export { default as Feed } from "./Feed";
 export { default as SignIn } from "./SignIn";
+export { default as Main } from "./Main";
