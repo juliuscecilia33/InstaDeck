@@ -170,16 +170,14 @@ export const CreateAcc = styled.div`
 `;
 
 export const NoAccount = styled.h2`
-  h2 {
-    font-size: 0.9vw;
-    font-weight: 400;
-    color: #000000;
-    text-align: center;
-    line-height: 1.6;
+  font-size: 0.9vw;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  line-height: 1.6;
 
-    span {
-      color: #e45257;
-      font-weight: 500;
-    }
+  span {
+    color: #e45257;
+    font-weight: 500;
   }
 `;

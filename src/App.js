@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import * as ROUTES from './constants/routes';
-import { db, auth } from './firebase';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { MainPage, SignUpPage, SignInPage, HomePage } from './pages';
-import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
-import { DetailedContext } from './context/detailed';
+import React, { useState, useEffect } from "react";
+import * as ROUTES from "./constants/routes";
+import { db, auth } from "./firebase";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { MainPage, SignUpPage, SignInPage, HomePage } from "./pages";
+import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
+import { DetailedContext } from "./context/detailed";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -14,27 +14,27 @@ function App() {
   const [detail, setDetail] = useState(false);
 
   useEffect(() => {
-    db.collection('popularposts')
-      .orderBy('timestamp', 'desc')
+    db.collection("popularposts")
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         setPopPosts(
           snapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-          })),
+          }))
         );
       });
   }, []);
 
   useEffect(() => {
-    db.collection('posts')
-      .orderBy('timestamp', 'desc')
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         setPosts(
           snapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-          })),
+          }))
         );
       });
   }, []);
@@ -77,14 +77,14 @@ function App() {
               <HomePage user={user} />
             </IsUserRedirect>
 
-            <IsUserRedirect
+            {/* <IsUserRedirect
               user={user}
               loggedInPath={ROUTES.HOME}
               path={ROUTES.SIGN_UP}
               exact
             >
               <SignUpPage />
-            </IsUserRedirect>
+            </IsUserRedirect> */}
 
             <IsUserRedirect
               user={user}
@@ -96,11 +96,7 @@ function App() {
             </IsUserRedirect>
 
             <ProtectedRoute path={ROUTES.HOME} user={user} exact>
-              <MainPage
-                posts={posts}
-                user={user}
-                popPosts={popPosts}
-              />
+              <MainPage posts={posts} user={user} popPosts={popPosts} />
             </ProtectedRoute>
           </Switch>
         </Router>
