@@ -1,6 +1,8 @@
 import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import Logo from "../../components/images/Decklol.png";
+import PageOne from "../../components/images/Page1.jpg";
 
 import {
   Container,
@@ -25,28 +27,20 @@ SignIn.DisplaySec = function SignInDisplaySec({ children, ...restProps }) {
   return <DisplaySec {...restProps}>{children}</DisplaySec>;
 };
 
-SignIn.DisplayLogo = function SignInDisplayLogo({
-  src,
-  children,
-  ...restProps
-}) {
+SignIn.DisplayLogo = function SignInDisplayLogo({ children, ...restProps }) {
   return (
     <DisplayLogo {...restProps}>
       <ReactRouterLink to={ROUTES.START}>
-        <img src={src} alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </ReactRouterLink>
     </DisplayLogo>
   );
 };
 
-SignIn.DisplayImage = function SignInDisplayImage({
-  src,
-  children,
-  ...restProps
-}) {
+SignIn.DisplayImage = function SignInDisplayImage({ children, ...restProps }) {
   return (
     <DisplayImage {...restProps}>
-      <img src={src} alt="Page Model" />
+      <img src={PageOne} alt="Page Model" />
     </DisplayImage>
   );
 };
