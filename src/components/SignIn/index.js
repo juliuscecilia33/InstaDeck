@@ -8,7 +8,7 @@ import {
   DisplayLogo,
   DisplayImage,
   InputSec,
-  SignUpTitle,
+  Title,
   InputArea,
   Inputs,
   InputText,
@@ -55,14 +55,14 @@ SignIn.InputSec = function SignInInputSec({ children, ...restProps }) {
   return <InputSec {...restProps}>{children}</InputSec>;
 };
 
-SignIn.SignUpTitle = function SignInSignUpTitle({ children, ...restProps }) {
+SignIn.Title = function SignInTitle({ children, ...restProps }) {
   return (
-    <SignUpTitle {...restProps}>
+    <Title {...restProps}>
       <h2>
         Sign In <br />
         to <span>InstaDeck</span>
       </h2>
-    </SignUpTitle>
+    </Title>
   );
 };
 
