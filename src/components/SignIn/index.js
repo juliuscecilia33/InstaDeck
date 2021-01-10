@@ -81,7 +81,6 @@ SignIn.InputText = function SignInInputText({
       <input
         type={type}
         placeholder={placeholder}
-        setAction={setAction}
         onChange={(e) => setAction(e.target.value)}
       />
     </InputText>
