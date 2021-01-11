@@ -11,10 +11,10 @@ export function DetailedContainer({ user }) {
   return (
     <>
       <Detailed>
-        {profile ? (
-          <h3>{profileData}</h3>
-        ) : detail ? (
+        {detail ? (
           <DetailedPostContainer />
+        ) : profile ? (
+          <h3>{profileData}</h3>
         ) : (
           <DetailedAccountContainer user={user} />
         )}

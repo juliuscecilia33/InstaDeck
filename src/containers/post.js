@@ -27,6 +27,7 @@ export function PostContainer({
 
   const showProfile = (userId) => {
     console.log(userId);
+    setDetail(false);
     setProfile(true);
     setProfileData(userId);
   };
