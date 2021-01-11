@@ -9,6 +9,7 @@ export function PostsContainer({ posts, user }) {
         <PostContainer
           key={id}
           postId={id}
+          post={post}
           user={user}
           username={post.username}
           caption={post.caption}
@@ -16,6 +17,7 @@ export function PostsContainer({ posts, user }) {
           likes={post.likes}
           comments={post.comments}
           usernamepic={post.usernamepic}
+          userId={post.userId}
         />
       ))}
     </Posts>

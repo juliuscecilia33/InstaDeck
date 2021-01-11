@@ -32,10 +32,12 @@ export const Footer = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
+  cursor: pointer;
 
   h3 {
     font-size: 0.8333333333333334vw;

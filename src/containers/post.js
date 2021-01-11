@@ -5,6 +5,7 @@ import { Post } from "../components";
 import BlankImage from "../components/images/UploadImageIcon.png";
 
 export function PostContainer({
+  post,
   user,
   username,
   imageUrl,
@@ -12,6 +13,7 @@ export function PostContainer({
   likes,
   comments,
   usernamepic,
+  userId,
 }) {
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
   const [heartColor, setHeartColor] = useState(false);
@@ -19,6 +21,10 @@ export function PostContainer({
   const updateDetail = (postId) => {
     setDetail(true);
     setSelectedDetail(postId);
+  };
+
+  const showProfile = (profile) => {
+    console.log(profile);
   };
 
   const updateLike = (postId) => {
@@ -74,7 +80,10 @@ export function PostContainer({
           />
 
           <Post.Footer>
-            <Post.Avatar username={username}>
+            <Post.Avatar
+              username={username}
+              onClick={() => showProfile(userId)}
+            >
               {usernamepic ? (
                 <Post.AvatarImage src={usernamepic} />
               ) : (
