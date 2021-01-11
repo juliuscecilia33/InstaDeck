@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { DetailedContext } from "../context/detailed";
+import { ProfileContext } from "../context/profile";
 import { db } from "../firebase";
 import { Post } from "../components";
 import BlankImage from "../components/images/UploadImageIcon.png";
@@ -16,6 +17,7 @@ export function PostContainer({
   userId,
 }) {
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
+  const { setProfile, setProfileData } = useContext(ProfileContext);
   const [heartColor, setHeartColor] = useState(false);
 
   const updateDetail = (postId) => {
@@ -25,6 +27,8 @@ export function PostContainer({
 
   const showProfile = (userId) => {
     console.log(userId);
+    setProfile(true);
+    setProfileData(userId);
   };
 
   const updateLike = (postId) => {
