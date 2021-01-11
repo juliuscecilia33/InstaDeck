@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Styles from "./HomePage.module.scss";
 
 export default function HomePage({ user }) {
   return (
