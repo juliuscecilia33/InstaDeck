@@ -77,14 +77,14 @@ function App() {
               <HomePage user={user} />
             </IsUserRedirect>
 
-            {/* <IsUserRedirect
+            <IsUserRedirect
               user={user}
               loggedInPath={ROUTES.HOME}
               path={ROUTES.SIGN_UP}
               exact
             >
               <SignUpPage />
-            </IsUserRedirect> */}
+            </IsUserRedirect>
 
             <IsUserRedirect
               user={user}

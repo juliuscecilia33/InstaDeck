@@ -9,3 +9,4 @@ export { PostsContainer } from "./posts";
 export { PopularPostsContainer } from "./popularPosts";
 export { FeedContainer } from "./feed";
 export { SignInContainer } from "./signIn";
+export { SignUpContainer } from "./signUp";
