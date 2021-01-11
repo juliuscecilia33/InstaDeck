@@ -23,8 +23,8 @@ export function PostContainer({
     setSelectedDetail(postId);
   };
 
-  const showProfile = (profile) => {
-    console.log(profile);
+  const showProfile = (userId) => {
+    console.log(userId);
   };
 
   const updateLike = (postId) => {

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { MainPage, SignUpPage, SignInPage, HomePage } from "./pages";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import { DetailedContext } from "./context/detailed";
+import { ProfileContext } from "./context/profile";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -12,6 +13,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [selectedDetail, setSelectedDetail] = useState(null);
   const [detail, setDetail] = useState(false);
+  const [profile, setProfile] = useState(false);
+  const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
     db.collection("popularposts")
@@ -58,49 +61,53 @@ function App() {
 
   return (
     <>
-      <DetailedContext.Provider
-        value={{
-          selectedDetail,
-          setSelectedDetail,
-          detail,
-          setDetail,
-        }}
+      <ProfileContext.Provider
+        value={{ profile, setProfile, profileData, setProfileData }}
       >
-        <Router>
-          <Switch>
-            <IsUserRedirect
-              user={user}
-              loggedInPath={ROUTES.HOME}
-              path={ROUTES.START}
-              exact
-            >
-              <HomePage user={user} />
-            </IsUserRedirect>
+        <DetailedContext.Provider
+          value={{
+            selectedDetail,
+            setSelectedDetail,
+            detail,
+            setDetail,
+          }}
+        >
+          <Router>
+            <Switch>
+              <IsUserRedirect
+                user={user}
+                loggedInPath={ROUTES.HOME}
+                path={ROUTES.START}
+                exact
+              >
+                <HomePage user={user} />
+              </IsUserRedirect>
 
-            <IsUserRedirect
-              user={user}
-              loggedInPath={ROUTES.HOME}
-              path={ROUTES.SIGN_UP}
-              exact
-            >
-              <SignUpPage />
-            </IsUserRedirect>
+              <IsUserRedirect
+                user={user}
+                loggedInPath={ROUTES.HOME}
+                path={ROUTES.SIGN_UP}
+                exact
+              >
+                <SignUpPage />
+              </IsUserRedirect>
 
-            <IsUserRedirect
-              user={user}
-              loggedInPath={ROUTES.HOME}
-              path={ROUTES.SIGN_IN}
-              exact
-            >
-              <SignInPage />
-            </IsUserRedirect>
+              <IsUserRedirect
+                user={user}
+                loggedInPath={ROUTES.HOME}
+                path={ROUTES.SIGN_IN}
+                exact
+              >
+                <SignInPage />
+              </IsUserRedirect>
 
-            <ProtectedRoute path={ROUTES.HOME} user={user} exact>
-              <MainPage posts={posts} user={user} popPosts={popPosts} />
-            </ProtectedRoute>
-          </Switch>
-        </Router>
-      </DetailedContext.Provider>
+              <ProtectedRoute path={ROUTES.HOME} user={user} exact>
+                <MainPage posts={posts} user={user} popPosts={popPosts} />
+              </ProtectedRoute>
+            </Switch>
+          </Router>
+        </DetailedContext.Provider>
+      </ProfileContext.Provider>
     </>
   );
 }
