@@ -17,7 +17,9 @@ export function PostContainer({
   userId,
 }) {
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
-  const { setProfile, setProfileData } = useContext(ProfileContext);
+  const { setProfile, setProfileData, setProfileText } = useContext(
+    ProfileContext
+  );
   const [heartColor, setHeartColor] = useState(false);
 
   const updateDetail = (postId) => {
@@ -25,11 +27,12 @@ export function PostContainer({
     setSelectedDetail(postId);
   };
 
-  const showProfile = (userId) => {
+  const showProfile = (userId, username) => {
     // console.log(userId);
     setDetail(false);
     setProfile(true);
     setProfileData(userId);
+    setProfileText(username);
   };
 
   const updateLike = (postId) => {
@@ -87,7 +90,7 @@ export function PostContainer({
           <Post.Footer>
             <Post.Avatar
               username={username}
-              onClick={() => showProfile(userId)}
+              onClick={() => showProfile(userId, username)}
             >
               {usernamepic ? (
                 <Post.AvatarImage src={usernamepic} />

@@ -6,7 +6,7 @@ import { Detailed } from "../components";
 
 export function DetailedContainer({ user }) {
   const { detail } = useContext(DetailedContext);
-  const { profile, profileData } = useContext(ProfileContext);
+  const { profile, profileData, profileText } = useContext(ProfileContext);
 
   return (
     <>
@@ -14,7 +14,9 @@ export function DetailedContainer({ user }) {
         {detail ? (
           <DetailedPostContainer />
         ) : profile ? (
-          <h3>{profileData}</h3>
+          <h3>
+            {profileData} <br /> {profileText}
+          </h3>
         ) : (
           <DetailedAccountContainer user={user} />
         )}

@@ -15,6 +15,7 @@ function App() {
   const [detail, setDetail] = useState(false);
   const [profile, setProfile] = useState(false);
   const [profileData, setProfileData] = useState(null);
+  const [profileText, setProfileText] = useState(null);
 
   useEffect(() => {
     db.collection("popularposts")
@@ -62,7 +63,14 @@ function App() {
   return (
     <>
       <ProfileContext.Provider
-        value={{ profile, setProfile, profileData, setProfileData }}
+        value={{
+          profile,
+          setProfile,
+          profileData,
+          setProfileData,
+          profileText,
+          setProfileText,
+        }}
       >
         <DetailedContext.Provider
           value={{
