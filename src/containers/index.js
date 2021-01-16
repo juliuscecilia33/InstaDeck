@@ -4,6 +4,7 @@ export { ImageUploadContainer } from "./imageUpload";
 export { DetailedContainer } from "./detailed";
 export { DetailedAccountContainer } from "./detailedAccount";
 export { DetailedPostContainer } from "./detailedPost";
+export { DetailedProfileContainer } from "./detailedProfile";
 export { PostContainer } from "./post";
 export { PostsContainer } from "./posts";
 export { PopularPostsContainer } from "./popularPosts";

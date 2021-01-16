@@ -11,7 +11,7 @@ export default function MainPage({ posts, user }) {
     <Main>
       <SideBarContainer user={user} />
       <FeedContainer posts={posts} user={user} />
-      <DetailedContainer user={user} />
+      <DetailedContainer user={user} posts={posts} />
     </Main>
   );
 }

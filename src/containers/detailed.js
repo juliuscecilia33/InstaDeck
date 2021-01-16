@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
-import { DetailedAccountContainer, DetailedPostContainer } from "../containers";
+import {
+  DetailedAccountContainer,
+  DetailedPostContainer,
+  DetailedProfileContainer,
+} from "../containers";
 import { DetailedContext } from "../context/detailed";
 import { ProfileContext } from "../context/profile";
 import { Detailed } from "../components";
 
-export function DetailedContainer({ user }) {
+export function DetailedContainer({ user, posts }) {
   const { detail } = useContext(DetailedContext);
-  const { profile, profileData, profileText } = useContext(ProfileContext);
+  const { profile } = useContext(ProfileContext);
 
   return (
     <>
@@ -14,9 +18,7 @@ export function DetailedContainer({ user }) {
         {detail ? (
           <DetailedPostContainer />
         ) : profile ? (
-          <h3>
-            {profileData} <br /> {profileText}
-          </h3>
+          <DetailedProfileContainer />
         ) : (
           <DetailedAccountContainer user={user} />
         )}
