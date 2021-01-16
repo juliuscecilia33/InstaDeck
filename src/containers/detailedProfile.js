@@ -20,6 +20,7 @@ export function DetailedProfileContainer({ posts }) {
 
             setProfileUser(docData.username);
             setProfileUserPic(docData.usernamepic);
+            console.log(docData);
           } else {
             setError("doc not found");
           }
@@ -33,12 +34,23 @@ export function DetailedProfileContainer({ posts }) {
   return (
     <>
       <Detailed.Container>
-        <h3>{profileUser}</h3>
         <img
           style={{ width: "300px", height: "auto" }}
           src={profileUserPic}
           alt="User Profile"
         />
+        <h3>{profileUser}</h3>
+        {posts.map(({ id, post }) => {
+          return (
+            post.username === profileText && (
+              <img
+                style={{ width: "100px", height: "auto" }}
+                src={post.imageUrl}
+                alt="Post"
+              />
+            )
+          );
+        })}
       </Detailed.Container>
     </>
   );
