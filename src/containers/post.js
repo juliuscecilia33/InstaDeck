@@ -27,11 +27,11 @@ export function PostContainer({
     setSelectedDetail(postId);
   };
 
-  const showProfile = (userId, username) => {
+  const showProfile = (postId, username) => {
     // console.log(userId);
     setDetail(false);
     setProfile(true);
-    setProfileData(userId);
+    setProfileData(postId);
     setProfileText(username);
   };
 
@@ -90,7 +90,7 @@ export function PostContainer({
           <Post.Footer>
             <Post.Avatar
               username={username}
-              onClick={() => showProfile(userId, username)}
+              onClick={() => showProfile(postId, username)}
             >
               {usernamepic ? (
                 <Post.AvatarImage src={usernamepic} />
