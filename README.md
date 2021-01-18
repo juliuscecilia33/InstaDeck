@@ -3,7 +3,7 @@
 
 
 
-Prototype (Built in Figma)
+Prototype (Built by me in Figma)
 <br />
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/PagesPNG.jpg)
