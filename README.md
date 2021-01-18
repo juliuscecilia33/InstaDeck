@@ -10,6 +10,10 @@ Prototype (Built in Figma)
 
 <br />
 
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Pages%203.png)
+
+<br />
+
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/HomePagePNG.png)
 
 <br />
