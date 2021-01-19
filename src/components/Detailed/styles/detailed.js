@@ -483,3 +483,71 @@ export const SuggestionsText = styled.div`
     color: #c4c4c4;
   }
 `;
+
+export const Top = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Bottom = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Heading = styled.h3`
+  width: 100%;
+  height: 10%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #a5a5a5;
+`;
+
+export const Posts = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.4166666666666667vw;
+    background-color: #f6f6f2;
+
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 15px;
+  }
+`;
+
+export const Post = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+
+  @media (max-width: 1500px) {
+    width: 100px;
+    height: 100px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+`;
