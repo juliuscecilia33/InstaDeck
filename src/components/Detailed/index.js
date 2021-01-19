@@ -1,5 +1,5 @@
-import React from 'react';
-import { mapTime } from '../../mappers/mapTime';
+import React from "react";
+import { mapTime } from "../../mappers/mapTime";
 
 import {
   Background,
@@ -33,24 +33,22 @@ import {
   Text,
   Suggestions,
   SuggestionsText,
-} from './styles/detailed';
+  Top,
+  Bottom,
+  Heading,
+  Posts,
+  Post,
+} from "./styles/detailed";
 
 export default function Detailed({ children, ...restProps }) {
   return <Background {...restProps}>{children}</Background>;
 }
 
-Detailed.Container = function DetailedContainer({
-  children,
-  ...restProps
-}) {
+Detailed.Container = function DetailedContainer({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Detailed.Image = function DetailedImage({
-  src,
-  children,
-  ...restProps
-}) {
+Detailed.Image = function DetailedImage({ src, children, ...restProps }) {
   return (
     <Image {...restProps}>
       <img src={src} alt="Detailed Post" />
@@ -72,10 +70,7 @@ Detailed.Caption = function DetailedCaption({
   );
 };
 
-Detailed.Comments = function DetailedComments({
-  children,
-  ...restProps
-}) {
+Detailed.Comments = function DetailedComments({ children, ...restProps }) {
   return <Comments {...restProps}>{children}</Comments>;
 };
 
@@ -146,10 +141,7 @@ Detailed.ProfileData = function DetailedProfileData({
   return <ProfileData {...restProps}>{children}</ProfileData>;
 };
 
-Detailed.TopProfile = function DetailedTopProfile({
-  children,
-  ...restProps
-}) {
+Detailed.TopProfile = function DetailedTopProfile({ children, ...restProps }) {
   return <TopProfile {...restProps}>{children}</TopProfile>;
 };
 
@@ -202,11 +194,7 @@ Detailed.UploadButton = function DetailedUploadButton({
   ...restProps
 }) {
   return (
-    <UploadButton
-      disabled={!image}
-      onClick={handleUpload}
-      {...restProps}
-    >
+    <UploadButton disabled={!image} onClick={handleUpload} {...restProps}>
       Upload
     </UploadButton>
   );
@@ -217,9 +205,7 @@ Detailed.ProfileProgress = function DetailedProfileProgress({
   children,
   ...restProps
 }) {
-  return (
-    <ProfileProgress value={progress} max="100" {...restProps} />
-  );
+  return <ProfileProgress value={progress} max="100" {...restProps} />;
 };
 
 Detailed.DisplayName = function DetailedDisplayName({
@@ -229,10 +215,7 @@ Detailed.DisplayName = function DetailedDisplayName({
   return <DisplayName {...restProps}>{children}</DisplayName>;
 };
 
-Detailed.Status = function DetailedStatus({
-  children,
-  ...restProps
-}) {
+Detailed.Status = function DetailedStatus({ children, ...restProps }) {
   return <Status {...restProps}>{children}</Status>;
 };
 
@@ -254,10 +237,7 @@ Detailed.Stat = function DetailedStat({
   );
 };
 
-Detailed.Statistics = function DetailedStatistics({
-  children,
-  ...restProps
-}) {
+Detailed.Statistics = function DetailedStatistics({ children, ...restProps }) {
   return <Statistics {...restProps}>{children}</Statistics>;
 };
 
@@ -276,10 +256,7 @@ Detailed.SecondaryIcon = function DetailedSecondaryIcon({
   return <SecondaryIcon {...restProps}>{children}</SecondaryIcon>;
 };
 
-Detailed.Number = function DetailedNumber({
-  children,
-  ...restProps
-}) {
+Detailed.Number = function DetailedNumber({ children, ...restProps }) {
   return <Number {...restProps}>{children}</Number>;
 };
 
@@ -303,5 +280,35 @@ Detailed.SuggestionsText = function DetailedSuggestionsText({
       <h2>Suggestions For You</h2>
       <h3>See All</h3>
     </SuggestionsText>
+  );
+};
+
+Detailed.Top = function DetailedTop({ children, ...restProps }) {
+  return <Top {...restProps}>{children}</Top>;
+};
+
+Detailed.Bottom = function DetailedBottom({ children, ...restProps }) {
+  return <Bottom {...restProps}>{children}</Bottom>;
+};
+
+Detailed.Heading = function DetailedHeading({ children, ...restProps }) {
+  return <Heading {...restProps}>Posts</Heading>;
+};
+
+Detailed.Posts = function DetailedPosts({ children, ...restProps }) {
+  return <Posts {...restProps}>{children}</Posts>;
+};
+
+Detailed.Post = function DetailedPost({
+  postId,
+  updateDetail,
+  src,
+  children,
+  ...restProps
+}) {
+  return (
+    <Post onClick={() => updateDetail(postId)} {...restProps}>
+      <img src={src} alt="Users Posts" />
+    </Post>
   );
 };
