@@ -119,7 +119,8 @@ export function DetailedPostContainer() {
       <Detailed.Icons>
         <Detailed.Icon>
           <button onClick={() => updateLike(selectedDetail)}>
-            <i class="fas fa-heart" style={inputStyle}></i>
+            {/* <i class="fas fa-heart" style={inputStyle}></i> */}
+            <i class="fas fa-heartbeat" style={inputStyle}></i>
           </button>
         </Detailed.Icon>
 

@@ -102,7 +102,8 @@ export function PostContainer({
             <Post.Buttons>
               <Post.Button action={likes}>
                 <button onClick={() => updateLike(postId)}>
-                  <i class="fas fa-heart" style={inputStyle}></i>
+                  {/* <i class="fas fa-heart" style={inputStyle}></i> */}
+                  <i class="fas fa-heartbeat" style={inputStyle}></i>
                 </button>
               </Post.Button>
               <Post.Button action={comments}>

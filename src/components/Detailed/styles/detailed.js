@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.div`
-  width: 100%;
+  ${"" /* width: 100%; */}
   max-height: 25.898305084745765vh;
   height: 100%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

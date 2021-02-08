@@ -7,16 +7,14 @@ import {
   Username,
   Bottom,
   Stats,
-  PostStat,
-  FollowerStat,
-  FollowingStat,
+  Stat,
   Totals,
-  LikeStat,
-  CommentStat,
+  Total,
   Icon,
   Title,
   Post,
   Posts,
+  Text,
 } from "./styles/profile";
 
 export default function Profile({ children, ...restProps }) {
@@ -28,7 +26,11 @@ Profile.Top = function ProfileTop({ children, ...restProps }) {
 };
 
 Profile.Avatar = function ProfileAvatar({ src, children, ...restProps }) {
-  return <Avatar src={src} alt="User Profile" {...restProps}></Avatar>;
+  return (
+    <Avatar {...restProps}>
+      <img src={src} alt="User Profile" />
+    </Avatar>
+  );
 };
 
 Profile.Username = function ProfileUsername({
@@ -42,18 +44,18 @@ Profile.Username = function ProfileUsername({
 Profile.Stats = function ProfileStats({ children, ...restProps }) {
   return (
     <Stats {...restProps}>
-      <PostStat>
+      <Stat>
         <h3>5</h3>
         <p>Posts</p>
-      </PostStat>
-      <FollowerStat>
+      </Stat>
+      <Stat>
         <h3>10</h3>
         <p>Followers</p>
-      </FollowerStat>
-      <FollowingStat>
+      </Stat>
+      <Stat>
         <h3>15</h3>
         <p>Following</p>
-      </FollowingStat>
+      </Stat>
     </Stats>
   );
 };
@@ -61,16 +63,24 @@ Profile.Stats = function ProfileStats({ children, ...restProps }) {
 Profile.Totals = function ProfileTotals({ children, ...restProps }) {
   return (
     <Totals {...restProps}>
-      <LikeStat>
-        <Icon></Icon>
-        <h3>100</h3>
-        <p>Total Likes</p>
-      </LikeStat>
-      <CommentStat>
-        <Icon></Icon>
-        <h3>50</h3>
-        <p>Total Comments</p>
-      </CommentStat>
+      <Total>
+        <Icon>
+          <i class="fas fa-heartbeat"></i>
+        </Icon>
+        <Text>
+          <h3>100</h3>
+          <p>Total Likes</p>
+        </Text>
+      </Total>
+      <Total>
+        <Icon>
+          <i class="fas fa-comments"></i>
+        </Icon>
+        <Text>
+          <h3>50</h3>
+          <p>Total Comments</p>
+        </Text>
+      </Total>
     </Totals>
   );
 };
@@ -89,8 +99,8 @@ Profile.Posts = function ProfilePosts({ children, ...restProps }) {
 
 Profile.Post = function ProfilePost({ src, children, ...restProps }) {
   return (
-    <Post src={src} alt="Post" {...restProps}>
-      {children}
+    <Post {...restProps}>
+      <img src={src} alt="Post" />
     </Post>
   );
 };
