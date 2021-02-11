@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 95%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +16,7 @@ export const Top = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.img`
+export const Avatar = styled.div`
   width: 203px;
   height: 203px;
   border-radius: 10px;
@@ -123,6 +124,7 @@ export const Post = styled.div`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   overflow-y: auto;
   overflow-x: hidden;
+  margin: 1rem;
 
   img {
     width: 100%;

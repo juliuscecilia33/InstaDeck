@@ -33,12 +33,8 @@ Profile.Avatar = function ProfileAvatar({ src, children, ...restProps }) {
   );
 };
 
-Profile.Username = function ProfileUsername({
-  profileUser,
-  children,
-  ...restProps
-}) {
-  return <Username {...restProps}>{profileUser}</Username>;
+Profile.Username = function ProfileUsername({ children, ...restProps }) {
+  return <Username {...restProps}>{children}</Username>;
 };
 
 Profile.Stats = function ProfileStats({ children, ...restProps }) {
