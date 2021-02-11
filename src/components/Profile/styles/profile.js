@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Top = styled.div`
   width: 100%;
-  height: 45%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,7 @@ export const Avatar = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 `;
 
@@ -98,7 +99,7 @@ export const Text = styled.div`
 
 export const Bottom = styled.div`
   width: 100%;
-  height: 55%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,22 +116,8 @@ export const Posts = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;
-
-export const Post = styled.div`
-  width: 199px;
-  height: 199px;
-  border-radius: 10px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 1rem;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
   &::-webkit-scrollbar {
     width: 0.4166666666666667vw;
@@ -142,5 +129,20 @@ export const Post = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: #c4c4c4;
     border-radius: 15px;
+  }
+`;
+
+export const Post = styled.div`
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
   }
 `;
