@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Profile } from "../components";
 import { ProfileContext } from "../context/profile";
+import { DetailedContext } from "../context/detailed";
 import { db } from "../firebase";
 
 export function DetailedProfileContainer({ posts }) {
@@ -8,6 +9,12 @@ export function DetailedProfileContainer({ posts }) {
   const [profileUser, setProfileUser] = useState(null);
   const [profileUserPic, setProfileUserPic] = useState(null);
   const [setError] = useState("");
+  const { setDetail, setSelectedDetail } = useContext(DetailedContext);
+
+  const updateDetail = (postId) => {
+    setDetail(true);
+    setSelectedDetail(postId);
+  };
 
   useEffect(() => {
     if (profileData) {
@@ -46,7 +53,11 @@ export function DetailedProfileContainer({ posts }) {
             {posts.map(({ id, post }) => {
               return (
                 post.username === profileText && (
-                  <Profile.Post src={post.imageUrl} />
+                  <Profile.Post
+                    updateDetail={updateDetail}
+                    postId={id}
+                    src={post.imageUrl}
+                  />
                 )
               );
             })}

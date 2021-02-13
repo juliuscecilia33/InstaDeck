@@ -93,9 +93,15 @@ Profile.Posts = function ProfilePosts({ children, ...restProps }) {
   return <Posts {...restProps}>{children}</Posts>;
 };
 
-Profile.Post = function ProfilePost({ src, children, ...restProps }) {
+Profile.Post = function ProfilePost({
+  updateDetail,
+  postId,
+  src,
+  children,
+  ...restProps
+}) {
   return (
-    <Post {...restProps}>
+    <Post onClick={() => updateDetail(postId)} {...restProps}>
       <img src={src} alt="Post" />
     </Post>
   );

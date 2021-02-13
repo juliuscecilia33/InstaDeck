@@ -156,16 +156,17 @@ export const Posts = styled.div`
   }
 `;
 
-export const Post = styled.div`
+export const Post = styled.a`
   width: 150px;
   height: 150px;
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 1rem;
+  cursor: pointer;
 
   @media (max-width: 1500px) {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     margin: 0.7rem;
   }
 
