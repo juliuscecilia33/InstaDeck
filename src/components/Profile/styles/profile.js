@@ -2,10 +2,12 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 95%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
 `;
 
 export const Top = styled.div`
@@ -14,13 +16,20 @@ export const Top = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
 `;
 
 export const Avatar = styled.div`
-  width: 203px;
-  height: 203px;
+  width: 180px;
+  height: 180px;
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  @media (max-width: 1500px) {
+    width: 160px;
+    height: 160px;
+  }
 
   img {
     width: 100%;
@@ -31,14 +40,16 @@ export const Avatar = styled.div`
 `;
 
 export const Username = styled.h3`
-  font-size: 24px;
+  font-size: 1.1vw;
   font-weight: 700;
 `;
 
 export const Stats = styled.div`
   width: 100%;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 export const Stat = styled.div`
@@ -48,8 +59,9 @@ export const Stat = styled.div`
   text-align: center;
 
   h3 {
-    font-size: 24px;
+    font-size: 1.1vw;
     font-weight: 500;
+    margin-bottom: 4px;
   }
 
   p {
@@ -59,24 +71,35 @@ export const Stat = styled.div`
 `;
 
 export const Totals = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export const Total = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Icon = styled.div`
-  width: 71px;
-  height: 71px;
+  width: 65px;
+  height: 65px;
   background: #f6f6f2;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
+
+  @media (max-width: 1600px) {
+    width: 50px;
+    height: 50px;
+  }
 
   i {
-    font-size: 40px;
+    font-size: 1.65vw;
     color: #000000;
   }
 `;
@@ -86,13 +109,14 @@ export const Text = styled.div`
   flex-direction: column;
 
   h3 {
-    font-size: 24px;
+    font-size: 0.9vw;
     font-weight: 700;
+    margin-bottom: 3px;
   }
 
   p {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 0.7vw;
+    font-weight: 500;
     color: #c4c4c4;
   }
 `;
@@ -106,7 +130,7 @@ export const Bottom = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: 1.15vw;
   font-weight: 700;
   color: #c4c4c4;
 `;
@@ -138,6 +162,12 @@ export const Post = styled.div`
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 1rem;
+
+  @media (max-width: 1500px) {
+    width: 130px;
+    height: 130px;
+    margin: 0.7rem;
+  }
 
   img {
     width: 100%;

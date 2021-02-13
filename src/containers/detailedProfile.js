@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Detailed, Profile } from "../components";
+import { Profile } from "../components";
 import { ProfileContext } from "../context/profile";
 import { db } from "../firebase";
 
@@ -33,24 +33,7 @@ export function DetailedProfileContainer({ posts }) {
 
   return (
     <>
-      <Detailed.Container>
-        {/* <img
-          style={{ width: "300px", height: "auto" }}
-          src={profileUserPic}
-          alt="User Profile"
-        />
-        <h3>{profileUser}</h3>
-        {posts.map(({ id, post }) => {
-          return (
-            post.username === profileText && (
-              <img
-                style={{ width: "100px", height: "auto" }}
-                src={post.imageUrl}
-                alt="Post"
-              />
-            )
-          );
-        })} */}
+      <Profile>
         <Profile.Top>
           <Profile.Avatar src={profileUserPic} />
           <Profile.Username>{profileUser}</Profile.Username>
@@ -69,7 +52,7 @@ export function DetailedProfileContainer({ posts }) {
             })}
           </Profile.Posts>
         </Profile.Bottom>
-      </Detailed.Container>
+      </Profile>
     </>
   );
 }
