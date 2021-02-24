@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle `
+export const GlobalStyles = createGlobalStyle`
     html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle `
         font-smooth: always;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        transition: all 0.50s linear;
     }
 
     ul {

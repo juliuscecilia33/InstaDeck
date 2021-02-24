@@ -6,6 +6,8 @@ import { MainPage, SignUpPage, SignInPage, HomePage } from "./pages";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import { DetailedContext } from "./context/detailed";
 import { ProfileContext } from "./context/profile";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./Themes";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -16,6 +18,11 @@ function App() {
   const [profile, setProfile] = useState(false);
   const [profileData, setProfileData] = useState(null);
   const [profileText, setProfileText] = useState(null);
+  const [theme, setTheme] = useState("light");
+  const themeToggler = () => {
+    console.log("I changed themes to!");
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
   useEffect(() => {
     db.collection("popularposts")
@@ -61,62 +68,69 @@ function App() {
   }, [user]);
 
   return (
-    <>
-      <ProfileContext.Provider
-        value={{
-          profile,
-          setProfile,
-          profileData,
-          setProfileData,
-          profileText,
-          setProfileText,
-        }}
-      >
-        <DetailedContext.Provider
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <>
+        <ProfileContext.Provider
           value={{
-            selectedDetail,
-            setSelectedDetail,
-            detail,
-            setDetail,
+            profile,
+            setProfile,
+            profileData,
+            setProfileData,
+            profileText,
+            setProfileText,
           }}
         >
-          <Router>
-            <Switch>
-              <IsUserRedirect
-                user={user}
-                loggedInPath={ROUTES.HOME}
-                path={ROUTES.START}
-                exact
-              >
-                <HomePage user={user} />
-              </IsUserRedirect>
+          <DetailedContext.Provider
+            value={{
+              selectedDetail,
+              setSelectedDetail,
+              detail,
+              setDetail,
+            }}
+          >
+            <Router>
+              <Switch>
+                <IsUserRedirect
+                  user={user}
+                  loggedInPath={ROUTES.HOME}
+                  path={ROUTES.START}
+                  exact
+                >
+                  <HomePage user={user} />
+                </IsUserRedirect>
 
-              <IsUserRedirect
-                user={user}
-                loggedInPath={ROUTES.HOME}
-                path={ROUTES.SIGN_UP}
-                exact
-              >
-                <SignUpPage />
-              </IsUserRedirect>
+                <IsUserRedirect
+                  user={user}
+                  loggedInPath={ROUTES.HOME}
+                  path={ROUTES.SIGN_UP}
+                  exact
+                >
+                  <SignUpPage />
+                </IsUserRedirect>
 
-              <IsUserRedirect
-                user={user}
-                loggedInPath={ROUTES.HOME}
-                path={ROUTES.SIGN_IN}
-                exact
-              >
-                <SignInPage />
-              </IsUserRedirect>
+                <IsUserRedirect
+                  user={user}
+                  loggedInPath={ROUTES.HOME}
+                  path={ROUTES.SIGN_IN}
+                  exact
+                >
+                  <SignInPage />
+                </IsUserRedirect>
 
-              <ProtectedRoute path={ROUTES.HOME} user={user} exact>
-                <MainPage posts={posts} user={user} popPosts={popPosts} />
-              </ProtectedRoute>
-            </Switch>
-          </Router>
-        </DetailedContext.Provider>
-      </ProfileContext.Provider>
-    </>
+                <ProtectedRoute path={ROUTES.HOME} user={user} exact>
+                  <MainPage
+                    themeToggler={themeToggler}
+                    posts={posts}
+                    user={user}
+                    popPosts={popPosts}
+                  />
+                </ProtectedRoute>
+              </Switch>
+            </Router>
+          </DetailedContext.Provider>
+        </ProfileContext.Provider>
+      </>
+    </ThemeProvider>
   );
 }
 

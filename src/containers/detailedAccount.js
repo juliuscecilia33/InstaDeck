@@ -3,8 +3,8 @@ import { Detailed } from "../components";
 import BlankAvatar from "../components/images/BlankAvatarSquare.jpg";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
-import { FirebaseContext } from '../context/firebase';
-import { storage } from '../firebase';
+import { FirebaseContext } from "../context/firebase";
+import { storage } from "../firebase";
 
 export function DetailedAccountContainer({ user }) {
   const [progress, setProgress] = useState(0);
@@ -72,7 +72,7 @@ export function DetailedAccountContainer({ user }) {
                 {image ? (
                   <span>Ready to Upload</span>
                 ) : (
-                  <span>Upload An Image</span>
+                  <span>Upload Profile</span>
                 )}
               </Detailed.InputStuff>
               <Detailed.UploadButton
