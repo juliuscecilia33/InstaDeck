@@ -2,7 +2,7 @@
 <h2>A semi-dashboard interface of Instagram made with React and Firebase!</h2>
 
 ## About 
-<p>Instadeck is a semi-dashboard interface of Instagram made with React and Google Firebase! By providing different “decks” of posts from your personalized following post deck to the trending or popular deck, users of InstaDeck are given a comforting and appealing perspective for their Instagram feed.</p>
+<p>Instadeck is a semi-dashboard interface of Instagram made with React and Google Firebase! By providing different “decks” of posts from your personalized following post deck to the trending or popular deck, users of InstaDeck are given a comforting and appealing perspective for their Instagram feed. The mockups were designed by me in Figma.</p>
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/PagesPNG.jpg)
 <br />
