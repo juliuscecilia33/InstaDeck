@@ -29,7 +29,7 @@
 <br />
 
 ## Conclusion 
-<p>As my first big project that took months to develop, I had fun creating InstaDeck from designing its prototype on Figma to developing the application with Firebase and organizing its database on Google Firebase! </p>
+<p>As my first big project that took months to develop, I had fun creating InstaDeck from designing its prototype on Figma to developing the application with React and organizing its database on Google Firebase! </p>
 
 
 
