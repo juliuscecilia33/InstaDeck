@@ -1,3 +1,4 @@
+![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/DisplayPage.png)
 # InstaDeck: A semi-dashboard interface of Instagram made with React and Firebase!
 
 ## About 
