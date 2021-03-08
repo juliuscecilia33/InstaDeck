@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Top = styled.div`
   width: 100%;
-  height: 50%;
+  height: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +42,8 @@ export const Avatar = styled.div`
 export const Username = styled.h3`
   font-size: 1.1vw;
   font-weight: 700;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 1rem;
 `;
 
 export const Stats = styled.div`
@@ -62,11 +64,13 @@ export const Stat = styled.div`
     font-size: 1.1vw;
     font-weight: 500;
     margin-bottom: 4px;
+    color: ${({ theme }) => theme.text};
   }
 
   p {
     font-size: 12px;
     font-weight: 500;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -86,7 +90,7 @@ export const Total = styled.div`
 export const Icon = styled.div`
   width: 65px;
   height: 65px;
-  background: #f6f6f2;
+  background: ${({ theme }) => theme.feedBody};
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -100,7 +104,7 @@ export const Icon = styled.div`
 
   i {
     font-size: 1.65vw;
-    color: #000000;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -112,6 +116,7 @@ export const Text = styled.div`
     font-size: 0.9vw;
     font-weight: 700;
     margin-bottom: 3px;
+    color: ${({ theme }) => theme.text};
   }
 
   p {
@@ -146,6 +151,7 @@ export const Posts = styled.div`
   &::-webkit-scrollbar {
     width: 0.4166666666666667vw;
     background-color: #f6f6f2;
+    ${({ theme }) => theme.feedBody}
 
     border-radius: 15px;
   }

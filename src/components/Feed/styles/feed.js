@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 65%;
   height: 100vh;
   overflow: hidden;
-  background-color: #f6f6f2;
+  background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   flex-direction: column;
 `;
@@ -30,7 +30,7 @@ export const Layout = styled.div`
 
   &::-webkit-scrollbar {
     width: 0.4166666666666667vw;
-    background-color: #f6f6f2;
+    background-color: ${({ theme }) => theme.feedBody};
 
     border-radius: 15px;
   }
@@ -54,7 +54,7 @@ export const Link = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.text};
   }
 
   &:focus {

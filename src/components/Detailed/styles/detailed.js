@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Background = styled.div`
   width: 22%;
   height: 100vh;
-  background-color: #f3eee8;
+  background-color: ${({ theme }) => theme.detailedBar};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@ export const Image = styled.div`
 export const Caption = styled.div`
   width: 100%;
   height: 7.126466753585397vh;
-  background-color: #f6f6f2;
+  background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,12 +62,12 @@ export const Caption = styled.div`
 export const Comments = styled.div`
   width: 100%;
   height: 45.670143415906125vh;
-  background-color: #f6f6f2;
+  background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 `;
 
 export const Comment = styled.div`
@@ -83,11 +83,13 @@ export const Comment = styled.div`
     font-size: 0.78125vw;
     font-weight: 700;
     margin-right: 5px;
+    color: ${({ theme }) => theme.text};
   }
 
   p {
     width: 65%;
     font-size: 0.78125vw;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -95,7 +97,7 @@ export const CommentBox = styled.form`
   width: 90%;
   height: 4.023989569752282vh;
   outline: none;
-  background-color: #f6f6f2;
+  background-color: ${({ theme }) => theme.feedBody};
   border: 1px solid #a5a5a5;
   border-radius: 10px;
   padding: 0 0.5rem 0 1rem;
@@ -150,7 +152,7 @@ export const Icon = styled.div`
 
     i {
       font-size: 1.3927083333333333vw;
-      color: #c4c4c4;
+      color: ${({ theme }) => theme.icons};
     }
   }
 `;
@@ -165,7 +167,7 @@ export const User = styled.div`
   h3 {
     font-weight: 500;
     font-size: 1vw;
-    color: #000000;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -360,7 +362,7 @@ export const ProfileProgress = styled.progress`
 export const DisplayName = styled.h2`
   font-size: 1.25vw;
   font-weight: 600;
-  color: black;
+  color: ${({ theme }) => theme.text};
   margin-bottom: 0.3rem;
 `;
 
@@ -387,14 +389,14 @@ export const Stats = styled.div`
 export const Stat = styled.div`
   h3 {
     font-size: 1.25vw;
-    color: black;
+    color: ${({ theme }) => theme.text};
     font-weight: 500;
     margin-bottom: 0.3rem;
   }
 
   p {
     font-size: 0.625vw;
-    color: black;
+    color: ${({ theme }) => theme.text};
     font-weight: 500;
   }
 `;
@@ -430,7 +432,7 @@ export const SecondaryIcon = styled.div`
   width: 2.1770833333333335vw;
   height: 4.205493387589013vh;
   border-radius: 10px;
-  background-color: #f6f6f2;
+  background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -451,7 +453,7 @@ export const Text = styled.div`
   p {
     font-size: 0.6291666666666666vw;
     font-weight: 500;
-    color: #c4c4c4;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -474,7 +476,7 @@ export const SuggestionsText = styled.div`
   h2 {
     font-size: 1.25vw;
     font-weight: 400;
-    color: black;
+    color: ${({ theme }) => theme.text};
   }
 
   h3 {
