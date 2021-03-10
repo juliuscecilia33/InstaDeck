@@ -2,12 +2,13 @@ export const lightTheme = {
   sideBar: "#F9F9F9",
   detailedBar: "#F3EEE8",
   feedBody: "#F6F6F2",
-  icons: "#FFFFFC",
+  icons: "#C4C4C4",
   text: "#000000",
   secondaryIcons: "#6F6F6F",
   secondaryText: "#3D3D3D",
   searchBackground: "#F3EEE8",
-  moon: "C4C4C4",
+  moon: "#C4C4C4",
+  border: "#C4C4C4",
 };
 
 export const darkTheme = {
@@ -19,6 +20,7 @@ export const darkTheme = {
   iconsHighlight: "#F8D3AC",
   secondaryIcons: "#6F6F6F",
   secondaryText: "#3D3D3D",
-  searchBackground: "6F6F6F",
-  moon: "F8D3AC",
+  searchBackground: "#6F6F6F",
+  moon: "#F8D3AC",
+  border: "#6F6F6F",
 };

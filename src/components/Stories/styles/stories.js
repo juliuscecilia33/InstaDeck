@@ -9,8 +9,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f6f6f2;
-  border-bottom: 1px solid #c4c4c4;
+  background-color: ${({ theme }) => theme.feedBody};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const List = styled.div`
@@ -59,7 +59,7 @@ export const Story = styled.div`
     p {
       font-weight: 400;
       font-size: 0.5510416666666666vw;
-      color: #000000;
+      color: ${({ theme }) => theme.text};
     }
 
     @media (max-width: 1500px) {
@@ -96,7 +96,7 @@ export const Story = styled.div`
   p {
     font-weight: 400;
     font-size: 0.5510416666666666vw;
-    color: #000000;
+    color: ${({ theme }) => theme.text};
   }
 
   @media (max-width: 1500px) {
@@ -165,6 +165,12 @@ export const Icons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:last-child {
+    i {
+      color: ${({ theme }) => theme.moon};
+    }
+  }
 
   i {
     color: #c4c4c4;

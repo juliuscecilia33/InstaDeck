@@ -7,6 +7,7 @@ export const Background = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.5s ease all;
 `;
 
 export const Container = styled.div`
@@ -46,7 +47,7 @@ export const Caption = styled.div`
   border-radius: 10px;
 
   h3 {
-    color: #000000;
+    color: ${({ theme }) => theme.text};
     font-size: 0.7463541666666666vw;
     font-weight: 700;
     margin-bottom: 0.3rem;
@@ -123,7 +124,7 @@ export const CommentBox = styled.form`
     outline: none;
     cursor: pointer;
     border-left: 1px solid #c4c4c4;
-    color: #000000;
+    color: ${({ theme }) => theme.text};
 
     &:disabled {
       color: #c4c4c4;
@@ -429,24 +430,25 @@ export const Item = styled.div`
 `;
 
 export const SecondaryIcon = styled.div`
-  width: 2.1770833333333335vw;
-  height: 4.205493387589013vh;
+  width: 51px;
+  height: 51px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1.2vh;
+  margin-right: 1rem;
 
   i {
     font-size: 1.1666666666666667vw;
-    color: black;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
 export const Number = styled.h2`
   font-size: 1.5229166666666667vw;
   margin-right: 0.7vh;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Text = styled.div`

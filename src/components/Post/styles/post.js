@@ -38,10 +38,12 @@ export const Avatar = styled.a`
   align-items: center;
   color: #000000;
   cursor: pointer;
+  transition: 0.5s ease all;
 
   h3 {
     font-size: 0.8333333333333334vw;
     font-weight: 400;
+    color: ${({ theme }) => theme.text};
   }
 `;
 

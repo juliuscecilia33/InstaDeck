@@ -7,6 +7,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.feedBody};
   display: flex;
   flex-direction: column;
+  transition: 0.5s ease all;
 `;
 
 export const User = styled.div`
