@@ -11,6 +11,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.feedBody};
   border-bottom: 1px solid ${({ theme }) => theme.border};
+  transition: 0.5s ease all;
 `;
 
 export const List = styled.div`
@@ -117,8 +118,8 @@ export const SettingsList = styled.div`
 export const SearchBox = styled.form`
   width: 14.276041666666668vw;
   height: 50%;
-  background: #f3eee8;
-  border: 1.5px solid #c4c4c4;
+  background: ${({ theme }) => theme.searchBackground};
+  border: ${({ theme }) => theme.searchBorder};
   border-radius: 10px;
   outline: none;
   display: flex;
@@ -158,6 +159,16 @@ export const SearchBox = styled.form`
     background: none;
     border: none;
     outline: none;
+
+    &::placeholder {
+      color: #c4c4c4;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -166,9 +177,11 @@ export const Icons = styled.div`
   justify-content: center;
   align-items: center;
 
-  &:last-child {
-    i {
-      color: ${({ theme }) => theme.moon};
+  button {
+    &:last-of-type {
+      i {
+        color: ${({ theme }) => theme.moon};
+      }
     }
   }
 
@@ -180,7 +193,7 @@ export const Icons = styled.div`
     transition: 0.5s ease all;
 
     &:hover {
-      color: #000000;
+      color: ${({ theme }) => theme.hover};
     }
   }
 `;
