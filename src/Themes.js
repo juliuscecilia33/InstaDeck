@@ -2,6 +2,7 @@ export const lightTheme = {
   sideBar: "#F9F9F9",
   detailedBar: "#F3EEE8",
   feedBody: "#F6F6F2",
+  tabBackground: "rgba(242, 241, 239, 1)",
   icons: "#C4C4C4",
   text: "#000000",
   secondaryIcons: "#6F6F6F",
@@ -16,10 +17,11 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  sideBar: "#3D3D3D",
+  sideBar: "#323232",
   detailedBar: "#202020",
   feedBody: "#2B2B2C",
   text: "#FFFFFC",
+  tabBackground: "rgba(196, 196, 196, 0.15);",
   icons: "#6F6F6F",
   iconsHighlight: "#F8D3AC",
   secondaryIcons: "#6F6F6F",
