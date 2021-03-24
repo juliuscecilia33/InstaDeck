@@ -256,8 +256,8 @@ Detailed.SecondaryIcon = function DetailedSecondaryIcon({
   return <SecondaryIcon {...restProps}>{children}</SecondaryIcon>;
 };
 
-Detailed.Number = function DetailedNumber({ children, ...restProps }) {
-  return <Number {...restProps}>{children}</Number>;
+Detailed.Number = function DetailedNumber({ number, children, ...restProps }) {
+  return <Number {...restProps}>{number}</Number>;
 };
 
 Detailed.Text = function DetailedText({ children, ...restProps }) {

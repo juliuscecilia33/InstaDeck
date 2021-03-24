@@ -64,6 +64,15 @@ export function DetailedAccountContainer({ user, posts }) {
 
   return (
     <>
+      {/* eslint-disable-next-line */}
+      {posts.map(({ post }) => {
+        post.username === firebaseUser.displayName && postCount++;
+      })}
+      {/* eslint-disable-next-line */}
+      {posts.map(({ post }) => {
+        post.username === firebaseUser.displayName &&
+          likesCount.push(post.likes);
+      })}
       <Detailed.ProfileData>
         <Detailed.TopProfile>
           {user ? (
@@ -108,7 +117,7 @@ export function DetailedAccountContainer({ user, posts }) {
 
           {user && (
             <Detailed.Stats>
-              <Detailed.Stat quantity="15" label="Posts" />
+              <Detailed.Stat quantity={postCount} label="Posts" />
               <Detailed.Stat quantity="100,000" label="Followers" />
               <Detailed.Stat quantity="100" label="Following" />
             </Detailed.Stats>
@@ -122,7 +131,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-user-friends"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number>25</Detailed.Number>
+                <Detailed.Number number="25" />
                 <Detailed.Text>
                   <p>New</p>
                   <p>Followers</p>
@@ -133,7 +142,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-comments"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number>5</Detailed.Number>
+                <Detailed.Number number="5" />
                 <Detailed.Text>
                   <p>New</p>
                   <p>Comments</p>
@@ -146,9 +155,11 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-heart"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number>75</Detailed.Number>
+                <Detailed.Number
+                  number={likesCount.reduce((a, b) => a + b, 0)}
+                />
                 <Detailed.Text>
-                  <p>New</p>
+                  <p>Total</p>
                   <p>Likes</p>
                 </Detailed.Text>
               </Detailed.Item>
@@ -157,7 +168,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-user-circle"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number>49</Detailed.Number>
+                <Detailed.Number number="49" />
                 <Detailed.Text>
                   <p>Profile</p>
                   <p>Views</p>
