@@ -41,7 +41,7 @@ Profile.Stats = function ProfileStats({ children, ...restProps }) {
   return (
     <Stats {...restProps}>
       <Stat>
-        <h3>5</h3>
+        <h3>{children}</h3>
         <p>Posts</p>
       </Stat>
       <Stat>

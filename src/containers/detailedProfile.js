@@ -11,6 +11,8 @@ export function DetailedProfileContainer({ posts }) {
   const [setError] = useState("");
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
 
+  let postCount = 0;
+
   const updateDetail = (postId) => {
     setDetail(true);
     setSelectedDetail(postId);
@@ -44,7 +46,11 @@ export function DetailedProfileContainer({ posts }) {
         <Profile.Top>
           <Profile.Avatar src={profileUserPic} />
           <Profile.Username>{profileUser}</Profile.Username>
-          <Profile.Stats />
+          {/* eslint-disable-next-line */}
+          {posts.map(({ post }) => {
+            post.username === profileText && postCount++;
+          })}
+          <Profile.Stats>{postCount}</Profile.Stats>
           <Profile.Totals />
         </Profile.Top>
         <Profile.Bottom>
