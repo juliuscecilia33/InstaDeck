@@ -81,8 +81,12 @@ Profile.Totals = function ProfileTotals({ children, ...restProps }) {
   );
 };
 
-Profile.Bottom = function ProfileBottom({ children, ...restProps }) {
-  return <Bottom {...restProps}>{children}</Bottom>;
+Profile.Bottom = function ProfileBottom({ height, children, ...restProps }) {
+  return (
+    <Bottom height={height} {...restProps}>
+      {children}
+    </Bottom>
+  );
 };
 
 Profile.Title = function ProfileTitle({ children, ...restProps }) {

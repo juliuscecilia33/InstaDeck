@@ -62,7 +62,7 @@ export function DetailedProfileContainer({ posts }) {
             {likesCount.reduce((a, b) => a + b, 0)}
           </Profile.Totals>
         </Profile.Top>
-        <Profile.Bottom>
+        <Profile.Bottom height="50%">
           <Profile.Title />
           <Profile.Posts>
             {posts.map(({ id, post }) => {

@@ -128,7 +128,7 @@ export const Text = styled.div`
 
 export const Bottom = styled.div`
   width: 100%;
-  height: 50%;
+  height: ${({ height }) => height};
   display: flex;
   flex-direction: column;
   align-items: center;

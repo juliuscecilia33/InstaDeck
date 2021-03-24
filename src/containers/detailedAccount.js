@@ -1,16 +1,26 @@
 import React, { useState, useContext } from "react";
-import { Detailed } from "../components";
+import { Detailed, Profile } from "../components";
 import BlankAvatar from "../components/images/BlankAvatarSquare.jpg";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
 import { FirebaseContext } from "../context/firebase";
+import { DetailedContext } from "../context/detailed";
 import { storage } from "../firebase";
 
-export function DetailedAccountContainer({ user }) {
+export function DetailedAccountContainer({ user, posts }) {
   const [progress, setProgress] = useState(0);
   const [image, setImage] = useState(null);
   const { firebaseApp } = useContext(FirebaseContext);
   const firebaseUser = firebaseApp.auth().currentUser || {};
+  const { setDetail, setSelectedDetail } = useContext(DetailedContext);
+
+  let postCount = 0;
+  let likesCount = [];
+
+  const updateDetail = (postId) => {
+    setDetail(true);
+    setSelectedDetail(postId);
+  };
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -158,9 +168,22 @@ export function DetailedAccountContainer({ user }) {
         )}
       </Detailed.ProfileData>
 
-      <Detailed.Suggestions>
-        <Detailed.SuggestionsText />
-      </Detailed.Suggestions>
+      <Profile.Bottom height="35%">
+        <Profile.Title />
+        <Profile.Posts>
+          {posts.map(({ id, post }) => {
+            return (
+              post.username === firebaseUser.displayName && (
+                <Profile.Post
+                  updateDetail={updateDetail}
+                  postId={id}
+                  src={post.imageUrl}
+                />
+              )
+            );
+          })}
+        </Profile.Posts>
+      </Profile.Bottom>
     </>
   );
 }

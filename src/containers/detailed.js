@@ -20,7 +20,7 @@ export function DetailedContainer({ user, posts }) {
         ) : profile ? (
           <DetailedProfileContainer posts={posts} />
         ) : (
-          <DetailedAccountContainer user={user} />
+          <DetailedAccountContainer user={user} posts={posts} />
         )}
       </Detailed>
     </>
