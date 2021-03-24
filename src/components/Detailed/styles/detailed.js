@@ -90,7 +90,7 @@ export const Comment = styled.div`
   width: 100%;
   height: 8%;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1.5rem;
 
@@ -103,9 +103,16 @@ export const Comment = styled.div`
   }
 
   p {
-    width: 65%;
     font-size: 0.78125vw;
     color: ${({ theme }) => theme.text};
+    line-height: 18px;
+  }
+
+  i {
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #c4c4c4;
+    margin-left: 0.5rem;
   }
 `;
 

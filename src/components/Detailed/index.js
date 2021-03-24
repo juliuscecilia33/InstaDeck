@@ -75,6 +75,7 @@ Detailed.Comments = function DetailedComments({ children, ...restProps }) {
 };
 
 Detailed.Comment = function DetailedComment({
+  onClick,
   comment,
   children,
   ...restProps
@@ -82,7 +83,12 @@ Detailed.Comment = function DetailedComment({
   return (
     <Comment {...restProps}>
       <h3>{comment.username}</h3>
-      <p>{comment.text}</p>
+      <p>
+        {comment.text}{" "}
+        <button onClick={onClick}>
+          <i class="fas fa-trash"></i>
+        </button>
+      </p>
     </Comment>
   );
 };

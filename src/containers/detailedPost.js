@@ -55,7 +55,12 @@ export function DetailedPostContainer() {
         .collection("comments")
         .orderBy("timestamp", "desc")
         .onSnapshot((snapshot) => {
-          setComments(snapshot.docs.map((doc) => doc.data()));
+          setComments(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              comment: doc.data(),
+            }))
+          );
         });
     }
   }, [selectedDetail]);
@@ -85,6 +90,20 @@ export function DetailedPostContainer() {
     setComment("");
   };
 
+  const deleteComment = (selectedDetail, commentId) => {
+    db.collection("posts")
+      .doc(selectedDetail)
+      .collection("comments")
+      .doc(commentId)
+      .delete()
+      .then(function () {
+        console.log("Comment successfully deleted!");
+      })
+      .catch(function (error) {
+        console.error("Error removing document: ", error);
+      });
+  };
+
   let inputStyle = {
     color: "#c4c4c4",
   };
@@ -105,8 +124,11 @@ export function DetailedPostContainer() {
       />
 
       <Detailed.Comments>
-        {comments.map((comment) => (
-          <Detailed.Comment comment={comment} />
+        {comments.map(({ id, comment }) => (
+          <Detailed.Comment
+            onClick={() => deleteComment(selectedDetail, id)}
+            comment={comment}
+          />
         ))}
       </Detailed.Comments>
 
