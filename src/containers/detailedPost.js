@@ -6,7 +6,7 @@ import { FirebaseContext } from "../context/firebase";
 import firebase from "firebase";
 import { mapTime } from "../mappers/mapTime";
 
-export function DetailedPostContainer() {
+export function DetailedPostContainer({ user }) {
   const { selectedDetail } = useContext(DetailedContext);
   const [detailedLikes, setDetailedLikes] = useState(0);
   const [detailedImage, setDetailedImage] = useState(null);
@@ -125,10 +125,13 @@ export function DetailedPostContainer() {
 
       <Detailed.Comments>
         {comments.map(({ id, comment }) => (
-          <Detailed.Comment
-            onClick={() => deleteComment(selectedDetail, id)}
-            comment={comment}
-          />
+          <Detailed.Comment comment={comment}>
+            {comment.username === user.displayName && (
+              <button onClick={() => deleteComment(selectedDetail, id)}>
+                <i class="fas fa-trash"></i>
+              </button>
+            )}
+          </Detailed.Comment>
         ))}
       </Detailed.Comments>
 
@@ -141,7 +144,6 @@ export function DetailedPostContainer() {
       <Detailed.Icons>
         <Detailed.Icon>
           <button onClick={() => updateLike(selectedDetail)}>
-            {/* <i class="fas fa-heart" style={inputStyle}></i> */}
             <i class="fas fa-heartbeat" style={inputStyle}></i>
           </button>
         </Detailed.Icon>
