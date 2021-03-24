@@ -69,6 +69,21 @@ export const Comments = styled.div`
   align-items: center;
   border-radius: 10px;
   padding: 1rem 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.4166666666666667vw;
+    background-color: #f6f6f2;
+    ${({ theme }) => theme.feedBody}
+
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 15px;
+  }
 `;
 
 export const Comment = styled.div`
