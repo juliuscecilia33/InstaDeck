@@ -64,7 +64,7 @@ Profile.Totals = function ProfileTotals({ children, ...restProps }) {
           <i class="fas fa-heartbeat"></i>
         </Icon>
         <Text>
-          <h3>100</h3>
+          <h3>{children}</h3>
           <p>Total Likes</p>
         </Text>
       </Total>

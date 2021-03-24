@@ -12,6 +12,7 @@ export function DetailedProfileContainer({ posts }) {
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
 
   let postCount = 0;
+  let likesCount = [];
 
   const updateDetail = (postId) => {
     setDetail(true);
@@ -40,6 +41,8 @@ export function DetailedProfileContainer({ posts }) {
     }
   }, [profileData, setError]);
 
+  console.log(likesCount);
+
   return (
     <>
       <Profile>
@@ -50,8 +53,14 @@ export function DetailedProfileContainer({ posts }) {
           {posts.map(({ post }) => {
             post.username === profileText && postCount++;
           })}
+          {/* eslint-disable-next-line */}
+          {posts.map(({ post }) => {
+            post.username === profileText && likesCount.push(post.likes);
+          })}
           <Profile.Stats>{postCount}</Profile.Stats>
-          <Profile.Totals />
+          <Profile.Totals>
+            {likesCount.reduce((a, b) => a + b, 0)}
+          </Profile.Totals>
         </Profile.Top>
         <Profile.Bottom>
           <Profile.Title />
