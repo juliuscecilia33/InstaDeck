@@ -14,6 +14,8 @@
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1.jpg)
 <br />
+![InstaDeck](https://github.com/juliuscecilia33/InstaDeck/blob/main/src/components/images/RealHomePage.png)
+<br />
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1DarkMode.jpg)
 <br />
 
