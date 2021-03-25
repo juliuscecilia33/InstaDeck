@@ -2,6 +2,7 @@ import React from "react";
 import Brand from "../../components/images/Decklol.png";
 import Profile from "../../components/images/picofme.png";
 import { Link as ReactRouterLink } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 
 import {
   Container,
@@ -9,6 +10,7 @@ import {
   MainSect,
   DisplaySect,
   TextSect,
+  TextSub,
   Logo,
   FillButton,
   OutlinedButton,
@@ -50,11 +52,19 @@ Home.Logo = function HomeLogo({ children, ...restProps }) {
 };
 
 Home.FillButton = function HomeFillButton({ children, ...restProps }) {
-  return <FillButton {...restProps}>{children}</FillButton>;
+  return (
+    <ReactRouterLink to={ROUTES.SIGN_UP}>
+      <FillButton {...restProps}>{children}</FillButton>;
+    </ReactRouterLink>
+  );
 };
 
 Home.OutlinedButton = function HomeOutlinedButton({ children, ...restProps }) {
-  return <OutlinedButton {...restProps}>{children}</OutlinedButton>;
+  return (
+    <ReactRouterLink to={ROUTES.SIGN_IN}>
+      <OutlinedButton {...restProps}>{children}</OutlinedButton>;
+    </ReactRouterLink>
+  );
 };
 
 Home.DisplaySect = function HomeDisplaySect({ children, ...restProps }) {
@@ -71,6 +81,10 @@ Home.Image = function HomeImage({ src, children, ...restProps }) {
 
 Home.TextSect = function HomeTextSect({ children, ...restProps }) {
   return <TextSect {...restProps}>{children}</TextSect>;
+};
+
+Home.TextSub = function HomeTextSub({ children, ...restProps }) {
+  return <TextSub {...restProps}>{children}</TextSub>;
 };
 
 Home.Title = function HomeTitle({ children, ...restProps }) {
