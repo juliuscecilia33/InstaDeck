@@ -57,10 +57,17 @@ export const Logo = styled.div`
   }
 `;
 
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const FillButton = styled.button`
-  width: 156px;
-  height: 44px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -69,11 +76,17 @@ export const FillButton = styled.button`
   font-weight: bold;
   font-size: 16px;
   color: #fffffc;
+
+  i {
+    color: #fffffc;
+    font-size: 32px;
+  }
 `;
 
 export const OutlinedButton = styled.button`
   width: 156px;
   height: 44px;
+  background: none;
   border-radius: 20px;
   border: 3px solid #e45257;
   display: flex;
@@ -83,6 +96,13 @@ export const OutlinedButton = styled.button`
   font-weight: bold;
   font-size: 16px;
   color: #fffffc;
+  margin-right: 1rem;
+  transition: 0.5s ease all;
+
+  &:hover {
+    background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
+    border: none;
+  }
 `;
 
 export const DisplaySect = styled.div`
@@ -92,6 +112,7 @@ export const DisplaySect = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 `;
 
 export const Image = styled.div`
@@ -110,6 +131,7 @@ export const TextSect = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 4;
 `;
 
 export const TextSub = styled.div`
@@ -124,7 +146,7 @@ export const Title = styled.h1`
   color: #fffffc;
 `;
 
-export const SubTitle = styled.h2`
+export const Subtitle = styled.h2`
   font-weight: 500;
   font-size: 50px;
   color: #fffffc;
@@ -141,13 +163,21 @@ export const Description = styled.p`
   }
 `;
 
-export const Message = styled.p`
-  font-size: 14px;
-  color: #c4c4c4;
-  font-weight: normal;
+export const Message = styled.div`
+  p {
+    font-size: 14px;
+    color: #c4c4c4;
+    font-weight: normal;
+    transition: 0.5s ease all;
 
-  span {
-    color: #e45257;
+    span {
+      color: #e45257;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: #e45257;
+      }
+    }
   }
 `;
 

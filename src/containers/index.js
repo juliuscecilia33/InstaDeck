@@ -11,3 +11,4 @@ export { PopularPostsContainer } from "./popularPosts";
 export { FeedContainer } from "./feed";
 export { SignInContainer } from "./signIn";
 export { SignUpContainer } from "./signUp";
+export { HomeContainer } from "./home";

@@ -1,6 +1,6 @@
 import React from "react";
 import Brand from "../../components/images/Decklol.png";
-import Profile from "../../components/images/picofme.png";
+import Profile from "../../components/images/picofme.jpg";
 import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 
@@ -24,6 +24,7 @@ import {
   Info,
   Image,
   Overlay,
+  Buttons,
 } from "./styles/home";
 
 export default function Home({ children, ...restProps }) {
@@ -51,10 +52,21 @@ Home.Logo = function HomeLogo({ children, ...restProps }) {
   );
 };
 
-Home.FillButton = function HomeFillButton({ children, ...restProps }) {
+Home.Buttons = function HomeButtons({ children, ...restProps }) {
+  return <Buttons {...restProps}>{children}</Buttons>;
+};
+
+Home.FillButton = function HomeFillButton({
+  width,
+  height,
+  children,
+  ...restProps
+}) {
   return (
     <ReactRouterLink to={ROUTES.SIGN_UP}>
-      <FillButton {...restProps}>{children}</FillButton>;
+      <FillButton width={width} height={height} {...restProps}>
+        {children}
+      </FillButton>
     </ReactRouterLink>
   );
 };
@@ -62,7 +74,7 @@ Home.FillButton = function HomeFillButton({ children, ...restProps }) {
 Home.OutlinedButton = function HomeOutlinedButton({ children, ...restProps }) {
   return (
     <ReactRouterLink to={ROUTES.SIGN_IN}>
-      <OutlinedButton {...restProps}>{children}</OutlinedButton>;
+      <OutlinedButton {...restProps}>{children}</OutlinedButton>
     </ReactRouterLink>
   );
 };
@@ -100,7 +112,16 @@ Home.Description = function HomeDescription({ children, ...restProps }) {
 };
 
 Home.Message = function HomeMessage({ children, ...restProps }) {
-  return <Message {...restProps}>{children}</Message>;
+  return (
+    <Message {...restProps}>
+      <p>
+        Have an account?{" "}
+        <ReactRouterLink to={ROUTES.SIGN_IN}>
+          <span>Sign in.</span>
+        </ReactRouterLink>
+      </p>
+    </Message>
+  );
 };
 
 Home.QuoteSect = function HomeQuoteSect({ children, ...restProps }) {
