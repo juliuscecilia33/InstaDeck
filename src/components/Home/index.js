@@ -21,7 +21,7 @@ import {
   QuoteSect,
   Quote,
   ProfilePic,
-  ProfileInfo,
+  Info,
   Image,
   Overlay,
 } from "./styles/home";
@@ -115,15 +115,10 @@ Home.ProfilePic = function HomeProfilePic({ children, ...restProps }) {
   return (
     <ProfilePic {...restProps}>
       <img src={Profile} alt="Profile" />
+      <Info>
+        <h3>Julius Cecilia</h3>
+        <p>College Student</p>
+      </Info>
     </ProfilePic>
-  );
-};
-
-Home.ProfileInfo = function HomeProfileInfo({ children, ...restProps }) {
-  return (
-    <ProfileInfo {...restProps}>
-      <h3>Julius Cecilia</h3>
-      <p>College Student</p>
-    </ProfileInfo>
   );
 };

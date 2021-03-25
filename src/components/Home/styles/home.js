@@ -140,3 +140,57 @@ export const Description = styled.p`
     color: #e45257;
   }
 `;
+
+export const Message = styled.p`
+  font-size: 14px;
+  color: #c4c4c4;
+  font-weight: normal;
+
+  span {
+    color: #e45257;
+  }
+`;
+
+export const QuoteSect = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Quote = styled.p`
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fffffc;
+`;
+
+export const ProfilePic = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-weight: 500;
+    font-size: 13px;
+    color: #fffffc;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    color: #fffffc;
+  }
+`;
