@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -12,6 +13,9 @@ export const Container = styled.div`
 `;
 
 export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   z-index: 3;
@@ -24,20 +28,21 @@ export const Overlay = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 10vh;
+  height: 8vh;
   z-index: 4;
   background: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 3rem;
 `;
 
 export const MainSect = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 92vh;
   display: flex;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  transition: 0.5s ease all;
 `;
 
 export const Logo = styled.div`
@@ -61,6 +66,7 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s ease all;
 `;
 
 export const FillButton = styled.button`
@@ -76,6 +82,8 @@ export const FillButton = styled.button`
   font-weight: bold;
   font-size: 16px;
   color: #fffffc;
+  cursor: pointer;
+  transition: 0.5s ease all;
 
   i {
     color: #fffffc;
@@ -97,7 +105,8 @@ export const OutlinedButton = styled.button`
   font-size: 16px;
   color: #fffffc;
   margin-right: 1rem;
-  transition: 0.5s ease all;
+  cursor: pointer;
+  transition: 0.5s ease background;
 
   &:hover {
     background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
@@ -106,17 +115,18 @@ export const OutlinedButton = styled.button`
 `;
 
 export const DisplaySect = styled.div`
-  width: 60%;
+  width: 70%;
   height: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   z-index: 2;
 `;
 
 export const Image = styled.div`
-  margin: 2rem;
+  margin: 1rem 2rem;
 
   img {
     width: auto;
@@ -127,7 +137,7 @@ export const Image = styled.div`
 `;
 
 export const TextSect = styled.div`
-  width: 40%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,9 @@
 import React from "react";
 import { Home } from "../components";
+import AnalyticsDark from "../components/images/AnalyticsDark.jpg";
+import DetailedDark from "../components/images/DetailedDark.jpg";
+import Page1 from "../components/images/Page1.jpg";
+import Page2DarkMode from "../components/images/Page2DarkMode.jpg";
 
 export function HomeContainer() {
   return (
@@ -42,10 +46,10 @@ export function HomeContainer() {
           </Home.QuoteSect>
         </Home.TextSect>
         <Home.DisplaySect>
-          <Home.Image src="AnalyticsDark" />
-          <Home.Image src="DetailedDark" />
-          <Home.Image src="Page1" />
-          <Home.Image src="Page2DarkMode" />
+          <Home.Image src={AnalyticsDark} />
+          <Home.Image src={Page1} />
+          <Home.Image src={DetailedDark} />
+          <Home.Image src={Page2DarkMode} />
         </Home.DisplaySect>
       </Home.MainSect>
     </Home>

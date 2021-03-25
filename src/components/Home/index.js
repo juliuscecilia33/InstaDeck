@@ -86,7 +86,7 @@ Home.DisplaySect = function HomeDisplaySect({ children, ...restProps }) {
 Home.Image = function HomeImage({ src, children, ...restProps }) {
   return (
     <Image {...restProps}>
-      <img src={`../../components/images/${src}.jpg`} alt="Display" />
+      <img src={src} alt="Display" />
     </Image>
   );
 };
