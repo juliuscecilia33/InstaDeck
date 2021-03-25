@@ -6,6 +6,8 @@
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/PagesPNG.jpg)
 <br />
+![InstaDeck](https://github.com/juliuscecilia33/InstaDeck/blob/main/src/components/images/RealHomePage.png)
+<br />
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Pages%203%20Vertical.png)
 <br />
 
@@ -13,8 +15,6 @@
 <p>InstaDeck could be called one of my first official project that I put a lot of time and commitment towards. It all started with a full-stack social media tutorial on Youtube and the impression of Instagram’s desktop version being not as appealing as it’s mobile version. Taking inspiration from Twitter’s dashboard app, TweetDeck, I decided to create and develop Instagram’s own dashboard app for its desktop version with InstaDeck! </p>
 
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1.jpg)
-<br />
-![InstaDeck](https://github.com/juliuscecilia33/InstaDeck/blob/main/src/components/images/RealHomePage.png)
 <br />
 ![InstaDeck](https://github.com/juliuscecilia33/instadeck/blob/main/src/components/images/Page1DarkMode.jpg)
 <br />
