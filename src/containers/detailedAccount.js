@@ -118,8 +118,8 @@ export function DetailedAccountContainer({ user, posts }) {
           {user && (
             <Detailed.Stats>
               <Detailed.Stat quantity={postCount} label="Posts" />
-              <Detailed.Stat quantity="100,000" label="Followers" />
-              <Detailed.Stat quantity="100" label="Following" />
+              <Detailed.Stat quantity="---" label="Followers" />
+              <Detailed.Stat quantity="---" label="Following" />
             </Detailed.Stats>
           )}
         </Detailed.TopProfile>
@@ -131,7 +131,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-user-friends"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number number="25" />
+                <Detailed.Number number="--" />
                 <Detailed.Text>
                   <p>New</p>
                   <p>Followers</p>
@@ -142,7 +142,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 <Detailed.SecondaryIcon>
                   <i class="fas fa-comments"></i>
                 </Detailed.SecondaryIcon>
-                <Detailed.Number number="5" />
+                <Detailed.Number number="--" />
                 <Detailed.Text>
                   <p>New</p>
                   <p>Comments</p>

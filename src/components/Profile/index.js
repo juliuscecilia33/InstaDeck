@@ -45,11 +45,11 @@ Profile.Stats = function ProfileStats({ children, ...restProps }) {
         <p>Posts</p>
       </Stat>
       <Stat>
-        <h3>10</h3>
+        <h3>--</h3>
         <p>Followers</p>
       </Stat>
       <Stat>
-        <h3>15</h3>
+        <h3>--</h3>
         <p>Following</p>
       </Stat>
     </Stats>
@@ -73,7 +73,7 @@ Profile.Totals = function ProfileTotals({ children, ...restProps }) {
           <i class="fas fa-comments"></i>
         </Icon>
         <Text>
-          <h3>50</h3>
+          <h3>--</h3>
           <p>Total Comments</p>
         </Text>
       </Total>
