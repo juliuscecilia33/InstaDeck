@@ -12,6 +12,7 @@ import {
   TextSect,
   TextSub,
   Logo,
+  LargeFillButton,
   FillButton,
   OutlinedButton,
   Title,
@@ -75,6 +76,29 @@ Home.FillButton = function HomeFillButton({
       >
         {children}
       </FillButton>
+    </ReactRouterLink>
+  );
+};
+
+Home.LargeFillButton = function HomeLargeFillButton({
+  borderRadius,
+  fontSize,
+  width,
+  height,
+  children,
+  ...restProps
+}) {
+  return (
+    <ReactRouterLink to={ROUTES.SIGN_UP}>
+      <LargeFillButton
+        borderRadius={borderRadius}
+        fontSize={fontSize}
+        width={width}
+        height={height}
+        {...restProps}
+      >
+        {children}
+      </LargeFillButton>
     </ReactRouterLink>
   );
 };

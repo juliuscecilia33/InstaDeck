@@ -37,14 +37,14 @@ export function HomeContainer() {
               </span>{" "}
               and more.
             </Home.Description>
-            <Home.FillButton
+            <Home.LargeFillButton
               borderRadius="50px"
               fontSize="24px"
               width="356px"
               height="71px"
             >
               Sign Up - You'll <i class="fas fa-heartbeat"></i> it.
-            </Home.FillButton>
+            </Home.LargeFillButton>
             <Home.Message />
           </Home.TextSub>
           <Home.QuoteSect>

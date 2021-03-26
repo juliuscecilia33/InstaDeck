@@ -34,14 +34,14 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 5rem;
 `;
 
 export const MainSect = styled.div`
   width: 100%;
   height: 92vh;
   display: flex;
-  padding: 0 3rem;
+  padding: 0 5rem;
   transition: 0.5s ease all;
   padding-top: 3rem;
 `;
@@ -93,6 +93,61 @@ export const FillButton = styled.button`
   }
 `;
 
+export const LargeFillButton = styled.button`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: ${({ borderRadius }) => borderRadius};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: ${({ fontSize }) => fontSize};
+  color: #fffffc;
+  cursor: pointer;
+  transition: 0.5s ease all;
+
+  &:hover {
+    font-size: 26px;
+  }
+
+  i {
+    color: #fffffc;
+    font-size: 32px;
+    margin: 0.5rem;
+  }
+
+  @media (max-width: 1600px) {
+    width: 316px;
+    height: 63px;
+    font-size: 20px;
+
+    i {
+      font-size: 28px;
+    }
+
+    &:hover {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 1450px) {
+    width: 280px;
+    height: 55px;
+    font-size: 18px;
+
+    i {
+      font-size: 26px;
+    }
+
+    &:hover {
+      font-size: 20px;
+    }
+  }
+`;
+
 export const OutlinedButton = styled.button`
   width: 156px;
   height: 44px;
@@ -134,6 +189,20 @@ export const Image = styled.div`
     height: 432px;
     filter: drop-shadow(0px 10px 60px rgba(57, 57, 57, 0.1));
     border-radius: 20px;
+
+    @media (max-width: 1700px) {
+      height: 380px;
+      width: auto;
+    }
+
+    @media (max-width: 1600px) {
+      height: 350px;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    margin: 1rem;
   }
 `;
 
@@ -158,6 +227,14 @@ export const Title = styled.h1`
   font-size: 62px;
   color: #fffffc;
   margin-bottom: 0.8rem;
+
+  @media (max-width: 1650px) {
+    font-size: 54px;
+  }
+
+  @media (max-width: 1450px) {
+    font-size: 46px;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -165,6 +242,14 @@ export const Subtitle = styled.h2`
   font-size: 50px;
   color: #fffffc;
   margin-bottom: 0.8rem;
+
+  @media (max-width: 1650px) {
+    font-size: 47px;
+  }
+
+  @media (max-width: 1450px) {
+    font-size: 43px;
+  }
 `;
 
 export const Description = styled.p`
@@ -177,6 +262,14 @@ export const Description = styled.p`
 
   span {
     color: #e45257;
+  }
+
+  @media (max-width: 1650px) {
+    font-size: 19px;
+  }
+
+  @media (max-width: 1450px) {
+    font-size: 17px;
   }
 `;
 
@@ -214,6 +307,14 @@ export const Quote = styled.p`
   line-height: 24px;
   color: #fffffc;
   margin-bottom: 1rem;
+
+  @media (max-width: 1650px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 1450px) {
+    font-size: 14px;
+  }
 `;
 
 export const ProfilePic = styled.div`
