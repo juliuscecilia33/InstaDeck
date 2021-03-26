@@ -159,6 +159,11 @@ export const HaveAccount = styled.h2`
   span {
     color: #e45257;
     font-weight: 500;
+    transition: 0.5s ease all;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -167,6 +172,25 @@ export const DisplaySec = styled.div`
   height: 100vh;
   background: #f3eee8;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+`;
+
+export const DisplayImage = styled.div`
+  margin-top: 10vh;
+
+  img {
+    width: 54.895833333333336vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: -3px 10px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+export const DisplayLogo = styled.div`
+  margin-top: 1.5vh;
+  img {
+    width: 4.166666666666667vw;
+    height: auto;
+  }
 `;

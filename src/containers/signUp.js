@@ -93,7 +93,10 @@ export function SignUpContainer() {
         </SignUp.InputArea>
       </SignUp.InputSec>
 
-      <SignUp.DisplaySec />
+      <SignUp.DisplaySec>
+        <SignUp.DisplayLogo />
+        <SignUp.DisplayImage />
+      </SignUp.DisplaySec>
     </SignUp>
   );
 }

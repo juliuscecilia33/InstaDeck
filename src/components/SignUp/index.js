@@ -2,6 +2,7 @@ import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import Logo from "../../components/images/Decklol.png";
+import Page3 from "../../components/images/Page3.jpg";
 
 import {
   Container,
@@ -15,6 +16,8 @@ import {
   Agreement,
   HaveAccount,
   DisplaySec,
+  DisplayImage,
+  DisplayLogo,
 } from "./Styles/signUp";
 
 export default function SignUp({ children, ...restProps }) {
@@ -110,4 +113,22 @@ SignUp.HaveAccount = function SignUpHaveAccount({ children, ...restProps }) {
 
 SignUp.DisplaySec = function SignUpDisplaySec({ children, ...restProps }) {
   return <DisplaySec {...restProps}>{children}</DisplaySec>;
+};
+
+SignUp.DisplayImage = function SignUpDisplayImage({ children, ...restProps }) {
+  return (
+    <DisplayImage {...restProps}>
+      <img src={Page3} alt="Page Model" />
+    </DisplayImage>
+  );
+};
+
+SignUp.DisplayLogo = function SignUpDisplayLogo({ children, ...restProps }) {
+  return (
+    <DisplayLogo {...restProps}>
+      <ReactRouterLink to={ROUTES.START}>
+        <img src={Logo} alt="Logo" />
+      </ReactRouterLink>
+    </DisplayLogo>
+  );
 };
