@@ -13,7 +13,12 @@ export function HomeContainer() {
         <Home.Logo />
         <Home.Buttons>
           <Home.OutlinedButton>Log in</Home.OutlinedButton>
-          <Home.FillButton width="156px" height="44px">
+          <Home.FillButton
+            borderRadius="20px"
+            fontSize="16px"
+            width="156px"
+            height="44px"
+          >
             Sign up
           </Home.FillButton>
         </Home.Buttons>
@@ -32,7 +37,12 @@ export function HomeContainer() {
               </span>{" "}
               and more.
             </Home.Description>
-            <Home.FillButton width="366px" height="71px">
+            <Home.FillButton
+              borderRadius="50px"
+              fontSize="24px"
+              width="356px"
+              height="71px"
+            >
               Sign Up - You'll <i class="fas fa-heartbeat"></i> it.
             </Home.FillButton>
             <Home.Message />

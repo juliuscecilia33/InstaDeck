@@ -57,6 +57,8 @@ Home.Buttons = function HomeButtons({ children, ...restProps }) {
 };
 
 Home.FillButton = function HomeFillButton({
+  borderRadius,
+  fontSize,
   width,
   height,
   children,
@@ -64,7 +66,13 @@ Home.FillButton = function HomeFillButton({
 }) {
   return (
     <ReactRouterLink to={ROUTES.SIGN_UP}>
-      <FillButton width={width} height={height} {...restProps}>
+      <FillButton
+        borderRadius={borderRadius}
+        fontSize={fontSize}
+        width={width}
+        height={height}
+        {...restProps}
+      >
         {children}
       </FillButton>
     </ReactRouterLink>

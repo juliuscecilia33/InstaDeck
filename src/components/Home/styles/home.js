@@ -43,6 +43,7 @@ export const MainSect = styled.div`
   display: flex;
   padding: 0 3rem;
   transition: 0.5s ease all;
+  padding-top: 3rem;
 `;
 
 export const Logo = styled.div`
@@ -74,13 +75,13 @@ export const FillButton = styled.button`
   height: ${({ height }) => height};
   background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: ${({ borderRadius }) => borderRadius};
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Roboto;
   font-weight: bold;
-  font-size: 16px;
+  font-size: ${({ fontSize }) => fontSize};
   color: #fffffc;
   cursor: pointer;
   transition: 0.5s ease all;
@@ -88,6 +89,7 @@ export const FillButton = styled.button`
   i {
     color: #fffffc;
     font-size: 32px;
+    margin: 0.5rem;
   }
 `;
 
@@ -109,8 +111,7 @@ export const OutlinedButton = styled.button`
   transition: 0.5s ease background;
 
   &:hover {
-    background: linear-gradient(90deg, #f28775 0%, #e45257 105.13%);
-    border: none;
+    background: #e45257;
   }
 `;
 
@@ -130,7 +131,7 @@ export const Image = styled.div`
 
   img {
     width: auto;
-    height: 442px;
+    height: 432px;
     filter: drop-shadow(0px 10px 60px rgba(57, 57, 57, 0.1));
     border-radius: 20px;
   }
@@ -141,7 +142,9 @@ export const TextSect = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   z-index: 4;
+  padding: 2rem 0;
 `;
 
 export const TextSub = styled.div`
@@ -154,12 +157,14 @@ export const Title = styled.h1`
   font-weight: bold;
   font-size: 62px;
   color: #fffffc;
+  margin-bottom: 0.8rem;
 `;
 
 export const Subtitle = styled.h2`
   font-weight: 500;
   font-size: 50px;
   color: #fffffc;
+  margin-bottom: 0.8rem;
 `;
 
 export const Description = styled.p`
@@ -167,6 +172,8 @@ export const Description = styled.p`
   font-size: 20px;
   line-height: 30px;
   color: #c4c4c4;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   span {
     color: #e45257;
@@ -174,6 +181,9 @@ export const Description = styled.p`
 `;
 
 export const Message = styled.div`
+  margin-top: 1rem;
+  padding-left: 2rem;
+
   p {
     font-size: 14px;
     color: #c4c4c4;
@@ -203,11 +213,11 @@ export const Quote = styled.p`
   font-size: 16px;
   line-height: 24px;
   color: #fffffc;
+  margin-bottom: 1rem;
 `;
 
 export const ProfilePic = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
 
   img {
@@ -215,6 +225,7 @@ export const ProfilePic = styled.div`
     height: 44px;
     border-radius: 50%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-right: 0.5rem;
   }
 `;
 
@@ -226,6 +237,7 @@ export const Info = styled.div`
     font-weight: 500;
     font-size: 13px;
     color: #fffffc;
+    margin-bottom: 0.3rem;
   }
 
   p {
