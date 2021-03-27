@@ -10,7 +10,7 @@ import { Feed } from "../components";
 export function FeedContainer({ themeToggler, posts, user }) {
   return (
     <Feed>
-      <StoriesContainer themeToggler={themeToggler} />
+      <StoriesContainer posts={posts} themeToggler={themeToggler} />
 
       <Feed.User>
         <Feed.Layout>

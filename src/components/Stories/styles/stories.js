@@ -38,50 +38,18 @@ export const Story = styled.div`
     }
   }
 
-  &:nth-last-child(-n + 2) {
-    img {
-      width: 61px;
-      height: 61px;
-      border-radius: 10px;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) grayscale(100%);
-      margin-bottom: 0.3rem;
-
-      @media (max-height: 750px) {
-        width: 55px;
-        height: 55px;
-      }
-
-      @media (max-width: 1500px) {
-        width: 50px;
-        height: 50px;
-      }
-    }
-
-    p {
-      font-weight: 400;
-      font-size: 0.5510416666666666vw;
-      color: ${({ theme }) => theme.text};
-    }
-
-    @media (max-width: 1500px) {
-      p {
-        display: none;
-      }
-    }
-
-    @media (max-height: 750px) {
-      p {
-        display: none;
-      }
-    }
-  }
-
   img {
     width: 61px;
     height: 61px;
     border-radius: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-bottom: 0.3rem;
+
+    ${
+      "" /* &:focus {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) grayscale(100%);
+    } */
+    }
 
     @media (max-height: 750px) {
       width: 55px;
