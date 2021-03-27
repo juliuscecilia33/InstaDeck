@@ -22,7 +22,7 @@ export const List = styled.div`
   padding: 0 1.7833333333333335vw;
 `;
 
-export const Story = styled.div`
+export const Story = styled.button`
   width: 4.752604166666667vw;
   height: 100%;
   display: flex;
