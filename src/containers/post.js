@@ -106,24 +106,24 @@ export function PostContainer({
                   <i class="fas fa-heartbeat" style={inputStyle}></i>
                 </button>
               </Post.Button>
-              <Post.Button action={comments}>
+              <Post.ButtonNoNumb action={comments}>
                 <a href="#/" onClick={() => updateDetail(postId)}>
                   <button>
                     <i class="fas fa-comments"></i>
                   </button>
                 </a>
-              </Post.Button>
-              <Post.Button>
+              </Post.ButtonNoNumb>
+              <Post.ButtonNoNumb>
                 <button>
                   <i class="fas fa-bookmark"></i>
                 </button>
-              </Post.Button>
+              </Post.ButtonNoNumb>
               {username === user.displayName && (
-                <Post.Button>
+                <Post.ButtonNoNumb>
                   <button onClick={() => deletePost(postId)}>
                     <i class="fas fa-trash"></i>
                   </button>
-                </Post.Button>
+                </Post.ButtonNoNumb>
               )}
             </Post.Buttons>
           </Post.Footer>

@@ -136,6 +136,8 @@ export const CommentBox = styled.form`
     outline: none;
     border: none;
     background: none;
+
+    color: ${({ theme }) => theme.text};
   }
 
   button {

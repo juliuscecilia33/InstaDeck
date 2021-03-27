@@ -179,5 +179,9 @@ export const NoAccount = styled.h2`
   span {
     color: #e45257;
     font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;

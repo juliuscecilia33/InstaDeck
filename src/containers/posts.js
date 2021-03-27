@@ -18,6 +18,7 @@ export function PostsContainer({ posts, user }) {
           comments={post.comments}
           usernamepic={post.usernamepic}
           userId={post.userId}
+          commentCount={post.commentCount}
         />
       ))}
     </Posts>

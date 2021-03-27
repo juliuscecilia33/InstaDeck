@@ -8,6 +8,7 @@ import {
   AvatarImage,
   Buttons,
   Button,
+  ButtonNoNumb,
 } from "./styles/post";
 
 export default function Post({ children, ...restProps }) {
@@ -53,7 +54,15 @@ Post.Button = function PostButton({ action, children, ...restProps }) {
   return (
     <Button {...restProps}>
       {children}
-      <p>{action}</p>
+      <p>{(action = action ? action : 0)}</p>
     </Button>
   );
+};
+
+Post.ButtonNoNumb = function PostButtonNoNumb({
+  action,
+  children,
+  ...restProps
+}) {
+  return <ButtonNoNumb {...restProps}>{children}</ButtonNoNumb>;
 };

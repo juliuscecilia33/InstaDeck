@@ -101,3 +101,38 @@ export const Button = styled.div`
     font-weight: 700;
   }
 `;
+
+export const ButtonNoNumb = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+
+  a {
+    margin: 0;
+    padding: 0;
+  }
+
+  button {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
+  i {
+    font-size: 1.0416666666666667vw;
+    color: #c4c4c4;
+    margin-right: 0.7rem;
+  }
+
+  p {
+    font-size: 0.625vw;
+    color: #c4c4c4;
+    font-weight: 700;
+  }
+`;

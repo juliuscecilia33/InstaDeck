@@ -105,7 +105,7 @@ Detailed.CommentBox = function DetailedCommentBox({
         onChange={(e) => setComment(e.target.value)}
       />
 
-      <button disabled={!comment} type="submit" onClick={postComment}>
+      <button disabled={!comment} type="submit" onClick={(e) => postComment(e)}>
         Post
       </button>
     </CommentBox>
