@@ -8,7 +8,6 @@ import { mapTime } from "../mappers/mapTime";
 
 export function DetailedPostContainer({ user }) {
   const { selectedDetail } = useContext(DetailedContext);
-  const [detailedLikes, setDetailedLikes] = useState(0);
   const [detailedImage, setDetailedImage] = useState(null);
   const [detailedUser, setDetailedUser] = useState("");
   const [detailedUserPic, setDetailedUserPic] = useState(null);
@@ -19,7 +18,6 @@ export function DetailedPostContainer({ user }) {
   const firebaseUser = firebaseApp.auth().currentUser || {};
   const [comment, setComment] = useState([]);
   const [comments, setComments] = useState([]);
-  const [heartColor, setHeartColor] = useState(false);
 
   useEffect(() => {
     if (selectedDetail) {
@@ -30,7 +28,6 @@ export function DetailedPostContainer({ user }) {
           if (doc.exists) {
             let docData = doc.data();
 
-            setDetailedLikes(docData.likes);
             setDetailedImage(docData.imageUrl);
             setDetailedUser(docData.username);
             setDetailedUserPic(docData.usernamepic);
@@ -44,8 +41,6 @@ export function DetailedPostContainer({ user }) {
           console.log("Error getting document:", error);
         });
     }
-
-    setHeartColor(false);
   }, [selectedDetail, setError]);
 
   useEffect(() => {
@@ -64,16 +59,6 @@ export function DetailedPostContainer({ user }) {
         });
     }
   }, [selectedDetail]);
-
-  const updateLike = (selectedDetail) => {
-    db.collection("posts")
-      .doc(selectedDetail)
-      .update({
-        likes: detailedLikes + 1,
-      });
-
-    setHeartColor(!heartColor);
-  };
 
   const postComment = (event) => {
     event.preventDefault();
@@ -104,16 +89,6 @@ export function DetailedPostContainer({ user }) {
       });
   };
 
-  let inputStyle = {
-    color: "#c4c4c4",
-  };
-
-  if (heartColor) {
-    inputStyle = {
-      color: "#E45257",
-    };
-  }
-
   return (
     <Detailed.Container>
       <Detailed.Image src={detailedImage} />
@@ -140,32 +115,6 @@ export function DetailedPostContainer({ user }) {
         setComment={setComment}
         postComment={postComment}
       />
-
-      <Detailed.Icons>
-        <Detailed.Icon>
-          <button onClick={() => updateLike(selectedDetail)}>
-            <i class="fas fa-heartbeat" style={inputStyle}></i>
-          </button>
-        </Detailed.Icon>
-
-        <Detailed.Icon>
-          <button>
-            <i class="fas fa-comments"></i>
-          </button>
-        </Detailed.Icon>
-
-        <Detailed.Icon>
-          <button>
-            <i class="fas fa-bookmark"></i>
-          </button>
-        </Detailed.Icon>
-
-        <Detailed.Icon>
-          <button>
-            <i class="fas fa-share"></i>
-          </button>
-        </Detailed.Icon>
-      </Detailed.Icons>
 
       <Detailed.User src={detailedUserPic}>{detailedUser}</Detailed.User>
     </Detailed.Container>
