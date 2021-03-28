@@ -17,16 +17,33 @@ export function StoriesContainer({ themeToggler, posts }) {
     setProfileText(username);
   };
 
+  const uniqueProfiles = [];
+  const profiles = [];
+
+  posts.map(({ id, post }) => {
+    if (uniqueProfiles.indexOf(post.username) === -1) {
+      uniqueProfiles.push(post.username);
+      profiles.push({
+        id: id,
+        postUsername: post.username,
+        postUsernamePic: post.usernamepic,
+      });
+    }
+  });
+
+  console.log(uniqueProfiles);
+  console.log(profiles);
+
   return (
     <Stories>
       <Stories.List>
-        {posts.slice(0, 5).map(({ id, post }) => {
+        {profiles.slice(0, 5).map(({ id, postUsername, postUsernamePic }) => {
           return (
             <Stories.Story
-              onClick={() => showProfile(id, post.username)}
-              src={post.usernamepic}
+              onClick={() => showProfile(id, postUsername)}
+              src={postUsernamePic}
             >
-              {post.username}
+              {postUsername}
             </Stories.Story>
           );
         })}
