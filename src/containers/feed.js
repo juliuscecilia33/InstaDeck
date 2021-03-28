@@ -23,9 +23,9 @@ export function FeedContainer({ themeToggler, posts, user }) {
         <Feed.Layout>
           <Feed.Links>
             <Feed.Link>Popular</Feed.Link>
-            <Feed.Link>Messages</Feed.Link>
+            {/* <Feed.Link>Messages</Feed.Link>
             <Feed.Link>Notifications</Feed.Link>
-            <Feed.Link>Saved</Feed.Link>
+            <Feed.Link>Saved</Feed.Link> */}
           </Feed.Links>
 
           <PopularPostsContainer posts={posts} user={user} />
