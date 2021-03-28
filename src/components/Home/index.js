@@ -3,6 +3,7 @@ import Brand from "../../components/images/Decklol.png";
 import Profile from "../../components/images/picofme.jpg";
 import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -47,7 +48,16 @@ Home.MainSect = function HomeMainSect({ children, ...restProps }) {
 Home.Logo = function HomeLogo({ children, ...restProps }) {
   return (
     <Logo {...restProps}>
-      <img src={Brand} alt="Logo" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={Brand} alt="Logo" />
+      </LazyLoad>
       <p>InstaDeck</p>
     </Logo>
   );
@@ -118,7 +128,16 @@ Home.DisplaySect = function HomeDisplaySect({ children, ...restProps }) {
 Home.Image = function HomeImage({ src, children, ...restProps }) {
   return (
     <Image {...restProps}>
-      <img src={src} alt="Display" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="Display" />
+      </LazyLoad>
     </Image>
   );
 };
@@ -167,7 +186,16 @@ Home.Quote = function HomeQuote({ children, ...restProps }) {
 Home.ProfilePic = function HomeProfilePic({ children, ...restProps }) {
   return (
     <ProfilePic {...restProps}>
-      <img src={Profile} alt="Profile" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={Profile} alt="Profile" />
+      </LazyLoad>
       <Info>
         <h3>Julius Cecilia</h3>
         <p>College Student</p>

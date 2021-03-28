@@ -7,6 +7,7 @@ import {
   SearchBox,
   Icons,
 } from "./styles/stories";
+import LazyLoad from "react-lazyload";
 
 export default function Stories({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -19,7 +20,16 @@ Stories.List = function StoriesList({ children, ...restProps }) {
 Stories.Story = function StoriesStory({ src, children, ...restProps }) {
   return (
     <Story {...restProps}>
-      <img src={src} alt="Story Display" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="Story Display" />
+      </LazyLoad>
       <p>{children}</p>
     </Story>
   );

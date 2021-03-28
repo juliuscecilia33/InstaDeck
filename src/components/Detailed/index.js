@@ -1,5 +1,6 @@
 import React from "react";
 import { mapTime } from "../../mappers/mapTime";
+import LazyLoad from "react-lazyload";
 
 import {
   Background,
@@ -51,7 +52,16 @@ Detailed.Container = function DetailedContainer({ children, ...restProps }) {
 Detailed.Image = function DetailedImage({ src, children, ...restProps }) {
   return (
     <Image {...restProps}>
-      <img src={src} alt="Detailed Post" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="Detailed Post" />
+      </LazyLoad>
     </Image>
   );
 };
@@ -129,7 +139,16 @@ Detailed.User = function DetailedUser({
   return (
     <User {...restProps}>
       <UserImage>
-        <img src={src} alt="User Profile Pic" />
+        <LazyLoad
+          height={200}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={src} alt="User Profile Pic" />
+        </LazyLoad>
       </UserImage>
       <h3>{children}</h3>
     </User>
@@ -310,7 +329,16 @@ Detailed.Post = function DetailedPost({
 }) {
   return (
     <Post onClick={() => updateDetail(postId)} {...restProps}>
-      <img src={src} alt="Users Posts" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="Users Posts" />
+      </LazyLoad>
     </Post>
   );
 };

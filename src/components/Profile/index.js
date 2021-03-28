@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -28,7 +29,16 @@ Profile.Top = function ProfileTop({ children, ...restProps }) {
 Profile.Avatar = function ProfileAvatar({ src, children, ...restProps }) {
   return (
     <Avatar {...restProps}>
-      <img src={src} alt="User Profile" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="User Profile" />
+      </LazyLoad>
     </Avatar>
   );
 };
@@ -106,7 +116,16 @@ Profile.Post = function ProfilePost({
 }) {
   return (
     <Post onClick={() => updateDetail(postId)} {...restProps}>
-      <img src={src} alt="Post" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={src} alt="Post" />
+      </LazyLoad>
     </Post>
   );
 };

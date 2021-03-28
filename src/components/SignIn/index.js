@@ -3,6 +3,7 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import Logo from "../../components/images/Decklol.png";
 import PageOne from "../../components/images/Page1.jpg";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -31,7 +32,16 @@ SignIn.DisplayLogo = function SignInDisplayLogo({ children, ...restProps }) {
   return (
     <DisplayLogo {...restProps}>
       <ReactRouterLink to={ROUTES.START}>
-        <img src={Logo} alt="Logo" />
+        <LazyLoad
+          height={200}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={Logo} alt="Logo" />
+        </LazyLoad>
       </ReactRouterLink>
     </DisplayLogo>
   );
@@ -40,7 +50,16 @@ SignIn.DisplayLogo = function SignInDisplayLogo({ children, ...restProps }) {
 SignIn.DisplayImage = function SignInDisplayImage({ children, ...restProps }) {
   return (
     <DisplayImage {...restProps}>
-      <img src={PageOne} alt="Page Model" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={PageOne} alt="Page Model" />
+      </LazyLoad>
     </DisplayImage>
   );
 };

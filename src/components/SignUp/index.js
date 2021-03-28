@@ -3,6 +3,7 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import Logo from "../../components/images/Decklol.png";
 import Page3 from "../../components/images/Page3.jpg";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -32,7 +33,16 @@ SignUp.LogoImage = function SignUpLogoImage({ children, ...restProps }) {
   return (
     <LogoImage {...restProps}>
       <ReactRouterLink to={ROUTES.START}>
-        <img src={Logo} alt="Logo" />
+        <LazyLoad
+          height={200}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={Logo} alt="Logo" />
+        </LazyLoad>
       </ReactRouterLink>
     </LogoImage>
   );
@@ -118,7 +128,16 @@ SignUp.DisplaySec = function SignUpDisplaySec({ children, ...restProps }) {
 SignUp.DisplayImage = function SignUpDisplayImage({ children, ...restProps }) {
   return (
     <DisplayImage {...restProps}>
-      <img src={Page3} alt="Page Model" />
+      <LazyLoad
+        height={200}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={Page3} alt="Page Model" />
+      </LazyLoad>
     </DisplayImage>
   );
 };
@@ -127,7 +146,16 @@ SignUp.DisplayLogo = function SignUpDisplayLogo({ children, ...restProps }) {
   return (
     <DisplayLogo {...restProps}>
       <ReactRouterLink to={ROUTES.START}>
-        <img src={Logo} alt="Logo" />
+        <LazyLoad
+          height={200}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={Logo} alt="Logo" />
+        </LazyLoad>
       </ReactRouterLink>
     </DisplayLogo>
   );

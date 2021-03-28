@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import DownArrow from "../images/DownArrow.png";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -60,7 +61,16 @@ SideBar.AccountBar = function SideBarAccountBar({ children, ...restProps }) {
     <AccountBar {...restProps}>
       <Top>
         <h3>Account</h3>
-        <img src={DownArrow} alt="DownArrow" />
+        <LazyLoad
+          height={200}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={DownArrow} alt="DownArrow" />
+        </LazyLoad>
       </Top>
 
       <Bottom>
