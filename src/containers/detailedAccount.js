@@ -6,6 +6,7 @@ import * as ROUTES from "../constants/routes";
 import { FirebaseContext } from "../context/firebase";
 import { DetailedContext } from "../context/detailed";
 import { storage } from "../firebase";
+import { useHistory } from "react-router";
 
 export function DetailedAccountContainer({ user, posts }) {
   const [progress, setProgress] = useState(0);
@@ -13,6 +14,7 @@ export function DetailedAccountContainer({ user, posts }) {
   const { firebaseApp } = useContext(FirebaseContext);
   const firebaseUser = firebaseApp.auth().currentUser || {};
   const { setDetail, setSelectedDetail } = useContext(DetailedContext);
+  const history = useHistory();
 
   let postCount = 0;
   let likesCount = [];
@@ -58,6 +60,7 @@ export function DetailedAccountContainer({ user, posts }) {
 
         setProgress(0);
         setImage(null);
+        history.go(0);
       }
     );
   };
