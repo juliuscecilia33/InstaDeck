@@ -20,16 +20,7 @@ Stories.List = function StoriesList({ children, ...restProps }) {
 Stories.Story = function StoriesStory({ src, children, ...restProps }) {
   return (
     <Story {...restProps}>
-      <LazyLoad
-        height={200}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={src} alt="Story Display" />
-      </LazyLoad>
+      <img src={src} alt="Story Display" />
       <p>{children}</p>
     </Story>
   );

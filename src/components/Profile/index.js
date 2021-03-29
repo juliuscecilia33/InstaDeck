@@ -29,16 +29,7 @@ Profile.Top = function ProfileTop({ children, ...restProps }) {
 Profile.Avatar = function ProfileAvatar({ src, children, ...restProps }) {
   return (
     <Avatar {...restProps}>
-      <LazyLoad
-        height={200}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={src} alt="User Profile" />
-      </LazyLoad>
+      <img src={src} alt="User Profile" />
     </Avatar>
   );
 };
