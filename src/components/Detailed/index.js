@@ -52,16 +52,7 @@ Detailed.Container = function DetailedContainer({ children, ...restProps }) {
 Detailed.Image = function DetailedImage({ src, children, ...restProps }) {
   return (
     <Image {...restProps}>
-      <LazyLoad
-        height={200}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={src} alt="Detailed Post" />
-      </LazyLoad>
+      <img src={src} alt="Detailed Post" />
     </Image>
   );
 };
@@ -139,16 +130,7 @@ Detailed.User = function DetailedUser({
   return (
     <User {...restProps}>
       <UserImage>
-        <LazyLoad
-          height={200}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img src={src} alt="User Profile Pic" />
-        </LazyLoad>
+        <img src={src} alt="User Profile Pic" />
       </UserImage>
       <h3>{children}</h3>
     </User>
@@ -329,16 +311,7 @@ Detailed.Post = function DetailedPost({
 }) {
   return (
     <Post onClick={() => updateDetail(postId)} {...restProps}>
-      <LazyLoad
-        height={200}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={src} alt="Users Posts" />
-      </LazyLoad>
+      <img src={src} alt="Users Posts" />
     </Post>
   );
 };

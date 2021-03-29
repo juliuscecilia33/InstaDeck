@@ -116,16 +116,7 @@ Profile.Post = function ProfilePost({
 }) {
   return (
     <Post onClick={() => updateDetail(postId)} {...restProps}>
-      <LazyLoad
-        height={200}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={src} alt="Post" />
-      </LazyLoad>
+      <img src={src} alt="Post" />
     </Post>
   );
 };
