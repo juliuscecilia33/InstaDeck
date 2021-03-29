@@ -28,9 +28,11 @@ export function PostsContainer({ posts, user }) {
           commentCount={post.commentCount}
         />
       ))}
-      <Posts.Button incrementCount={incrementCount}>
-        Load more posts
-      </Posts.Button>
+      {posts && (
+        <Posts.Button incrementCount={incrementCount}>
+          Load more posts
+        </Posts.Button>
+      )}
     </Posts>
   );
 }

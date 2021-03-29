@@ -16,9 +16,9 @@ export const Button = styled.div`
   align-items: center;
 
   button {
-    width: 212px;
-    height: 50px;
-    background: #e45257;
+    width: 186px;
+    height: 44px;
+    background-color: ${({ theme }) => theme.upload};
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -26,8 +26,14 @@ export const Button = styled.div`
     color: #fffffc;
     font-family: Roboto;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     margin-bottom: 5rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: 0.5s ease all;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.uploadHover};
+    }
   }
 `;

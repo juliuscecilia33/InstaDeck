@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Posts } from "../components";
 import { PostContainer } from "../containers";
 
 export function PopularPostsContainer({ posts, user }) {
+  const [count, setCount] = useState(5);
+
+  const incrementCount = () => {
+    setCount(count + 5);
+    console.log(count);
+  };
+
   return (
     <Posts>
       {posts.map(({ id, post }) => {
@@ -22,6 +29,11 @@ export function PopularPostsContainer({ posts, user }) {
           )
         );
       })}
+      {posts && (
+        <Posts.Button incrementCount={incrementCount}>
+          Load more posts
+        </Posts.Button>
+      )}
     </Posts>
   );
 }
