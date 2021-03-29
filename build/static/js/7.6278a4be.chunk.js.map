@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/SignUpPage.js"],"names":["SignUpPage"],"mappings":"gLAGe,SAASA,IACtB,OAAO,cAAC,IAAD","file":"static/js/7.6278a4be.chunk.js","sourcesContent":["import React from \"react\";\r\nimport { SignUpContainer } from \"../containers\";\r\n\r\nexport default function SignUpPage() {\r\n  return <SignUpContainer />;\r\n}\r\n"],"sourceRoot":""}

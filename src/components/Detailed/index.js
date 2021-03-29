@@ -1,6 +1,5 @@
 import React from "react";
 import { mapTime } from "../../mappers/mapTime";
-import LazyLoad from "react-lazyload";
 
 import {
   Background,

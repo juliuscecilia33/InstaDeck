@@ -7,7 +7,6 @@ import {
   SearchBox,
   Icons,
 } from "./styles/stories";
-import LazyLoad from "react-lazyload";
 
 export default function Stories({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;

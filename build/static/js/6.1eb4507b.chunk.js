@@ -1,0 +1,2 @@
+(this.webpackJsonpinstadeck=this.webpackJsonpinstadeck||[]).push([[6],{71:function(t,n,s){"use strict";s.r(n),s.d(n,"default",(function(){return i}));var c=s(4),e=(s(2),s(62));function i(){return Object(c.jsx)(e.l,{})}}}]);
+//# sourceMappingURL=6.1eb4507b.chunk.js.map

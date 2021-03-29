@@ -20,6 +20,7 @@ export function StoriesContainer({ themeToggler, posts }) {
   const uniqueProfiles = [];
   const profiles = [];
 
+  // eslint-disable-next-line
   posts.map(({ id, post }) => {
     if (uniqueProfiles.indexOf(post.username) === -1) {
       uniqueProfiles.push(post.username);

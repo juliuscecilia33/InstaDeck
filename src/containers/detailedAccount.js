@@ -94,7 +94,7 @@ export function DetailedAccountContainer({ user, posts }) {
                 {image ? (
                   <span>Ready to Upload</span>
                 ) : (
-                  <span>Upload Profile</span>
+                  <span>Upload Avatar</span>
                 )}
               </Detailed.InputStuff>
               <Detailed.UploadButton

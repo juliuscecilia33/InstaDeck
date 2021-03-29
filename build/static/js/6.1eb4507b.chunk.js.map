@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/SignInPage.js"],"names":["SignInPage"],"mappings":"gLAGe,SAASA,IACtB,OAAO,cAAC,IAAD","file":"static/js/6.1eb4507b.chunk.js","sourcesContent":["import React from \"react\";\r\nimport { SignInContainer } from \"../containers\";\r\n\r\nexport default function SignInPage() {\r\n  return <SignInContainer />;\r\n}\r\n"],"sourceRoot":""}
